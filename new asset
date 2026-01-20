@@ -1,0 +1,145 @@
+// =====================================================
+// STEP 1: GET EXISTING ASSETS
+// =====================================================
+
+var Inventory = PlanningModel_1.getMembers("NFP_ASSET");
+var existingAssetIds = ArrayUtils.create(Type.string);
+
+for (var e = 0; e < Inventory.length; e++) {
+    existingAssetIds.push(Inventory[e].id);
+}
+
+// =====================================================
+// STEP 2: READ UPLOADED FILE DATA
+// =====================================================
+
+var raw = Asset_2.getUnit();
+var rows = raw.split("},{");
+
+var Ar_ID = ArrayUtils.create(Type.string);
+var Ar_DESCRIPTION = ArrayUtils.create(Type.string);
+var Ar_ASSET_TYPE = ArrayUtils.create(Type.string);
+var Ar_COMPANY_CODE = ArrayUtils.create(Type.string);
+var Ar_ASSET_CLASS = ArrayUtils.create(Type.string);
+var Ar_COST_CENTER = ArrayUtils.create(Type.string);
+var Ar_CWIP = ArrayUtils.create(Type.string);
+
+for (var i = 0; i < rows.length; i++) {
+
+    var row = rows[i].replace("[{", "").replace("}]", "");
+    var col = row.split(",");
+
+    Ar_ID.push(col[0].split(":")[1].replace('"','').replace('"',''));
+    Ar_DESCRIPTION.push(col[1].split(":")[1].replace('"','').replace('"',''));
+    Ar_ASSET_TYPE.push(col[2].split(":")[1].replace('"','').replace('"',''));
+    Ar_COMPANY_CODE.push(col[3].split(":")[1].replace('"','').replace('"',''));
+    Ar_ASSET_CLASS.push(col[4].split(":")[1].replace('"','').replace('"',''));
+    Ar_COST_CENTER.push(col[5].split(":")[1].replace('"','').replace('"',''));
+    Ar_CWIP.push(col[6].split(":")[1].replace('"','').replace('"',''));
+}
+
+// =====================================================
+// STEP 3: VALIDATE COMPANY CODES
+// =====================================================
+
+var companyMembers = PlanningModel_1.getMembers("NFP_COMPANY");
+var validCompanies = ArrayUtils.create(Type.string);
+
+for (var c = 0; c < companyMembers.length; c++) {
+    validCompanies.push(companyMembers[c].id);
+}
+
+var isValidRow = ArrayUtils.create(Type.boolean);
+
+for (var v = 0; v < Ar_COMPANY_CODE.length; v++) {
+    isValidRow.push(validCompanies.includes(Ar_COMPANY_CODE[v]));
+}
+
+// =====================================================
+// STEP 4: DEACTIVATE + RECREATE LOGIC
+// =====================================================
+
+Application.showBusyIndicator();
+
+for (var r = 0; r < Ar_ID.length; r++) {
+
+    if (isValidRow[r] !== true) {
+        Application.showMessage(
+            ApplicationMessageType.Warning,
+            "Invalid Company Code for Asset " + Ar_ID[r]
+        );
+        continue;
+    }
+
+    var assetId = Ar_ID[r];
+
+    // -------------------------------------------------
+    // CASE 1: ASSET ALREADY EXISTS
+    // -------------------------------------------------
+    if (existingAssetIds.includes(assetId)) {
+
+        // 1️⃣ Deactivate old asset
+        var deactivateArr = ArrayUtils.create(Type.PlanningModelMember);
+        deactivateArr.push({
+            id: assetId,
+            properties: {
+                STATUS: "INACTIVE"
+            }
+        });
+
+        PlanningModel_1.updateMembers("NFP_ASSET", deactivateArr);
+
+        // 2️⃣ Create new asset with correct company
+        var newAssetId = assetId + "_NEW";
+
+        PlanningModel_1.createMembers("NFP_ASSET", {
+            id: newAssetId,
+            description: Ar_DESCRIPTION[r],
+            hierarchies: {
+                H1: { parentId: Ar_ASSET_TYPE[r] }
+            },
+            properties: {
+                COMPANY_CODE: Ar_COMPANY_CODE[r],
+                ASSET_CLASS: Ar_ASSET_CLASS[r],
+                COSTCENTER: Ar_COST_CENTER[r],
+                CWIP: Ar_CWIP[r],
+                STATUS: "ACTIVE",
+                PREVIOUS_ASSET_ID: assetId
+            }
+        });
+
+        Application.showMessage(
+            ApplicationMessageType.Success,
+            "Asset " + assetId +
+            " reassigned → new asset " + newAssetId
+        );
+    }
+
+    // -------------------------------------------------
+    // CASE 2: ASSET DOES NOT EXIST
+    // -------------------------------------------------
+    else {
+
+        PlanningModel_1.createMembers("NFP_ASSET", {
+            id: assetId,
+            description: Ar_DESCRIPTION[r],
+            hierarchies: {
+                H1: { parentId: Ar_ASSET_TYPE[r] }
+            },
+            properties: {
+                COMPANY_CODE: Ar_COMPANY_CODE[r],
+                ASSET_CLASS: Ar_ASSET_CLASS[r],
+                COSTCENTER: Ar_COST_CENTER[r],
+                CWIP: Ar_CWIP[r],
+                STATUS: "ACTIVE"
+            }
+        });
+
+        Application.showMessage(
+            ApplicationMessageType.Success,
+            "Asset " + assetId + " created successfully"
+        );
+    }
+}
+
+Application.hideBusyIndicator();
