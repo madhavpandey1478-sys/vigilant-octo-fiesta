@@ -1,6 +1,6 @@
 {
   "id": "com.fd.djaja.sap.sac.excel",
-  "version": "2.0.0",
+  "version": "12.12.01",
   "name": "Asset",
   "description": "Asset",
   "newInstancePrefix": "Asset",
@@ -13,14 +13,14 @@
     {
       "kind": "main",
       "tag": "com-fd-djaja-sap-sac-excel",
-      "url": " https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/excel (1) 1.js",
+      "url": " https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-fd-djaja-sap-sac-excel-aps",
-      "url": "https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/aps_excel (1) 1.js",
+      "url": "https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/aps_excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
