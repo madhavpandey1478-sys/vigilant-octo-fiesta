@@ -1,6 +1,6 @@
 {
   "id": "com.fd.djaja.sap.sac.excel",
-  "version": "6.6.1",
+  "version": "6.7.0",
   "name": "Asset",
   "description": "Asset",
   "newInstancePrefix": "Asset",
@@ -8,19 +8,21 @@
   "vendor": "MADHAV_P",
   "eula": "",
   "license": "",
-  "imports": [ "input-controls" ],
+  "imports": [
+    "input-controls"
+  ],
   "webcomponents": [
     {
       "kind": "main",
       "tag": "com-fd-djaja-sap-sac-excel",
-      "url": " https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/excel.js",
+      "url": "/excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-fd-djaja-sap-sac-excel-aps",
-      "url": "https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/aps_excel.js",
+      "url": "/aps_excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
@@ -145,7 +147,7 @@
     }
   },
   "events": {
-  	"onStart": {
+    "onStart": {
       "description": "Specify the SAC Script that shall be triggered when the Export process is started."
     }
   }
