@@ -15,14 +15,14 @@
     {
       "kind": "main",
       "tag": "com-fd-djaja-sap-sac-excel",
-      "url": "/excel.js",
+      "url": "https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     },
     {
       "kind": "styling",
       "tag": "com-fd-djaja-sap-sac-excel-aps",
-      "url": "/aps_excel.js",
+      "url": "https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/aps_excel.js",
       "integrity": "",
       "ignoreIntegrity": true
     }
