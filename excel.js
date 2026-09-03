@@ -8,169 +8,463 @@
     var Ar = [];
 
     let tmpl = document.createElement("template");
-    tmpl.innerHTML = `
-      <style>
-        :host {
-          display: block;
-          width: 100%;
-          height: 100%;
-          min-width: 260px;
-          font-family: "72", Arial, Helvetica, sans-serif;
-          box-sizing: border-box;
-        }
+tmpl.innerHTML = `
+  <style>
 
-        *, *::before, *::after {
-          box-sizing: border-box;
-        }
+    :host {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-width: 300px;
+      font-family: "72", Arial, Helvetica, sans-serif;
+      color: #1d2d3e;
+      box-sizing: border-box;
+      background: #f5f7fa;
+    }
 
-        .assetUploadCard {
-          width: 100%;
-          min-height: 210px;
-          padding: 20px;
-          border: 1px solid #d9e2ec;
-          border-radius: 16px;
-          background: linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
-          box-shadow: 0 8px 24px rgba(28, 63, 91, 0.10);
-          overflow: hidden;
-          transition: box-shadow 180ms ease, transform 180ms ease;
-        }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-        .assetUploadCard:hover {
-          box-shadow: 0 12px 30px rgba(28, 63, 91, 0.14);
-        }
 
-        .assetHeader {
-          width: 100%;
-          margin-bottom: 16px;
-        }
+    /* =========================================================
+       MAIN CARD
+       ========================================================= */
 
-        .assetIcon {
-          width: 42px;
-          height: 42px;
-          line-height: 42px;
-          margin-right: 12px;
-          border-radius: 12px;
-          background: linear-gradient(135deg, #107c41, #21a366);
-          color: #ffffff;
-          text-align: center;
-          box-shadow: 0 6px 14px rgba(16, 124, 65, 0.24);
-        }
+    .assetUploadCard {
+      position: relative;
+      width: 100%;
+      min-height: 270px;
 
-        .assetTitle {
-          color: #172b4d;
-          font-size: 18px;
-          font-weight: 700;
-          line-height: 24px;
-        }
+      padding: 24px;
 
-        .assetSubtitle {
-          color: #6a7b8f;
-          font-size: 12px;
-          line-height: 18px;
-        }
+      border: 1px solid #d9e2ec;
+      border-radius: 16px;
 
-        .assetDropZone {
-          width: 100%;
-          min-height: 88px;
-          padding: 14px 16px;
-          border: 1.5px dashed #9fb5c8;
-          border-radius: 13px;
-          background: rgba(255, 255, 255, 0.82);
-          transition:
-            border-color 180ms ease,
-            background 180ms ease,
-            box-shadow 180ms ease;
-        }
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #f9fbfd 100%
+        );
 
-        .assetDropZone:hover {
-          border-color: #107c41;
-          background: #f8fffb;
-          box-shadow: inset 0 0 0 1px rgba(16, 124, 65, 0.08);
-        }
+      box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.04),
+        0 10px 30px rgba(31, 55, 77, 0.08);
 
-        .assetDropIcon {
-          color: #107c41;
-          margin-right: 9px;
-        }
+      overflow: hidden;
 
-        .assetHelper {
-          color: #6b7c93;
-          font-size: 11px;
-          margin-top: 4px;
-        }
+      transition:
+        box-shadow 180ms ease,
+        border-color 180ms ease;
+    }
 
-        .assetFileUploader {
-          width: 100% !important;
-        }
+    .assetUploadCard:hover {
+      border-color: #b8c9da;
 
-        .assetFileUploader .sapUiFupInputMask {
-          border-radius: 9px !important;
-          border: 1px solid #c7d3df !important;
-          background: #ffffff !important;
-          color: #243b53 !important;
-          min-height: 38px !important;
-          box-shadow: none !important;
-        }
+      box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.05),
+        0 14px 36px rgba(31, 55, 77, 0.11);
+    }
 
-        .assetFileUploader .sapUiFupInputMask:hover {
-          border-color: #107c41 !important;
-        }
 
-        .assetFileUploader .sapUiFupButton {
-          border-radius: 9px !important;
-          min-height: 38px !important;
-          margin-left: 8px !important;
-        }
+    /* =========================================================
+       TOP BLUE ACCENT
+       ========================================================= */
 
-        .assetUploadButton {
-          margin-top: 14px;
-          min-width: 118px;
-          height: 40px;
-          border-radius: 10px !important;
-          box-shadow: 0 5px 12px rgba(16, 124, 65, 0.20);
-          transition:
-            transform 160ms ease,
-            box-shadow 160ms ease;
-        }
+    .assetUploadCard::before {
+      content: "";
 
-        .assetUploadButton:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 8px 16px rgba(16, 124, 65, 0.25);
-        }
+      position: absolute;
+      top: 0;
+      left: 0;
 
-        .assetUploadButton .sapMBtnInner {
-          border-radius: 10px !important;
-          font-weight: 700 !important;
-        }
+      width: 100%;
+      height: 4px;
 
-        .assetFooter {
-          width: 100%;
-          margin-top: 10px;
-          color: #7a8a9a;
-          font-size: 10px;
-          text-align: center;
-        }
+      background: #0a6ed1;
+    }
 
-        @media (max-width: 420px) {
-          .assetUploadCard {
-            padding: 14px;
-            border-radius: 13px;
-          }
 
-          .assetTitle {
-            font-size: 16px;
-          }
+    /* =========================================================
+       HEADER
+       ========================================================= */
 
-          .assetFileUploader .sapUiFupInputMask {
-            min-height: 36px !important;
-          }
+    .assetHeader {
+      width: 100%;
 
-          .assetUploadButton {
-            width: 100%;
-          }
-        }
-      </style>
-    `;
+      min-height: 56px;
+
+      margin-bottom: 20px;
+
+      align-items: center;
+    }
+
+
+    /* Excel / Upload Icon */
+
+    .assetIcon {
+      display: flex;
+
+      width: 48px !important;
+      height: 48px !important;
+
+      margin-right: 14px;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #0a6ed1,
+          #0854a0
+        );
+
+      color: #ffffff !important;
+
+      align-items: center;
+      justify-content: center;
+
+      box-shadow:
+        0 5px 12px rgba(10, 110, 209, 0.22);
+    }
+
+
+    /* Main title */
+
+    .assetTitle {
+      display: block;
+
+      color: #1d2d3e !important;
+
+      font-size: 20px !important;
+
+      font-weight: 700 !important;
+
+      line-height: 26px !important;
+    }
+
+
+    /* Subtitle */
+
+    .assetSubtitle {
+      display: block;
+
+      margin-top: 2px;
+
+      color: #6a7885 !important;
+
+      font-size: 12px !important;
+
+      line-height: 18px !important;
+    }
+
+
+    /* =========================================================
+       UPLOAD AREA
+       ========================================================= */
+
+    .assetDropZone {
+      width: 100%;
+
+      min-height: 112px;
+
+      padding: 18px;
+
+      border:
+        1.5px dashed
+        #8fb9e5;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #f7fbff 0%,
+          #ffffff 100%
+        );
+
+      transition:
+        border-color 180ms ease,
+        background 180ms ease,
+        box-shadow 180ms ease;
+    }
+
+
+    .assetDropZone:hover {
+      border-color: #0a6ed1;
+
+      background:
+        linear-gradient(
+          180deg,
+          #eef7ff 0%,
+          #ffffff 100%
+        );
+
+      box-shadow:
+        inset 0 0 0 1px
+        rgba(10, 110, 209, 0.06);
+    }
+
+
+    /* Small upload icon */
+
+    .assetDropIcon {
+      color: #0a6ed1 !important;
+
+      margin-right: 8px;
+    }
+
+
+    /* Text inside upload area */
+
+    .assetDropZone .sapMText {
+      color: #334e68;
+
+      font-size: 13px;
+
+      font-weight: 600;
+    }
+
+
+    /* Helper text */
+
+    .assetHelper {
+      display: block;
+
+      margin-top: 7px;
+
+      color: #738496 !important;
+
+      font-size: 11px !important;
+
+      line-height: 16px !important;
+    }
+
+
+    /* =========================================================
+       FILE UPLOADER
+       ========================================================= */
+
+    .assetFileUploader {
+      width: 100% !important;
+
+      margin-top: 12px;
+    }
+
+
+    /*
+       File name input
+    */
+
+    .assetFileUploader .sapUiFupInputMask {
+      min-height: 40px !important;
+
+      border:
+        1px solid
+        #c8d2dc !important;
+
+      border-radius: 9px !important;
+
+      background: #ffffff !important;
+
+      color: #1d2d3e !important;
+
+      box-shadow: none !important;
+
+      font-size: 12px !important;
+    }
+
+
+    .assetFileUploader .sapUiFupInputMask:hover {
+      border-color: #8da9c0 !important;
+    }
+
+
+    .assetFileUploader .sapUiFupInputMask:focus {
+      border-color: #0a6ed1 !important;
+
+      box-shadow:
+        0 0 0 2px
+        rgba(10, 110, 209, 0.12) !important;
+    }
+
+
+    /*
+       Browse button
+    */
+
+    .assetFileUploader .sapUiFupButton {
+      min-height: 40px !important;
+
+      margin-left: 8px !important;
+
+      border-radius: 9px !important;
+
+      background: #e7ebef !important;
+
+      border: 1px solid #cbd3da !important;
+
+      color: #1d2d3e !important;
+
+      font-weight: 600 !important;
+
+      box-shadow: none !important;
+
+      transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+    }
+
+
+    .assetFileUploader .sapUiFupButton:hover {
+      background: #dce2e8 !important;
+
+      border-color: #b6c1cb !important;
+
+      transform: translateY(-1px);
+    }
+
+
+    .assetFileUploader .sapUiFupButton:active {
+      transform: translateY(0);
+    }
+
+
+    .assetFileUploader .sapMBtnInner {
+      border-radius: 9px !important;
+
+      font-weight: 600 !important;
+    }
+
+
+    /* =========================================================
+       MAIN UPLOAD BUTTON
+       ========================================================= */
+
+    .assetUploadButton {
+      margin-top: 16px;
+
+      min-width: 145px;
+
+      height: 42px;
+
+      border-radius: 9px !important;
+
+      box-shadow:
+        0 4px 10px
+        rgba(10, 110, 209, 0.18);
+
+      transition:
+        transform 160ms ease,
+        box-shadow 160ms ease;
+    }
+
+
+    .assetUploadButton:hover {
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 7px 16px
+        rgba(10, 110, 209, 0.25);
+    }
+
+
+    .assetUploadButton:active {
+      transform: translateY(0);
+    }
+
+
+    .assetUploadButton .sapMBtnInner {
+      height: 42px !important;
+
+      padding-left: 18px !important;
+      padding-right: 18px !important;
+
+      border-radius: 9px !important;
+
+      background: #0a6ed1 !important;
+
+      border-color: #0a6ed1 !important;
+
+      color: #ffffff !important;
+
+      font-weight: 700 !important;
+
+      font-size: 13px !important;
+    }
+
+
+    .assetUploadButton .sapMBtnIcon {
+      color: #ffffff !important;
+
+      margin-right: 7px;
+    }
+
+
+    .assetUploadButton .sapMBtnInner:hover {
+      background: #085caf !important;
+
+      border-color: #085caf !important;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .assetFooter {
+      width: 100%;
+
+      margin-top: 11px;
+
+      color: #7a8794 !important;
+
+      font-size: 10px !important;
+
+      text-align: left;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 520px) {
+
+      .assetUploadCard {
+        padding: 18px;
+
+        border-radius: 13px;
+      }
+
+      .assetTitle {
+        font-size: 17px !important;
+      }
+
+      .assetSubtitle {
+        font-size: 11px !important;
+      }
+
+      .assetDropZone {
+        padding: 14px;
+      }
+
+      .assetFileUploader .sapUiFupButton {
+        margin-left: 5px !important;
+      }
+
+      .assetUploadButton {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+`;
 
     class Excel extends HTMLElement {
 
@@ -528,94 +822,156 @@
                 document.createElement("div");
 
             div0.innerHTML =
-                '<?xml version="1.0"?>' +
-                '<script id="oView_' +
-                widgetName +
-                '" name="oView_' +
-                widgetName +
-                '" type="sapui5/xmlview">' +
+    '<?xml version="1.0"?>' +
 
-                '<mvc:View height="100%" ' +
-                'xmlns="sap.m" ' +
-                'xmlns:u="sap.ui.unified" ' +
-                'xmlns:f="sap.ui.layout.form" ' +
-                'xmlns:core="sap.ui.core" ' +
-                'xmlns:mvc="sap.ui.core.mvc" ' +
-                'controllerName="myView.Template">' +
+    '<script id="oView_' +
+    widgetName +
+    '" name="oView_' +
+    widgetName +
+    '" type="sapui5/xmlview">' +
 
-                '<VBox class="assetUploadCard" width="100%">' +
+    '<mvc:View ' +
+    'height="100%" ' +
+    'xmlns="sap.m" ' +
+    'xmlns:u="sap.ui.unified" ' +
+    'xmlns:f="sap.ui.layout.form" ' +
+    'xmlns:core="sap.ui.core" ' +
+    'xmlns:mvc="sap.ui.core.mvc" ' +
+    'controllerName="myView.Template">' +
 
-                '<HBox class="assetHeader" alignItems="Center">' +
 
-                '<core:Icon ' +
-                'src="sap-icon://excel-attachment" ' +
-                'size="1.25rem" ' +
-                'class="assetIcon" />' +
+    /* ==============================
+       MAIN CARD
+       ============================== */
 
-                '<VBox>' +
+    '<VBox ' +
+    'class="assetUploadCard" ' +
+    'width="100%">' +
 
-                '<Text ' +
-                'text="Upload Asset File" ' +
-                'class="assetTitle" />' +
 
-                '<Text ' +
-                'text="Import your asset data into SAC" ' +
-                'class="assetSubtitle" />' +
+    /* ==============================
+       HEADER
+       ============================== */
 
-                '</VBox>' +
+    '<HBox ' +
+    'class="assetHeader" ' +
+    'alignItems="Center">' +
 
-                '</HBox>' +
+    '<Icon ' +
+    'src="sap-icon://excel-attachment" ' +
+    'size="1.35rem" ' +
+    'class="assetIcon"/>' +
 
-                '<VBox class="assetDropZone">' +
+    '<VBox>' +
 
-                '<HBox alignItems="Center">' +
+    '<Title ' +
+    'text="Upload Asset File" ' +
+    'level="H3" ' +
+    'class="assetTitle"/>' +
 
-                '<core:Icon ' +
-                'src="sap-icon://upload" ' +
-                'size="1rem" ' +
-                'class="assetDropIcon" />' +
+    '<Text ' +
+    'text="Import your XLSM asset data into SAC" ' +
+    'class="assetSubtitle"/>' +
 
-                '<Text ' +
-                'text="Select your XLSM file" />' +
+    '</VBox>' +
 
-                '</HBox>' +
+    '</HBox>' +
 
-                '<Text ' +
-                'text="Supported format: XLSM • Sheet1 • Maximum 2,000 records" ' +
-                'class="assetHelper" />' +
 
-                '<u:FileUploader ' +
-                'id="idfileUploader" ' +
-                'width="100%" ' +
-                'useMultipart="false" ' +
-                'sendXHR="true" ' +
-                'sameFilenameAllowed="false" ' +
-                'buttonText="Browse" ' +
-                'fileType="XLSM" ' +
-                'placeholder="Choose an XLSM file" ' +
-                'style="Emphasized" ' +
-                'class="assetFileUploader" />' +
+    /* ==============================
+       UPLOAD AREA
+       ============================== */
 
-                '</VBox>' +
+    '<VBox ' +
+    'class="assetDropZone">' +
 
-                '<Button ' +
-                'text="Upload Asset Data" ' +
-                'icon="sap-icon://upload-to-cloud" ' +
-                'type="Accept" ' +
-                'press="onValidate" ' +
-                'id="__uploadButton" ' +
-                'tooltip="Upload Asset Data" ' +
-                'class="assetUploadButton" />' +
 
-                '<Text ' +
-                'text="The uploaded data will be processed and sent to SAC." ' +
-                'class="assetFooter" />' +
+    '<HBox ' +
+    'alignItems="Center">' +
 
-                '</VBox>' +
+    '<Icon ' +
+    'src="sap-icon://upload" ' +
+    'size="1rem" ' +
+    'class="assetDropIcon"/>' +
 
-                '</mvc:View>' +
+    '<Text ' +
+    'text="Select your XLSM file"/>' +
 
-                '</script>';
+    '</HBox>' +
+
+
+    '<Text ' +
+    'text="Supported format: XLSM  •  Sheet: Sheet1  •  Maximum 2,000 records" ' +
+    'class="assetHelper"/>' +
+
+
+    /* ==============================
+       FILE UPLOADER
+       ============================== */
+
+    '<u:FileUploader ' +
+
+    'id="idfileUploader" ' +
+
+    'class="assetFileUploader" ' +
+
+    'width="100%" ' +
+
+    'useMultipart="false" ' +
+
+    'sendXHR="true" ' +
+
+    'sameFilenameAllowed="false" ' +
+
+    'buttonText="Browse" ' +
+
+    'fileType="XLSM" ' +
+
+    'placeholder="Choose an XLSM file" ' +
+
+    'style="Emphasized"/>' +
+
+
+    '</VBox>' +
+
+
+    /* ==============================
+       UPLOAD BUTTON
+       ============================== */
+
+    '<Button ' +
+
+    'text="Upload Asset Data" ' +
+
+    'press="onValidate" ' +
+
+    'id="__uploadButton" ' +
+
+    'icon="sap-icon://upload-to-cloud" ' +
+
+    'type="Emphasized" ' +
+
+    'class="assetUploadButton" ' +
+
+    'tooltip="Upload the selected asset file"/>' +
+
+
+    /* ==============================
+       FOOTER
+       ============================== */
+
+    '<Text ' +
+
+    'text="The file will be validated before the data is sent to SAC." ' +
+
+    'class="assetFooter"/>' +
+
+
+    '</VBox>' +
+
+    '</mvc:View>' +
+
+    '</script>';
 
             _shadowRoot.appendChild(
                 div0
