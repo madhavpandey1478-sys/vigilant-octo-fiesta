@@ -228,7 +228,50 @@
     line-height: 14px !important;
 }
 
+/* =====================================================
+   FILE + UPLOAD SAME ROW
+   ===================================================== */
 
+.assetActionRow {
+
+    width: 100% !important;
+
+    align-items: center !important;
+}
+
+
+.assetActionRow .assetUploader {
+
+    flex: 1 1 auto !important;
+
+    width: auto !important;
+
+    min-width: 0 !important;
+}
+
+
+.assetActionRow .assetUploadButton {
+
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+
+    min-width: 90px !important;
+
+    margin-top: 0 !important;
+
+    margin-left: 8px !important;
+
+    height: 36px !important;
+}
+
+
+.assetActionRow .assetUploadButton .sapMBtnInner {
+
+    height: 36px !important;
+
+    border-radius: 7px !important;
+}
 /* =====================================================
    FILE UPLOADER
    ===================================================== */
@@ -1127,55 +1170,6 @@
 
                 'class="assetHelper"/>' +
 
-/* =====================================================
-   FILE + UPLOAD SAME ROW
-   ===================================================== */
-
-.assetActionRow {
-
-    width: 100% !important;
-
-    align-items: center !important;
-}
-
-
-/* FileUploader takes remaining space */
-
-.assetActionRow .assetUploader {
-
-    flex: 1 1 auto !important;
-
-    width: auto !important;
-
-    min-width: 0 !important;
-}
-
-
-/* Upload sits beside Browse */
-
-.assetActionRow .assetUploadButton {
-
-    flex: 0 0 auto !important;
-
-    width: auto !important;
-
-    min-width: 90px !important;
-
-    margin-top: 0 !important;
-
-    margin-left: 8px !important;
-
-    height: 36px !important;
-}
-
-
-.assetActionRow .assetUploadButton .sapMBtnInner {
-
-    height: 36px !important;
-
-    border-radius: 7px !important;
-}
-              
 
 '<HBox ' +
 'class="assetActionRow" ' +
