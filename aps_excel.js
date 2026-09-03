@@ -7,194 +7,358 @@
 
         :host {
           display: block;
-          font-family: "72", Arial, Helvetica, sans-serif;
-          color: #172b4d;
+
+          font-family:
+            "72",
+            Arial,
+            Helvetica,
+            sans-serif;
+
+          color: #1d2d3e;
+
+          background: #f5f7fa;
         }
+
+
+        /* =========================================
+           SETTINGS CONTAINER
+           ========================================= */
 
         #form {
-          padding: 14px;
-          background: #f7f9fb;
+          padding: 16px;
+
+          background:
+            linear-gradient(
+              180deg,
+              #f5f7fa 0%,
+              #ffffff 100%
+            );
         }
+
+
+        /* =========================================
+           SETTINGS CARD
+           ========================================= */
 
         fieldset {
+
           margin: 0;
-          padding: 14px;
-          border: 1px solid #d9e2ec;
+
+          padding: 16px;
+
+          border:
+            1px solid
+            #d9e2ec;
+
           border-radius: 12px;
+
           background: #ffffff;
-          box-shadow: 0 4px 14px rgba(28, 63, 91, 0.08);
+
+          box-shadow:
+            0 3px 10px
+            rgba(31, 55, 77, 0.07);
         }
 
+
+        /* =========================================
+           LEGEND
+           ========================================= */
+
         legend {
-          padding: 0 8px;
-          color: #107c41;
+
+          padding:
+            0 8px;
+
+          color: #0a6ed1;
+
           font-size: 13px;
+
           font-weight: 700;
         }
 
+
+        /* =========================================
+           TABLE
+           ========================================= */
+
         table {
+
           width: 100%;
-          border-collapse: separate;
-          border-spacing: 0 8px;
+
+          border-collapse:
+            separate;
+
+          border-spacing:
+            0 9px;
         }
 
+
         td:first-child {
+
           width: 34%;
+
           padding-right: 10px;
+
           color: #52667a;
+
           font-size: 12px;
+
           font-weight: 600;
+
           vertical-align: middle;
         }
+
+
+        /* =========================================
+           INPUTS
+           ========================================= */
 
         input,
         textarea,
         select {
+
           width: 100%;
-          padding: 8px 10px;
+
+          padding:
+            9px 10px;
+
           box-sizing: border-box;
-          border: 1px solid #c7d3df;
+
+          border:
+            1px solid
+            #c7d3df;
+
           border-radius: 8px;
+
           background: #ffffff;
-          color: #172b4d;
-          font-family: "72", Arial, Helvetica, sans-serif;
+
+          color: #1d2d3e;
+
+          font-family:
+            "72",
+            Arial,
+            Helvetica,
+            sans-serif;
+
           font-size: 12px;
+
           outline: none;
+
           transition:
             border-color 160ms ease,
-            box-shadow 160ms ease;
+            box-shadow 160ms ease,
+            background 160ms ease;
         }
+
 
         input:hover,
         textarea:hover,
         select:hover {
-          border-color: #8ea6bb;
+
+          border-color:
+            #8da9c0;
+
+          background:
+            #fbfcfd;
         }
+
 
         input:focus,
         textarea:focus,
         select:focus {
-          border-color: #107c41;
-          box-shadow: 0 0 0 3px rgba(16, 124, 65, 0.10);
+
+          border-color:
+            #0a6ed1;
+
+          box-shadow:
+            0 0 0 3px
+            rgba(10, 110, 209, 0.10);
+
+          background:
+            #ffffff;
         }
+
+
+        /* =========================================
+           CHECKBOX
+           ========================================= */
 
         input[type=checkbox] {
+
           width: auto;
-          margin: 6px 3px 6px 0;
+
+          margin:
+            6px 3px 6px 0;
+
           vertical-align: middle;
-          accent-color: #107c41;
+
+          accent-color:
+            #0a6ed1;
         }
 
+
         label {
+
           cursor: pointer;
         }
 
+
+        /* =========================================
+           HIDDEN SUBMIT
+           ========================================= */
+
         button[type=submit] {
+
           display: none;
         }
 
       </style>
 
-      <form id="form" autocomplete="off">
+
+      <form
+        id="form"
+        autocomplete="off">
+
 
         <fieldset>
 
-          <legend>General</legend>
+          <legend>
+            General
+          </legend>
+
 
           <table>
 
             <tr>
+
               <td>
+
                 <label for="title">
                   Title
                 </label>
+
               </td>
 
               <td>
+
                 <input
                   id="title"
                   name="title"
                   type="text"
                   placeholder="Widget title"
                 >
+
               </td>
+
             </tr>
 
+
             <tr>
+
               <td>
+
                 <label for="subtitle">
                   Sub Title
                 </label>
+
               </td>
 
               <td>
+
                 <input
                   id="subtitle"
                   name="subtitle"
                   type="text"
                   placeholder="Widget subtitle"
                 >
+
               </td>
+
             </tr>
 
+
             <tr>
+
               <td>
+
                 <label for="icon">
                   Icon
                 </label>
+
               </td>
 
               <td>
+
                 <input
                   id="icon"
                   name="icon"
                   type="text"
                   placeholder="Icon"
                 >
+
               </td>
+
             </tr>
 
+
             <tr>
+
               <td>
+
                 <label for="unit">
                   Unit
                 </label>
+
               </td>
 
               <td>
+
                 <input
                   id="unit"
                   name="unit"
                   type="text"
                   placeholder="Unit"
                 >
+
               </td>
+
             </tr>
 
+
             <tr>
+
               <td>
+
                 <label for="footer">
                   Footer
                 </label>
+
               </td>
 
               <td>
+
                 <input
                   id="footer"
                   name="footer"
                   type="text"
                   placeholder="Footer text"
                 >
+
               </td>
+
             </tr>
 
           </table>
 
         </fieldset>
 
-        <button type="submit" hidden>
+
+        <button
+          type="submit"
+          hidden>
           Submit
         </button>
+
 
       </form>
     `;
@@ -206,10 +370,12 @@
 
             super();
 
+
             this._shadowRoot =
                 this.attachShadow({
                     mode: "open"
                 });
+
 
             this._shadowRoot.appendChild(
                 tmpl.content.cloneNode(true)
@@ -232,6 +398,7 @@
                 "change",
                 this._change.bind(this)
             );
+
         }
 
 
@@ -253,6 +420,7 @@
 
                 properties[name] =
                     this[name];
+
             }
 
 
@@ -269,6 +437,7 @@
             this._changeProperty(
                 e.target.name
             );
+
         }
 
 
@@ -283,10 +452,13 @@
             this._firePropertiesChanged(
                 properties
             );
+
         }
 
 
-        _firePropertiesChanged(properties) {
+        _firePropertiesChanged(
+            properties
+        ) {
 
             this.dispatchEvent(
                 new CustomEvent(
@@ -299,6 +471,7 @@
                     }
                 )
             );
+
         }
 
 
@@ -307,6 +480,7 @@
             return this.getValue(
                 "title"
             );
+
         }
 
 
@@ -316,6 +490,7 @@
                 "title",
                 value
             );
+
         }
 
 
@@ -324,6 +499,7 @@
             return this.getValue(
                 "subtitle"
             );
+
         }
 
 
@@ -333,6 +509,7 @@
                 "subtitle",
                 value
             );
+
         }
 
 
@@ -341,6 +518,7 @@
             return this.getValue(
                 "icon"
             );
+
         }
 
 
@@ -350,6 +528,7 @@
                 "icon",
                 value
             );
+
         }
 
 
@@ -358,6 +537,7 @@
             return this.getValue(
                 "unit"
             );
+
         }
 
 
@@ -367,6 +547,7 @@
                 "unit",
                 value
             );
+
         }
 
 
@@ -375,6 +556,7 @@
             return this.getValue(
                 "footer"
             );
+
         }
 
 
@@ -384,6 +566,7 @@
                 "footer",
                 value
             );
+
         }
 
 
@@ -392,6 +575,7 @@
             return this._shadowRoot
                 .getElementById(id)
                 .value;
+
         }
 
 
@@ -400,6 +584,7 @@
             this._shadowRoot
                 .getElementById(id)
                 .value = value;
+
         }
 
 
@@ -412,6 +597,7 @@
                 "unit",
                 "footer"
             ];
+
         }
 
 
@@ -427,7 +613,9 @@
 
                 this[name] =
                     newValue;
+
             }
+
         }
 
     }
