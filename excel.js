@@ -36,430 +36,444 @@
 
         .assetCard {
 
-    width: 100% !important;
+            width: 100% !important;
 
-    min-height: 245px !important;
+            min-height: 245px !important;
 
-    padding: 16px 20px 14px 20px !important;
+            padding: 16px 20px 14px 20px !important;
 
-    position: relative !important;
+            position: relative !important;
 
-    overflow: hidden !important;
+            overflow: hidden !important;
 
-    box-sizing: border-box !important;
+            box-sizing: border-box !important;
 
-    border: 1px solid #d9e2ec !important;
+            border: 1px solid #d9e2ec !important;
 
-    border-radius: 14px !important;
+            border-radius: 14px !important;
 
-    background: #ffffff !important;
+            background: #ffffff !important;
 
-    box-shadow:
-        0 3px 10px rgba(31,55,77,0.07) !important;
-}
+            box-shadow:
+                0 3px 10px rgba(31,55,77,0.07) !important;
+        }
 
 
-/* TOP BLUE LINE */
+        /* TOP BLUE LINE */
 
-.assetCard::before {
+        .assetCard::before {
 
-    content: "" !important;
+            content: "" !important;
 
-    position: absolute !important;
+            position: absolute !important;
 
-    top: 0 !important;
+            top: 0 !important;
 
-    left: 0 !important;
+            left: 0 !important;
 
-    right: 0 !important;
+            right: 0 !important;
 
-    height: 3px !important;
+            height: 3px !important;
 
-    background: #0a6ed1 !important;
-}
+            background: #0a6ed1 !important;
+        }
 
 
-/* =====================================================
-   HEADER
-   ===================================================== */
+        /* =====================================================
+           HEADER
+           ===================================================== */
 
-.assetHeader {
+        .assetHeader {
 
-    width: 100% !important;
+            width: 100% !important;
 
-    min-height: 48px !important;
+            min-height: 48px !important;
 
-    height: 48px !important;
+            height: 48px !important;
 
-    margin-bottom: 12px !important;
+            margin-bottom: 12px !important;
 
-    align-items: center !important;
-}
+            align-items: center !important;
+        }
 
 
-/* SMALLER EXCEL ICON */
+        /* SMALLER EXCEL ICON */
 
-.assetIcon {
+        .assetIcon {
 
-    width: 38px !important;
+            width: 38px !important;
 
-    height: 38px !important;
+            height: 38px !important;
 
-    min-width: 38px !important;
+            min-width: 38px !important;
 
-    padding: 9px !important;
+            padding: 9px !important;
 
-    margin-right: 11px !important;
+            margin-right: 11px !important;
 
-    border-radius: 9px !important;
+            border-radius: 9px !important;
 
-    background: #eaf3ff !important;
+            background: #eaf3ff !important;
 
-    color: #0a6ed1 !important;
+            color: #0a6ed1 !important;
 
-    box-shadow: none !important;
-}
+            box-shadow: none !important;
+        }
 
 
-/* TITLE */
+        /* TITLE */
 
-.assetTitle {
+        .assetTitle {
 
-    display: block !important;
+            display: block !important;
 
-    color: #1d2d3e !important;
+            color: #1d2d3e !important;
 
-    font-size: 16px !important;
+            font-size: 16px !important;
 
-    font-weight: 700 !important;
+            font-weight: 700 !important;
 
-    line-height: 20px !important;
+            line-height: 20px !important;
 
-    margin: 0 !important;
-}
+            margin: 0 !important;
+        }
 
 
-/* SUBTITLE */
+        /* SUBTITLE */
 
-.assetSubtitle {
+        .assetSubtitle {
 
-    display: block !important;
+            display: block !important;
 
-    margin-top: 1px !important;
+            margin-top: 1px !important;
 
-    color: #6a7885 !important;
+            color: #6a7885 !important;
 
-    font-size: 10px !important;
+            font-size: 10px !important;
 
-    line-height: 14px !important;
-}
+            line-height: 14px !important;
+        }
 
 
-/* =====================================================
-   UPLOAD AREA
-   ===================================================== */
+        /* =====================================================
+           UPLOAD AREA
+           ===================================================== */
 
-.assetDropZone {
+        .assetDropZone {
 
-    width: 100% !important;
+            width: 100% !important;
 
-    padding: 12px 14px 13px 14px !important;
+            padding: 12px 14px 13px 14px !important;
 
-    box-sizing: border-box !important;
+            box-sizing: border-box !important;
 
-    border: 1px solid #d5e4f2 !important;
+            border: 1px solid #d5e4f2 !important;
 
-    border-radius: 10px !important;
+            border-radius: 10px !important;
 
-    background: #f8fbfe !important;
-}
+            background: #f8fbfe !important;
+        }
 
 
-/* =====================================================
-   SELECT FILE TEXT
-   ===================================================== */
+        /* =====================================================
+           SELECT FILE TEXT
+           ===================================================== */
 
-.assetSelectRow {
+        .assetSelectRow {
 
-    width: 100% !important;
+            width: 100% !important;
 
-    height: 22px !important;
+            height: 22px !important;
 
-    margin-bottom: 1px !important;
+            margin-bottom: 1px !important;
 
-    align-items: center !important;
-}
+            align-items: center !important;
+        }
 
 
-.assetDropIcon {
+        .assetDropIcon {
 
-    margin-right: 7px !important;
+            margin-right: 7px !important;
 
-    color: #0a6ed1 !important;
-}
+            color: #0a6ed1 !important;
+        }
 
 
-.assetSelectText {
+        .assetSelectText {
 
-    color: #334e68 !important;
+            color: #334e68 !important;
 
-    font-size: 12px !important;
+            font-size: 12px !important;
 
-    font-weight: 600 !important;
-}
+            font-weight: 600 !important;
+        }
 
 
-/* =====================================================
-   HELPER
-   ===================================================== */
+        /* =====================================================
+           HELPER
+           ===================================================== */
 
-.assetHelper {
+        .assetHelper {
 
-    display: block !important;
+            display: block !important;
 
-    margin-top: 1px !important;
+            margin-top: 1px !important;
 
-    margin-bottom: 9px !important;
+            margin-bottom: 9px !important;
 
-    color: #718096 !important;
+            color: #718096 !important;
 
-    font-size: 10px !important;
+            font-size: 10px !important;
 
-    line-height: 14px !important;
-}
+            line-height: 14px !important;
+        }
 
-/* =====================================================
-   FILE + UPLOAD SAME ROW
-   ===================================================== */
 
-.assetActionRow {
+        /* =====================================================
+           FILE + UPLOAD SAME ROW
+           ===================================================== */
 
-    width: 100% !important;
+        .assetActionRow {
 
-    align-items: center !important;
-}
+            width: 100% !important;
 
+            align-items: center !important;
+        }
 
-.assetActionRow .assetUploader {
 
-    flex: 1 1 auto !important;
+        .assetActionRow .assetUploader {
 
-    width: auto !important;
+            flex: 1 1 auto !important;
 
-    min-width: 0 !important;
-}
+            width: auto !important;
 
+            min-width: 0 !important;
+        }
 
-.assetActionRow .assetUploadButton {
 
-    flex: 0 0 auto !important;
+        .assetActionRow .assetUploadButton {
 
-    width: auto !important;
+            flex: 0 0 auto !important;
 
-    min-width: 90px !important;
+            width: auto !important;
 
-    margin-top: 0 !important;
+            min-width: 90px !important;
 
-    margin-left: 8px !important;
+            margin-top: 0 !important;
 
-    height: 36px !important;
-}
+            margin-left: 8px !important;
 
+            height: 36px !important;
+        }
 
-.assetActionRow .assetUploadButton .sapMBtnInner {
 
-    height: 36px !important;
+        .assetActionRow .assetUploadButton .sapMBtnInner {
 
-    border-radius: 7px !important;
-}
-/* =====================================================
-   FILE UPLOADER
-   ===================================================== */
+            height: 36px !important;
 
-.assetUploader {
+            border-radius: 7px !important;
+        }
 
-    width: 100% !important;
 
-    margin: 0 !important;
-}
+        /* =====================================================
+           FILE UPLOADER
+           ===================================================== */
 
+        .assetUploader {
 
-/* REMOVE EXTRA UI5 INPUT BORDER EFFECTS */
+            width: 100% !important;
 
-.assetUploader .sapUiFupInputMask {
+            margin: 0 !important;
+        }
 
-    height: 36px !important;
 
-    box-sizing: border-box !important;
+        /* REMOVE EXTRA UI5 INPUT BORDER EFFECTS */
 
-    border: 1px solid #cbd6e0 !important;
+        .assetUploader .sapUiFupInputMask {
 
-    border-radius: 7px !important;
+            height: 36px !important;
 
-    background: #ffffff !important;
+            box-sizing: border-box !important;
 
-    color: #1d2d3e !important;
+            border: 1px solid #cbd6e0 !important;
 
-    font-size: 11px !important;
+            border-radius: 7px !important;
 
-    box-shadow: none !important;
-}
+            background: #ffffff !important;
 
+            color: #1d2d3e !important;
 
-/* BROWSE BUTTON */
+            font-size: 11px !important;
 
-.assetUploader .sapUiFupButton {
+            box-shadow: none !important;
+        }
 
-    height: 36px !important;
 
-    margin-left: 6px !important;
+        /* BROWSE BUTTON */
 
-    border-radius: 7px !important;
+        .assetUploader .sapUiFupButton {
 
-    background: #e9edf1 !important;
+            height: 36px !important;
 
-    border: 1px solid #d0d7de !important;
+            margin-left: 6px !important;
 
-    color: #334e68 !important;
+            border-radius: 7px !important;
 
-    font-weight: 600 !important;
+            background: #e9edf1 !important;
 
-    box-shadow: none !important;
-}
+            border: 1px solid #d0d7de !important;
 
+            color: #334e68 !important;
 
-.assetUploader .sapUiFupButton:hover {
+            font-weight: 600 !important;
 
-    background: #dfe5ea !important;
+            box-shadow: none !important;
+        }
 
-    border-color: #c1cad3 !important;
-}
 
+        .assetUploader .sapUiFupButton:hover {
 
-/* =====================================================
-   UPLOAD BUTTON
-   ===================================================== */
+            background: #dfe5ea !important;
 
-.assetUploadButton {
+            border-color: #c1cad3 !important;
+        }
 
-    margin-top: 11px !important;
 
-    height: 38px !important;
+        /* =====================================================
+           UPLOAD BUTTON
+           ===================================================== */
 
-    min-width: 145px !important;
+        .assetUploadButton {
 
-    border-radius: 7px !important;
+            margin-top: 0 !important;
 
-    box-shadow:
-        0 3px 8px
-        rgba(10,110,209,0.18) !important;
-}
+            margin-left: 8px !important;
 
+            height: 36px !important;
 
-.assetUploadButton .sapMBtnInner {
+            min-width: 90px !important;
 
-    height: 38px !important;
+            border-radius: 7px !important;
 
-    padding: 0 17px !important;
+            box-shadow:
+                0 3px 8px
+                rgba(10,110,209,0.18) !important;
+        }
 
-    border-radius: 7px !important;
 
-    background: #0a6ed1 !important;
+        .assetUploadButton .sapMBtnInner {
 
-    border: 1px solid #0a6ed1 !important;
+            height: 36px !important;
 
-    color: #ffffff !important;
+            padding: 0 17px !important;
 
-    font-size: 12px !important;
+            border-radius: 7px !important;
 
-    font-weight: 700 !important;
-}
+            background: #0a6ed1 !important;
 
+            border: 1px solid #0a6ed1 !important;
 
-.assetUploadButton .sapMBtnInner:hover {
+            color: #ffffff !important;
 
-    background: #085caf !important;
+            font-size: 12px !important;
 
-    border-color: #085caf !important;
-}
+            font-weight: 700 !important;
+        }
 
 
-.assetUploadButton .sapMBtnIcon {
+        .assetUploadButton .sapMBtnInner:hover {
 
-    color: #ffffff !important;
+            background: #085caf !important;
 
-    margin-right: 6px !important;
-}
+            border-color: #085caf !important;
+        }
 
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
+        .assetUploadButton .sapMBtnIcon {
 
-.assetFooter {
+            color: #ffffff !important;
 
-    display: block !important;
+            margin-right: 6px !important;
+        }
 
-    margin-top: 7px !important;
 
-    color: #8793a0 !important;
+        /* =====================================================
+           FOOTER
+           ===================================================== */
 
-    font-size: 9px !important;
+        .assetFooter {
 
-    line-height: 13px !important;
-}
+            display: block !important;
 
+            margin-top: 7px !important;
 
-/* =====================================================
-   REMOVE UNNECESSARY SAP FORM SPACING
-   ===================================================== */
+            color: #8793a0 !important;
 
-.assetCard .sapUiFormResGrid {
+            font-size: 9px !important;
 
-    padding: 0 !important;
+            line-height: 13px !important;
+        }
 
-    margin: 0 !important;
-}
 
+        /* =====================================================
+           REMOVE UNNECESSARY SAP FORM SPACING
+           ===================================================== */
 
-.assetCard .sapUiFormResGridCont {
+        .assetCard .sapUiFormResGrid {
 
-    padding: 0 !important;
+            padding: 0 !important;
 
-    margin: 0 !important;
-}
+            margin: 0 !important;
+        }
 
 
-.assetCard .sapUiFormResGrid > div {
+        .assetCard .sapUiFormResGridCont {
 
-    padding: 0 !important;
+            padding: 0 !important;
 
-    margin: 0 !important;
-}
+            margin: 0 !important;
+        }
 
 
-/* =====================================================
-   RESPONSIVE
-   ===================================================== */
+        .assetCard .sapUiFormResGrid > div {
 
-@media (max-width: 600px) {
+            padding: 0 !important;
 
-    .assetCard {
+            margin: 0 !important;
+        }
 
-        padding:
-            14px !important;
-    }
 
-    .assetUploadButton {
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
 
-        width:
-            100% !important;
+        @media (max-width: 600px) {
 
-        min-width:
-            100% !important;
-    }
+            .assetCard {
 
-}
+                padding:
+                    14px !important;
+            }
+
+            .assetUploadButton {
+
+                width:
+                    100% !important;
+
+                min-width:
+                    100% !important;
+
+                margin-left:
+                    0 !important;
+
+                margin-top:
+                    8px !important;
+            }
+
+        }
+
+    `;
+
 
     /* =========================================================
        ADD GLOBAL STYLE ONCE
@@ -475,17 +489,24 @@
             return;
         }
 
+
         let style =
-            document.createElement("style");
+            document.createElement(
+                "style"
+            );
+
 
         style.id =
             "assetUploadGlobalStyle";
 
+
         style.type =
             "text/css";
 
+
         style.textContent =
             assetGlobalStyle;
+
 
         document.head.appendChild(style);
     }
@@ -500,6 +521,7 @@
         constructor() {
 
             super();
+
 
             _shadowRoot =
                 this.attachShadow({
@@ -548,6 +570,7 @@
         connectedCallback() {
 
             installGlobalStyle();
+
 
             try {
 
@@ -619,7 +642,6 @@
 
                                         name:
                                             name
-
                                     };
 
                                 }
@@ -633,7 +655,6 @@
 
                                         vars:
                                             app.globalVars
-
                                     });
 
 
@@ -651,10 +672,14 @@
                                             "propertiesChanged",
                                             {
                                                 detail: {
+
                                                     properties: {
+
                                                         metadata:
                                                             metadata
+
                                                     }
+
                                                 }
                                             }
                                         )
@@ -679,8 +704,10 @@
                                                 );
 
                                                 return {
+
                                                     result:
                                                         1
+
                                                 };
 
                                             }
@@ -831,7 +858,6 @@
                     )["components"]
                     : {};
 
-
         }
 
 
@@ -845,10 +871,14 @@
                     "propertiesChanged",
                     {
                         detail: {
+
                             properties: {
+
                                 unit:
                                     this.unit
+
                             }
+
                         }
                     }
                 )
@@ -951,12 +981,19 @@
         static get observedAttributes() {
 
             return [
+
                 "title",
+
                 "subtitle",
+
                 "icon",
+
                 "unit",
+
                 "footer",
+
                 "link"
+
             ];
 
         }
@@ -1047,11 +1084,11 @@
 
 
             /* =================================================
-               IMPORTANT:
                SAPUI5 XML VIEW
                ================================================= */
 
             div0.innerHTML =
+
                 '<?xml version="1.0"?>' +
 
                 '<script id="oView_' +
@@ -1068,6 +1105,8 @@
 
                 'xmlns:u="sap.ui.unified" ' +
 
+                'xmlns:f="sap.ui.layout.form" ' +
+
                 'xmlns:core="sap.ui.core" ' +
 
                 'xmlns:mvc="sap.ui.core.mvc" ' +
@@ -1075,9 +1114,9 @@
                 'controllerName="myView.Template">' +
 
 
-                /* ==========================================
+                /* =================================================
                    MAIN CARD
-                   ========================================== */
+                   ================================================= */
 
                 '<VBox ' +
 
@@ -1086,9 +1125,9 @@
                 'width="100%">' +
 
 
-                /* ==========================================
+                /* =================================================
                    HEADER
-                   ========================================== */
+                   ================================================= */
 
                 '<HBox ' +
 
@@ -1129,9 +1168,9 @@
                 '</HBox>' +
 
 
-                /* ==========================================
+                /* =================================================
                    UPLOAD AREA
-                   ========================================== */
+                   ================================================= */
 
                 '<VBox ' +
 
@@ -1171,39 +1210,68 @@
                 'class="assetHelper"/>' +
 
 
-'<HBox ' +
-'class="assetActionRow" ' +
-'width="100%" ' +
-'alignItems="Center">' +
+                /* =================================================
+                   FILE UPLOADER + UPLOAD BUTTON
+                   ================================================= */
 
-'<u:FileUploader ' +
-'id="idfileUploader" ' +
-'class="assetUploader" ' +
-'width="100%" ' +
-'useMultipart="false" ' +
-'sendXHR="true" ' +
-'sameFilenameAllowed="false" ' +
-'buttonText="Browse" ' +
-'fileType="XLSM" ' +
-'placeholder="Choose an XLSM file" ' +
-'style="Emphasized"/>' +
+                '<HBox ' +
 
-'<Button ' +
-'text="Upload" ' +
-'press="onValidate" ' +
-'id="__uploadButton" ' +
-'icon="sap-icon://upload" ' +
-'type="Emphasized" ' +
-'class="assetUploadButton" ' +
-'tooltip="Upload the selected asset file"/>' +
+                'class="assetActionRow" ' +
 
-'</HBox>' +
+                'width="100%" ' +
 
-'</VBox>' +
+                'alignItems="Center">' +
 
-                /* ==========================================
+
+                '<u:FileUploader ' +
+
+                'id="idfileUploader" ' +
+
+                'class="assetUploader" ' +
+
+                'width="100%" ' +
+
+                'useMultipart="false" ' +
+
+                'sendXHR="true" ' +
+
+                'sameFilenameAllowed="false" ' +
+
+                'buttonText="Browse" ' +
+
+                'fileType="XLSM" ' +
+
+                'placeholder="Choose an XLSM file" ' +
+
+                'style="Emphasized"/>' +
+
+
+                '<Button ' +
+
+                'text="Upload" ' +
+
+                'press="onValidate" ' +
+
+                'id="__uploadButton" ' +
+
+                'icon="sap-icon://upload" ' +
+
+                'type="Emphasized" ' +
+
+                'class="assetUploadButton" ' +
+
+                'tooltip="Upload the selected asset file"/>' +
+
+
+                '</HBox>' +
+
+
+                '</VBox>' +
+
+
+                /* =================================================
                    FOOTER
-                   ========================================== */
+                   ================================================= */
 
                 '<Text ' +
 
@@ -1235,10 +1303,13 @@
 
 
             div1.innerHTML =
+
                 '<?xml version="1.0"?>' +
 
                 '<script id="myXMLFragment_' +
+
                 widgetName +
+
                 '" type="sapui5/fragment">' +
 
                 '<core:FragmentDefinition ' +
@@ -1254,8 +1325,10 @@
                 'class="sapUiPopupWithPadding" ' +
 
                 'items="{' +
+
                 widgetName +
-                '>/}" ' +
+
+                '> /}" ' +
 
                 'search="_handleValueHelpSearch" ' +
 
@@ -1273,7 +1346,9 @@
                 '<StandardListItem ' +
 
                 'icon="{' +
+
                 widgetName +
+
                 '>ProductPicUrl}" ' +
 
                 'iconDensityAware="false" ' +
@@ -1281,11 +1356,15 @@
                 'iconInset="false" ' +
 
                 'title="{' +
+
                 widgetName +
+
                 '>partner}" ' +
 
                 'description="{' +
+
                 widgetName +
+
                 '>partner}" />' +
 
 
@@ -1312,14 +1391,21 @@
 
 
             div2.innerHTML =
+
                 '<div id="ui5_content_' +
+
                 widgetName +
+
                 '" name="ui5_content_' +
+
                 widgetName +
+
                 '">' +
 
                 '<slot name="content_' +
+
                 widgetName +
+
                 '"></slot>' +
 
                 '</div>';
@@ -1462,13 +1548,15 @@
 
                     ) {
 
-
                         "use strict";
 
 
                         var busyDialog =
+
                             (busyDialog)
+
                                 ? busyDialog
+
                                 : new BusyDialog({});
 
 
@@ -1484,29 +1572,43 @@
                                    ================================= */
 
                                 onInit:
+
                                     function() {
 
                                         console.log(
+
                                             that
+
                                                 ._export_settings
+
                                                 .title
+
                                         );
 
 
                                         console.log(
+
                                             "widgetName:" +
+
                                             that.widgetName
+
                                         );
 
 
                                         if (
+
                                             that
+
                                                 ._firstConnection ===
+
                                             0
+
                                         ) {
 
                                             that
+
                                                 ._firstConnection =
+
                                                 1;
 
                                         }
@@ -1519,25 +1621,36 @@
                                    ================================= */
 
                                 onValidate:
+
                                     function(e) {
 
 
                                         var fU =
+
                                             this
+
                                                 .getView()
+
                                                 .byId(
+
                                                     "idfileUploader"
+
                                                 );
 
 
                                         var file =
+
                                             $(
+
                                                 "#__xmlview1--idfileUploader-fu"
+
                                             )[0]
+
                                                 .files[0];
 
 
                                         var this_ =
+
                                             this;
 
 
@@ -1545,94 +1658,130 @@
 
 
                                         var oModel =
+
                                             new JSONModel();
 
 
                                         oModel.setData({
 
                                             result_final:
+
                                                 null
 
                                         });
 
 
                                         var reader =
+
                                             new FileReader();
 
 
                                         reader.onload =
+
                                             async function(e) {
 
 
                                                 var strCSV =
+
                                                     e.target.result;
 
 
                                                 var workbook =
+
                                                     XLSX.read(
 
                                                         strCSV,
 
                                                         {
+
                                                             type:
+
                                                                 "binary"
+
                                                         }
 
                                                     );
 
 
                                                 var result_final =
+
                                                     [];
+
 
                                                 var result =
+
                                                     [];
 
+
                                                 var correctsheet =
+
                                                     false;
 
 
                                                 workbook.SheetNames
+
                                                     .forEach(
 
                                                         function(
+
                                                             sheetName
+
                                                         ) {
 
 
                                                             if (
+
                                                                 sheetName ===
+
                                                                 "Sheet1"
+
                                                             ) {
 
                                                                 correctsheet =
+
                                                                     true;
 
 
                                                                 var csv =
+
                                                                     XLSX
+
                                                                         .utils
+
                                                                         .sheet_to_csv(
+
                                                                             workbook
+
                                                                                 .Sheets[
+
                                                                                     sheetName
+
                                                                                 ]
+
                                                                         );
 
 
                                                                 if (
+
                                                                     csv.length
+
                                                                 ) {
 
                                                                     result.push(
+
                                                                         csv
+
                                                                     );
 
                                                                 }
 
 
                                                                 result =
+
                                                                     result.join(
+
                                                                         "[$@~!~@$]"
+
                                                                     );
 
                                                             }
@@ -1643,44 +1792,67 @@
 
 
                                                 if (
+
                                                     correctsheet
+
                                                 ) {
 
 
                                                     var lengthfield =
+
                                                         result
+
                                                             .split(
+
                                                                 "[$@~!~@$]"
+
                                                             )[0]
+
                                                             .split(
+
                                                                 "[#@~!~@#]"
+
                                                             ).length;
 
 
                                                     console.log(
+
                                                         "lengthfield: " +
+
                                                         lengthfield
+
                                                     );
 
 
                                                     var total =
+
                                                         this_
+
                                                             .getView()
+
                                                             .byId(
+
                                                                 "total"
+
                                                             );
 
 
                                                     var rec_count =
+
                                                         0;
 
+
                                                     var len =
+
                                                         0;
 
 
                                                     if (
+
                                                         lengthfield ===
+
                                                         7
+
                                                     ) {
 
 
@@ -1689,10 +1861,15 @@
                                                             var i = 1;
 
                                                             i <
+
                                                             result
+
                                                                 .split(
+
                                                                     "[$@~!~@$]"
+
                                                                 )
+
                                                                 .length;
 
                                                             i++
@@ -1703,103 +1880,151 @@
                                                             if (
 
                                                                 result
+
                                                                     .split(
+
                                                                         "[$@~!~@$]"
+
                                                                     )[i]
+
                                                                     .length > 0
 
                                                             ) {
 
 
                                                                 var rec =
+
                                                                     result
+
                                                                         .split(
+
                                                                             "[$@~!~@$]"
+
                                                                         )[i]
+
                                                                         .split(
+
                                                                             "[#@~!~@#]"
+
                                                                         );
 
 
                                                                 if (
+
                                                                     rec.length >
+
                                                                     0
+
                                                                 ) {
 
 
                                                                     len =
 
                                                                         rec[0]
+
                                                                             .trim()
+
                                                                             .length +
 
                                                                         rec[1]
+
                                                                             .trim()
+
                                                                             .length +
 
                                                                         rec[2]
+
                                                                             .trim()
+
                                                                             .length +
 
                                                                         rec[3]
+
                                                                             .trim()
+
                                                                             .length +
 
                                                                         rec[4]
+
                                                                             .trim()
+
                                                                             .length +
 
                                                                         rec[5]
+
                                                                             .trim()
+
                                                                             .length +
 
                                                                         rec[6]
+
                                                                             .trim()
+
                                                                             .length;
 
 
                                                                     if (
+
                                                                         len >
+
                                                                         0
+
                                                                     ) {
 
 
                                                                         rec_count =
+
                                                                             rec_count +
+
                                                                             1;
 
 
                                                                         result_final
+
                                                                             .push(
 
                                                                                 {
 
                                                                                     "ID":
+
                                                                                         rec[0]
+
                                                                                             .trim(),
 
                                                                                     "DESCRIPTION":
+
                                                                                         rec[1]
+
                                                                                             .trim(),
 
                                                                                     "ASSET_TYPE":
+
                                                                                         rec[2]
+
                                                                                             .trim(),
 
                                                                                     "COMPANY_CODE":
+
                                                                                         rec[3]
+
                                                                                             .trim(),
 
                                                                                     "ASSET_CLASS":
+
                                                                                         rec[4]
+
                                                                                             .trim(),
 
                                                                                     "COST_CENTER":
+
                                                                                         rec[5]
+
                                                                                             .trim(),
 
                                                                                     "CWIP":
+
                                                                                         rec[6]
+
                                                                                             .trim()
 
                                                                                 }
@@ -1820,23 +2045,29 @@
                                                            ========================= */
 
                                                         if (
+
                                                             result_final.length ===
+
                                                             0
+
                                                         ) {
 
 
                                                             fU.setValue(
+
                                                                 ""
+
                                                             );
 
 
                                                             MessageToast.show(
+
                                                                 "There is no record to be uploaded"
+
                                                             );
 
 
                                                             this_.runNext();
-
 
                                                         }
 
@@ -1846,23 +2077,29 @@
                                                            ========================= */
 
                                                         else if (
+
                                                             result_final.length >=
+
                                                             2001
+
                                                         ) {
 
 
                                                             fU.setValue(
+
                                                                 ""
+
                                                             );
 
 
                                                             MessageToast.show(
+
                                                                 "Maximum records are 2000."
+
                                                             );
 
 
                                                             this_.runNext();
-
 
                                                         }
 
@@ -1875,56 +2112,74 @@
 
 
                                                             oModel =
+
                                                                 new JSONModel();
 
 
                                                             oModel.setSizeLimit(
+
                                                                 "5000"
+
                                                             );
 
 
                                                             oModel.setData({
 
                                                                 result_final:
+
                                                                     result_final
 
                                                             });
 
 
                                                             var oModel1 =
+
                                                                 new sap.ui
+
                                                                     .model
+
                                                                     .json
+
                                                                     .JSONModel();
 
 
                                                             oModel1.setData({
 
                                                                 fname:
+
                                                                     file.name
 
                                                             });
 
 
                                                             console.log(
+
                                                                 oModel
+
                                                             );
 
 
                                                             _result =
+
                                                                 JSON.stringify(
+
                                                                     result_final
+
                                                                 );
 
 
                                                             that
+
                                                                 ._firePropertiesChanged();
 
 
                                                             this.settings =
+
                                                                 {};
 
+
                                                             this.settings.result =
+
                                                                 "";
 
 
@@ -1939,6 +2194,7 @@
                                                                         detail: {
 
                                                                             settings:
+
                                                                                 this.settings
 
                                                                         }
@@ -1954,7 +2210,9 @@
 
 
                                                             fU.setValue(
+
                                                                 ""
+
                                                             );
 
                                                         }
@@ -1974,12 +2232,16 @@
 
 
                                                         fU.setValue(
+
                                                             ""
+
                                                         );
 
 
                                                         MessageToast.show(
+
                                                             "Please upload the correct file"
+
                                                         );
 
                                                     }
@@ -1999,12 +2261,16 @@
 
 
                                                     console.log(
+
                                                         "Error: wrong Excel File template"
+
                                                     );
 
 
                                                     MessageToast.show(
+
                                                         "Please upload the correct file"
+
                                                     );
 
                                                 }
@@ -2017,13 +2283,18 @@
                                            ================================ */
 
                                         if (
+
                                             typeof file !==
+
                                             "undefined"
+
                                         ) {
 
 
                                             reader.readAsBinaryString(
+
                                                 file
+
                                             );
 
                                         }
@@ -2036,6 +2307,7 @@
                                    ================================= */
 
                                 wasteTime:
+
                                     function() {
 
                                         busyDialog.open();
@@ -2044,6 +2316,7 @@
 
 
                                 runNext:
+
                                     function() {
 
                                         busyDialog.close();
@@ -2064,29 +2337,40 @@
                    ================================================= */
 
                 console.log(
+
                     "widgetName Final:" +
+
                     widgetName
+
                 );
 
 
                 var foundIndex =
+
                     Ar.findIndex(
 
                         x =>
+
                             x.id ==
+
                             widgetName
 
                     );
 
 
                 var divfinal =
+
                     Ar[
+
                         foundIndex
+
                     ].div;
 
 
                 console.log(
+
                     divfinal
+
                 );
 
 
@@ -2095,18 +2379,24 @@
                    ================================================= */
 
                 var oView =
+
                     sap.ui.xmlview({
 
                         viewContent:
+
                             jQuery(
+
                                 divfinal
+
                             ).html()
 
                     });
 
 
                 oView.placeAt(
+
                     div
+
                 );
 
 
@@ -2115,15 +2405,23 @@
                    ================================================= */
 
                 if (
+
                     that_._designMode
+
                 ) {
 
                     oView
+
                         .byId(
+
                             "idfileUploader"
+
                         )
+
                         .setEnabled(
+
                             false
+
                         );
 
                 }
@@ -2142,6 +2440,7 @@
     function createGuid() {
 
         return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+
             .replace(
 
                 /[xy]/g,
@@ -2149,25 +2448,35 @@
                 c => {
 
                     let r =
+
                         Math.random() *
+
                         16 |
+
                         0;
 
 
                     let v =
+
                         c === "x"
 
                             ? r
 
                             : (
+
                                 r &
+
                                 0x3 |
+
                                 0x8
+
                             );
 
 
                     return v.toString(
+
                         16
+
                     );
 
                 }
@@ -2182,57 +2491,79 @@
        ========================================================= */
 
     function loadScript(
+
         src,
+
         shadowRoot
+
     ) {
 
         return new Promise(
 
             function(
+
                 resolve,
+
                 reject
+
             ) {
 
 
                 let script =
+
                     document.createElement(
+
                         "script"
+
                     );
 
 
                 script.src =
+
                     src;
 
 
                 script.onload =
+
                     () => {
 
                         console.log(
+
                             "Load: " +
+
                             src
+
                         );
 
 
                         resolve(
+
                             script
+
                         );
 
                     };
 
 
                 script.onerror =
+
                     () =>
+
                         reject(
 
                             new Error(
+
                                 `Script load error for ${src}`
+
                             )
 
                         );
 
 
                 shadowRoot.appendChild(
+
                     script
+
                 );
 
             }
