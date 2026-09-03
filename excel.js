@@ -1,4 +1,5 @@
 (function() {
+
     let _shadowRoot;
     let _id;
     let _result;
@@ -7,647 +8,826 @@
     let widgetName;
     var Ar = [];
 
+
+    /* =========================================================
+       SHADOW DOM TEMPLATE
+       ========================================================= */
+
     let tmpl = document.createElement("template");
 
-tmpl.innerHTML = `
-<style>
+    tmpl.innerHTML = `
+        <style>
+            :host {
+                display: block;
+                width: 100%;
+                height: 100%;
+                min-width: 300px;
+                box-sizing: border-box;
+            }
+        </style>
+    `;
 
-:host {
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-width: 300px;
 
-    font-family:
-        "72",
-        Arial,
-        Helvetica,
-        sans-serif;
+    /* =========================================================
+       GLOBAL SAPUI5 STYLE
+       ========================================================= */
 
-    color: #1d2d3e;
+    const assetGlobalStyle = `
 
-    background: #f5f7fa;
+        /* =====================================================
+           MAIN WIDGET CARD
+           ===================================================== */
 
-    box-sizing: border-box;
-}
+        .assetCard {
 
+            width: 100% !important;
 
-/* =========================================================
-   MAIN CARD
-   ========================================================= */
+            min-height: 275px !important;
 
-.assetCard {
+            padding: 22px !important;
 
-    width: 100%;
+            position: relative !important;
 
-    min-height: 260px;
+            overflow: hidden !important;
 
-    padding: 22px;
+            box-sizing: border-box !important;
 
-    border:
-        1px solid
-        #d9e2ec;
+            border: 1px solid #d9e2ec !important;
 
-    border-radius: 16px;
+            border-radius: 16px !important;
 
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff 0%,
-            #f8fafc 100%
-        );
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #f7f9fc 100%
+                ) !important;
 
-    box-shadow:
-        0 2px 6px rgba(0,0,0,0.04),
-        0 10px 28px rgba(31,55,77,0.08);
+            box-shadow:
+                0 2px 6px rgba(0,0,0,0.04),
+                0 10px 28px rgba(31,55,77,0.08) !important;
+        }
 
-    position: relative;
 
-    overflow: hidden;
+        /* =====================================================
+           BLUE TOP ACCENT
+           ===================================================== */
 
-    box-sizing: border-box;
-}
+        .assetCard::before {
 
+            content: "" !important;
 
-/* SAP BLUE TOP LINE */
+            position: absolute !important;
 
-.assetCard::before {
+            top: 0 !important;
 
-    content: "";
+            left: 0 !important;
 
-    position: absolute;
+            right: 0 !important;
 
-    top: 0;
-    left: 0;
+            height: 4px !important;
 
-    width: 100%;
+            background: #0a6ed1 !important;
+        }
 
-    height: 4px;
 
-    background: #0a6ed1;
-}
+        /* =====================================================
+           HEADER
+           ===================================================== */
 
+        .assetHeader {
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+            width: 100% !important;
 
-.assetHeader {
+            min-height: 54px !important;
 
-    width: 100%;
+            margin-bottom: 20px !important;
 
-    min-height: 52px;
+            align-items: center !important;
+        }
 
-    margin-bottom: 18px;
 
-    align-items: center;
-}
+        /* =====================================================
+           EXCEL ICON
+           ===================================================== */
 
+        .assetIcon {
 
-/* BLUE ICON BOX */
+            width: 48px !important;
 
-.assetIcon {
+            height: 48px !important;
 
-    width: 46px !important;
+            min-width: 48px !important;
 
-    height: 46px !important;
+            margin-right: 14px !important;
 
-    min-width: 46px !important;
+            padding: 13px !important;
 
-    margin-right: 13px;
+            border-radius: 12px !important;
 
-    border-radius: 11px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #0a6ed1,
+                    #0854a0
+                ) !important;
 
-    background:
-        linear-gradient(
-            145deg,
-            #0a6ed1,
-            #0854a0
-        );
+            color: #ffffff !important;
 
-    color: #ffffff !important;
+            box-shadow:
+                0 5px 12px
+                rgba(10,110,209,0.22) !important;
+        }
 
-    box-shadow:
-        0 4px 10px
-        rgba(10,110,209,0.22);
 
-    display: flex;
+        /* =====================================================
+           TITLE
+           ===================================================== */
 
-    align-items: center;
+        .assetTitle {
 
-    justify-content: center;
-}
+            display: block !important;
 
+            color: #1d2d3e !important;
 
-/* TITLE */
+            font-size: 19px !important;
 
-.assetTitle {
+            font-weight: 700 !important;
 
-    display: block;
+            line-height: 25px !important;
 
-    color: #1d2d3e !important;
+            margin: 0 !important;
+        }
 
-    font-size: 19px !important;
 
-    font-weight: 700 !important;
+        /* =====================================================
+           SUBTITLE
+           ===================================================== */
 
-    line-height: 25px !important;
-}
+        .assetSubtitle {
 
+            display: block !important;
 
-/* SUBTITLE */
+            margin-top: 3px !important;
 
-.assetSubtitle {
+            color: #6a7885 !important;
 
-    display: block;
+            font-size: 12px !important;
 
-    margin-top: 2px;
+            line-height: 17px !important;
+        }
 
-    color: #6a7885 !important;
 
-    font-size: 12px !important;
+        /* =====================================================
+           UPLOAD AREA
+           ===================================================== */
 
-    line-height: 17px !important;
-}
+        .assetDropZone {
 
+            width: 100% !important;
 
-/* =========================================================
-   DROP / UPLOAD AREA
-   ========================================================= */
+            padding: 18px !important;
 
-.assetDropZone {
+            box-sizing: border-box !important;
 
-    width: 100%;
+            border: 1.5px dashed #9fc5eb !important;
 
-    padding: 17px;
+            border-radius: 12px !important;
 
-    border:
-        1.5px dashed
-        #9fc5eb;
+            background:
+                linear-gradient(
+                    180deg,
+                    #f3f8fd 0%,
+                    #ffffff 100%
+                ) !important;
 
-    border-radius: 12px;
+            transition:
+                border-color 160ms ease,
+                background 160ms ease,
+                box-shadow 160ms ease !important;
+        }
 
-    background:
-        linear-gradient(
-            180deg,
-            #f4f9ff 0%,
-            #ffffff 100%
-        );
 
-    box-sizing: border-box;
+        .assetDropZone:hover {
 
-    transition:
-        border-color 160ms ease,
-        background 160ms ease,
-        box-shadow 160ms ease;
-}
+            border-color: #0a6ed1 !important;
 
+            background: #f0f7ff !important;
 
-.assetDropZone:hover {
+            box-shadow:
+                inset 0 0 0 1px
+                rgba(10,110,209,0.08) !important;
+        }
 
-    border-color:
-        #0a6ed1;
 
-    background:
-        #f0f7ff;
+        /* =====================================================
+           SELECT FILE ROW
+           ===================================================== */
 
-    box-shadow:
-        inset 0 0 0 1px
-        rgba(10,110,209,0.08);
-}
+        .assetSelectRow {
 
+            width: 100% !important;
 
-/* =========================================================
-   SELECT FILE ROW
-   ========================================================= */
+            margin-bottom: 4px !important;
 
-.assetSelectRow {
+            align-items: center !important;
+        }
 
-    width: 100%;
 
-    align-items: center;
+        .assetDropIcon {
 
-    margin-bottom: 5px;
-}
+            margin-right: 8px !important;
 
+            color: #0a6ed1 !important;
+        }
 
-/* UPLOAD ICON */
 
-.assetDropIcon {
+        .assetSelectText {
 
-    margin-right: 8px;
+            color: #334e68 !important;
 
-    color:
-        #0a6ed1 !important;
-}
+            font-size: 13px !important;
 
+            font-weight: 600 !important;
+        }
 
-/* SELECT TEXT */
 
-.assetSelectText {
+        /* =====================================================
+           HELPER TEXT
+           ===================================================== */
 
-    color:
-        #334e68 !important;
+        .assetHelper {
 
-    font-size:
-        13px !important;
+            display: block !important;
 
-    font-weight:
-        600 !important;
-}
+            margin-top: 5px !important;
 
+            margin-bottom: 13px !important;
 
-/* =========================================================
-   HELPER TEXT
-   ========================================================= */
+            color: #738496 !important;
 
-.assetHelper {
+            font-size: 11px !important;
 
-    display: block;
+            line-height: 16px !important;
+        }
 
-    margin-top: 4px;
 
-    margin-bottom: 12px;
+        /* =====================================================
+           FILE UPLOADER
+           ===================================================== */
 
-    color:
-        #738496 !important;
+        .assetUploader {
 
-    font-size:
-        11px !important;
+            width: 100% !important;
 
-    line-height:
-        16px !important;
-}
+            margin: 0 !important;
+        }
 
 
-/* =========================================================
-   FILE UPLOADER
-   ========================================================= */
+        /*
+           File input field
+        */
 
-.assetUploader {
+        .assetUploader
+        .sapUiFupInputMask {
 
-    width: 100% !important;
+            height: 40px !important;
 
-    margin: 0 !important;
-}
+            box-sizing: border-box !important;
 
+            border:
+                1px solid
+                #c7d3df !important;
 
-/* FILE INPUT */
+            border-radius:
+                8px !important;
 
-.assetUploader
-.sapUiFupInputMask {
+            background:
+                #ffffff !important;
 
-    height: 40px !important;
+            color:
+                #1d2d3e !important;
 
-    border:
-        1px solid
-        #c7d3df !important;
+            font-size:
+                12px !important;
 
-    border-radius:
-        8px !important;
+            box-shadow:
+                none !important;
 
-    background:
-        #ffffff !important;
+            transition:
+                border-color 160ms ease,
+                box-shadow 160ms ease !important;
+        }
 
-    color:
-        #1d2d3e !important;
 
-    box-shadow:
-        none !important;
+        .assetUploader
+        .sapUiFupInputMask:hover {
 
-    font-size:
-        12px !important;
-}
+            border-color:
+                #8da9c0 !important;
+        }
 
 
-/* INPUT HOVER */
+        .assetUploader
+        .sapUiFupInputMask:focus {
 
-.assetUploader
-.sapUiFupInputMask:hover {
+            border-color:
+                #0a6ed1 !important;
 
-    border-color:
-        #8da9c0 !important;
-}
+            box-shadow:
+                0 0 0 3px
+                rgba(10,110,209,0.10) !important;
+        }
 
 
-/* INPUT FOCUS */
+        /*
+           Browse button
+        */
 
-.assetUploader
-.sapUiFupInputMask:focus {
+        .assetUploader
+        .sapUiFupButton {
 
-    border-color:
-        #0a6ed1 !important;
+            height: 40px !important;
 
-    box-shadow:
-        0 0 0 3px
-        rgba(10,110,209,0.10) !important;
-}
+            margin-left: 8px !important;
 
+            border-radius:
+                8px !important;
 
-/* =========================================================
-   BROWSE BUTTON
-   ========================================================= */
+            background:
+                #e7ebef !important;
 
-.assetUploader
-.sapUiFupButton {
+            border:
+                1px solid
+                #c7d0d8 !important;
 
-    height: 40px !important;
+            color:
+                #1d2d3e !important;
 
-    margin-left: 8px !important;
+            font-weight:
+                600 !important;
 
-    border-radius:
-        8px !important;
+            box-shadow:
+                none !important;
 
-    background:
-        #e7ebef !important;
+            transition:
+                background 150ms ease,
+                border-color 150ms ease,
+                transform 150ms ease !important;
+        }
 
-    border:
-        1px solid
-        #c7d0d8 !important;
 
-    color:
-        #1d2d3e !important;
+        .assetUploader
+        .sapUiFupButton:hover {
 
-    font-weight:
-        600 !important;
+            background:
+                #dce2e8 !important;
 
-    box-shadow:
-        none !important;
-}
+            border-color:
+                #b7c1ca !important;
 
+            transform:
+                translateY(-1px) !important;
+        }
 
-.assetUploader
-.sapUiFupButton:hover {
 
-    background:
-        #dce2e8 !important;
+        .assetUploader
+        .sapUiFupButton:active {
 
-    border-color:
-        #b7c1ca !important;
-}
+            transform:
+                translateY(0) !important;
+        }
 
 
-/* =========================================================
-   MAIN UPLOAD BUTTON
-   ========================================================= */
+        .assetUploader
+        .sapMBtnInner {
 
-.assetUploadButton {
+            min-height: 40px !important;
 
-    margin-top:
-        16px !important;
+            border-radius:
+                8px !important;
 
-    height:
-        42px !important;
+            font-weight:
+                600 !important;
+        }
 
-    min-width:
-        150px !important;
 
-    border-radius:
-        9px !important;
+        /* =====================================================
+           MAIN UPLOAD BUTTON
+           ===================================================== */
 
-    box-shadow:
-        0 4px 11px
-        rgba(10,110,209,0.20);
+        .assetUploadButton {
 
-    transition:
-        transform 150ms ease,
-        box-shadow 150ms ease;
-}
+            margin-top:
+                16px !important;
 
+            min-width:
+                155px !important;
 
-.assetUploadButton:hover {
+            height:
+                42px !important;
 
-    transform:
-        translateY(-1px);
+            border-radius:
+                9px !important;
 
-    box-shadow:
-        0 7px 17px
-        rgba(10,110,209,0.26);
-}
+            box-shadow:
+                0 4px 11px
+                rgba(10,110,209,0.20) !important;
 
+            transition:
+                transform 150ms ease,
+                box-shadow 150ms ease !important;
+        }
 
-.assetUploadButton
-.sapMBtnInner {
 
-    height:
-        42px !important;
+        .assetUploadButton:hover {
 
-    padding:
-        0 20px !important;
+            transform:
+                translateY(-1px) !important;
 
-    border-radius:
-        9px !important;
+            box-shadow:
+                0 7px 17px
+                rgba(10,110,209,0.27) !important;
+        }
 
-    background:
-        #0a6ed1 !important;
 
-    border:
-        1px solid
-        #0a6ed1 !important;
+        .assetUploadButton:active {
 
-    color:
-        #ffffff !important;
+            transform:
+                translateY(0) !important;
+        }
 
-    font-size:
-        13px !important;
 
-    font-weight:
-        700 !important;
-}
+        .assetUploadButton
+        .sapMBtnInner {
 
+            height:
+                42px !important;
 
-.assetUploadButton
-.sapMBtnInner:hover {
+            padding:
+                0 20px !important;
 
-    background:
-        #085caf !important;
+            border-radius:
+                9px !important;
 
-    border-color:
-        #085caf !important;
-}
+            background:
+                #0a6ed1 !important;
 
+            border:
+                1px solid
+                #0a6ed1 !important;
 
-.assetUploadButton
-.sapMBtnIcon {
+            color:
+                #ffffff !important;
 
-    color:
-        #ffffff !important;
+            font-size:
+                13px !important;
 
-    margin-right:
-        7px;
-}
+            font-weight:
+                700 !important;
+        }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+        .assetUploadButton
+        .sapMBtnInner:hover {
 
-.assetFooter {
+            background:
+                #085caf !important;
 
-    display: block;
+            border-color:
+                #085caf !important;
+        }
 
-    margin-top:
-        10px;
 
-    color:
-        #7a8794 !important;
+        .assetUploadButton
+        .sapMBtnIcon {
 
-    font-size:
-        10px !important;
-}
+            color:
+                #ffffff !important;
 
+            margin-right:
+                7px !important;
+        }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
-@media (max-width: 500px) {
+        /* =====================================================
+           FOOTER
+           ===================================================== */
 
-    .assetCard {
+        .assetFooter {
 
-        padding:
-            16px;
+            display: block !important;
+
+            margin-top:
+                11px !important;
+
+            color:
+                #7a8794 !important;
+
+            font-size:
+                10px !important;
+
+            line-height:
+                15px !important;
+        }
+
+
+        /* =====================================================
+           SIMPLE FORM OVERRIDES
+           ===================================================== */
+
+        .assetCard.sapUiForm {
+
+            border: none !important;
+        }
+
+
+        .assetCard
+        .sapUiFormResGrid {
+
+            padding:
+                0 !important;
+        }
+
+
+        .assetCard
+        .sapUiFormResGrid > div {
+
+            padding:
+                0 !important;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+           ===================================================== */
+
+        @media (max-width: 600px) {
+
+            .assetCard {
+
+                padding:
+                    17px !important;
+
+                min-height:
+                    250px !important;
+            }
+
+
+            .assetDropZone {
+
+                padding:
+                    14px !important;
+            }
+
+
+            .assetUploadButton {
+
+                width:
+                    100% !important;
+
+                min-width:
+                    100% !important;
+            }
+
+        }
+
+    `;
+
+
+    /* =========================================================
+       ADD GLOBAL STYLE ONCE
+       ========================================================= */
+
+    function installGlobalStyle() {
+
+        if (
+            document.getElementById(
+                "assetUploadGlobalStyle"
+            )
+        ) {
+            return;
+        }
+
+        let style =
+            document.createElement("style");
+
+        style.id =
+            "assetUploadGlobalStyle";
+
+        style.type =
+            "text/css";
+
+        style.textContent =
+            assetGlobalStyle;
+
+        document.head.appendChild(style);
     }
 
 
-    .assetDropZone {
-
-        padding:
-            13px;
-    }
-
-
-    .assetUploadButton {
-
-        width:
-            100% !important;
-    }
-
-}
-
-</style>
-`;
+    /* =========================================================
+       MAIN CUSTOM WIDGET
+       ========================================================= */
 
     class Excel extends HTMLElement {
 
         constructor() {
+
             super();
 
-            _shadowRoot = this.attachShadow({
-                mode: "open"
-            });
+            _shadowRoot =
+                this.attachShadow({
+                    mode: "open"
+                });
+
 
             _shadowRoot.appendChild(
                 tmpl.content.cloneNode(true)
             );
 
-            _id = createGuid();
+
+            _id =
+                createGuid();
+
 
             this._export_settings = {};
+
             this._export_settings.title = "";
+
             this._export_settings.subtitle = "";
+
             this._export_settings.icon = "";
+
             this._export_settings.unit = "";
+
             this._export_settings.footer = "";
 
-            this.addEventListener("click", event => {
-                console.log("click");
-            });
+
+            this.addEventListener(
+                "click",
+                event => {
+
+                    console.log(
+                        "click"
+                    );
+
+                }
+            );
+
 
             this._firstConnection = 0;
         }
 
+
         connectedCallback() {
+
+            installGlobalStyle();
+
             try {
+
                 if (window.commonApp) {
 
                     let outlineContainer =
-                        commonApp.getShell().findElements(
-                            true,
-                            ele =>
-                                ele.hasStyleClass &&
-                                ele.hasStyleClass("sapAppBuildingOutline")
-                        )[0];
+                        commonApp
+                            .getShell()
+                            .findElements(
+                                true,
+                                ele =>
+                                    ele.hasStyleClass &&
+                                    ele.hasStyleClass(
+                                        "sapAppBuildingOutline"
+                                    )
+                            )[0];
+
 
                     if (
                         outlineContainer &&
                         outlineContainer.getReactProps
                     ) {
 
-                        let parseReactState = state => {
+                        let parseReactState =
+                            state => {
 
-                            let components = {};
+                                let components = {};
 
-                            let globalState = state.globalState;
-                            let instances = globalState.instances;
+                                let globalState =
+                                    state.globalState;
 
-                            let app =
-                                instances.app[
-                                    "[{\"app\":\"MAIN_APPLICATION\"}]"
-                                ];
+                                let instances =
+                                    globalState.instances;
 
-                            let names = app.names;
+                                let app =
+                                    instances
+                                        .app[
+                                            "[{\"app\":\"MAIN_APPLICATION\"}]"
+                                        ];
 
-                            for (let key in names) {
+                                let names =
+                                    app.names;
 
-                                let name = names[key];
 
-                                let obj =
-                                    JSON.parse(key).pop();
+                                for (
+                                    let key in names
+                                ) {
 
-                                let type =
-                                    Object.keys(obj)[0];
+                                    let name =
+                                        names[key];
 
-                                let id = obj[type];
+                                    let obj =
+                                        JSON.parse(
+                                            key
+                                        ).pop();
 
-                                components[id] = {
-                                    type: type,
-                                    name: name
-                                };
-                            }
+                                    let type =
+                                        Object.keys(
+                                            obj
+                                        )[0];
 
-                            let metadata =
-                                JSON.stringify({
-                                    components: components,
-                                    vars: app.globalVars
-                                });
+                                    let id =
+                                        obj[type];
 
-                            if (metadata != this.metadata) {
+                                    components[id] = {
 
-                                this.metadata = metadata;
+                                        type:
+                                            type,
 
-                                this.dispatchEvent(
-                                    new CustomEvent(
-                                        "propertiesChanged",
-                                        {
-                                            detail: {
-                                                properties: {
-                                                    metadata: metadata
+                                        name:
+                                            name
+
+                                    };
+
+                                }
+
+
+                                let metadata =
+                                    JSON.stringify({
+
+                                        components:
+                                            components,
+
+                                        vars:
+                                            app.globalVars
+
+                                    });
+
+
+                                if (
+                                    metadata !=
+                                    this.metadata
+                                ) {
+
+                                    this.metadata =
+                                        metadata;
+
+
+                                    this.dispatchEvent(
+                                        new CustomEvent(
+                                            "propertiesChanged",
+                                            {
+                                                detail: {
+                                                    properties: {
+                                                        metadata:
+                                                            metadata
+                                                    }
                                                 }
                                             }
-                                        }
-                                    )
-                                );
-                            }
-                        };
+                                        )
+                                    );
 
-                        let subscribeReactStore = store => {
+                                }
 
-                            this._subscription =
-                                store.subscribe({
-                                    effect: state => {
+                            };
 
-                                        parseReactState(state);
 
-                                        return {
-                                            result: 1
-                                        };
-                                    }
-                                });
-                        };
+                        let subscribeReactStore =
+                            store => {
+
+                                this._subscription =
+                                    store.subscribe({
+
+                                        effect:
+                                            state => {
+
+                                                parseReactState(
+                                                    state
+                                                );
+
+                                                return {
+                                                    result:
+                                                        1
+                                                };
+
+                                            }
+
+                                    });
+
+                            };
+
 
                         let props =
-                            outlineContainer.getReactProps();
+                            outlineContainer
+                                .getReactProps();
+
 
                         if (props) {
 
@@ -658,54 +838,93 @@ tmpl.innerHTML = `
                         } else {
 
                             let oldRenderReactComponent =
-                                outlineContainer.renderReactComponent;
+                                outlineContainer
+                                    .renderReactComponent;
 
-                            outlineContainer.renderReactComponent =
-                                e => {
 
-                                    let props =
-                                        outlineContainer.getReactProps();
+                            outlineContainer
+                                .renderReactComponent =
+                                    e => {
 
-                                    subscribeReactStore(
-                                        props.store
-                                    );
+                                        let props =
+                                            outlineContainer
+                                                .getReactProps();
 
-                                    oldRenderReactComponent.call(
-                                        outlineContainer,
-                                        e
-                                    );
-                                };
+
+                                        subscribeReactStore(
+                                            props.store
+                                        );
+
+
+                                        oldRenderReactComponent.call(
+                                            outlineContainer,
+                                            e
+                                        );
+
+                                    };
+
                         }
+
                     }
+
                 }
-            } catch (e) {}
+
+            } catch (e) {
+
+            }
+
         }
+
 
         disconnectedCallback() {
 
-            if (this._subscription) {
+            if (
+                this._subscription
+            ) {
 
                 this._subscription();
 
-                this._subscription = null;
+                this._subscription =
+                    null;
+
             }
+
         }
 
-        onCustomWidgetBeforeUpdate(changedProperties) {
 
-            if ("designMode" in changedProperties) {
+        onCustomWidgetBeforeUpdate(
+            changedProperties
+        ) {
+
+            if (
+                "designMode"
+                in changedProperties
+            ) {
 
                 this._designMode =
-                    changedProperties["designMode"];
+                    changedProperties[
+                        "designMode"
+                    ];
+
             }
+
         }
 
-        onCustomWidgetAfterUpdate(changedProperties) {
 
-            var that = this;
+        onCustomWidgetAfterUpdate(
+            changedProperties
+        ) {
+
+            installGlobalStyle();
+
+
+            var that =
+                this;
+
 
             let xlsxjs =
                 "https://madhavpandey1478-sys.github.io/vigilant-octo-fiesta/xlsx (1) 1.js";
+
 
             async function LoadLibs() {
 
@@ -726,23 +945,34 @@ tmpl.innerHTML = `
                         that,
                         changedProperties
                     );
+
                 }
+
             }
 
+
             LoadLibs();
+
         }
+
 
         _renderExportButton() {
 
             let components =
                 this.metadata
-                    ? JSON.parse(this.metadata)["components"]
+                    ? JSON.parse(
+                        this.metadata
+                    )["components"]
                     : {};
+
+
         }
+
 
         _firePropertiesChanged() {
 
             this.unit = "";
+
 
             this.dispatchEvent(
                 new CustomEvent(
@@ -750,73 +980,107 @@ tmpl.innerHTML = `
                     {
                         detail: {
                             properties: {
-                                unit: this.unit
+                                unit:
+                                    this.unit
                             }
                         }
                     }
                 )
             );
+
         }
 
+
         get title() {
+
             return this._export_settings.title;
+
         }
+
 
         set title(value) {
 
-            console.log("setTitle:" + value);
+            console.log(
+                "setTitle:" +
+                value
+            );
+
 
             this._export_settings.title =
                 value;
+
         }
+
 
         get subtitle() {
 
             return this._export_settings.subtitle;
+
         }
+
 
         set subtitle(value) {
 
             this._export_settings.subtitle =
                 value;
+
         }
+
 
         get icon() {
 
             return this._export_settings.icon;
+
         }
+
 
         set icon(value) {
 
             this._export_settings.icon =
                 value;
+
         }
+
 
         get unit() {
 
             return this._export_settings.unit;
+
         }
+
 
         set unit(value) {
 
-            value = _result;
+            value =
+                _result;
 
-            console.log("value: " + value);
+
+            console.log(
+                "value: " +
+                value
+            );
+
 
             this._export_settings.unit =
                 value;
+
         }
+
 
         get footer() {
 
             return this._export_settings.footer;
+
         }
+
 
         set footer(value) {
 
             this._export_settings.footer =
                 value;
+
         }
+
 
         static get observedAttributes() {
 
@@ -828,7 +1092,9 @@ tmpl.innerHTML = `
                 "footer",
                 "link"
             ];
+
         }
+
 
         attributeChangedCallback(
             name,
@@ -836,13 +1102,24 @@ tmpl.innerHTML = `
             newValue
         ) {
 
-            if (oldValue != newValue) {
+            if (
+                oldValue !=
+                newValue
+            ) {
 
                 this[name] =
                     newValue;
+
             }
+
         }
+
     }
+
+
+    /* =========================================================
+       REGISTER WIDGET
+       ========================================================= */
 
     customElements.define(
         "com-fd-djaja-sap-sac-excel",
@@ -850,15 +1127,22 @@ tmpl.innerHTML = `
     );
 
 
+    /* =========================================================
+       LOAD SAPUI5 VIEW
+       ========================================================= */
+
     function loadthis(
         that,
         changedProperties
     ) {
 
-        var that_ = that;
+        var that_ =
+            that;
+
 
         widgetName =
             changedProperties.widgetName;
+
 
         if (
             typeof widgetName ===
@@ -866,67 +1150,299 @@ tmpl.innerHTML = `
         ) {
 
             widgetName =
-                that._export_settings.title.split("|")[0];
+                that
+                    ._export_settings
+                    .title
+                    .split("|")[0];
+
         }
 
+
         div =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
+
 
         div.slot =
-            "content_" + widgetName;
+            "content_" +
+            widgetName;
 
 
         if (
-            that._firstConnection === 0
+            that._firstConnection ===
+            0
         ) {
 
             let div0 =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
 
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View height="100%" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" controllerName="myView.Template"><VBox class="assetCard" width="100%"><HBox class="assetHeader" alignItems="Center"><core:Icon src="sap-icon://excel-attachment" size="1.3rem" class="assetIcon"/><VBox><Text text="Upload Asset File" class="assetTitle"/><Text text="Import your asset data into SAC" class="assetSubtitle"/></VBox></HBox><VBox class="assetDropZone"><HBox class="assetSelectRow" alignItems="Center"><core:Icon src="sap-icon://upload" size="1rem" class="assetDropIcon"/><Text text="Select your XLSM file" class="assetSelectText"/></HBox><Text text="Supported format: XLSM  •  Sheet: Sheet1  •  Maximum 2,000 records" class="assetHelper"/><u:FileUploader id="idfileUploader" class="assetUploader" width="100%" useMultipart="false" sendXHR="true" sameFilenameAllowed="false" buttonText="Browse" fileType="XLSM" placeholder="Choose an XLSM file" style="Emphasized"/></VBox><Button text="Upload Asset Data" press="onValidate" id="__uploadButton" icon="sap-icon://upload" type="Emphasized" class="assetUploadButton" tooltip="Upload the selected asset file"/><Text text="The file will be validated before the data is sent to SAC." class="assetFooter"/></VBox></mvc:View></script>';
+
+            /* =================================================
+               IMPORTANT:
+               SAPUI5 XML VIEW
+               ================================================= */
+
+            div0.innerHTML =
+                '<?xml version="1.0"?>' +
+
+                '<script id="oView_' +
+                widgetName +
+                '" name="oView_' +
+                widgetName +
+                '" type="sapui5/xmlview">' +
+
+                '<mvc:View ' +
+
+                'height="100%" ' +
+
+                'xmlns="sap.m" ' +
+
+                'xmlns:u="sap.ui.unified" ' +
+
+                'xmlns:core="sap.ui.core" ' +
+
+                'xmlns:mvc="sap.ui.core.mvc" ' +
+
+                'controllerName="myView.Template">' +
+
+
+                /* ==========================================
+                   MAIN CARD
+                   ========================================== */
+
+                '<VBox ' +
+
+                'class="assetCard" ' +
+
+                'width="100%">' +
+
+
+                /* ==========================================
+                   HEADER
+                   ========================================== */
+
+                '<HBox ' +
+
+                'class="assetHeader" ' +
+
+                'alignItems="Center">' +
+
+
+                '<core:Icon ' +
+
+                'src="sap-icon://excel-attachment" ' +
+
+                'size="1.3rem" ' +
+
+                'class="assetIcon"/>' +
+
+
+                '<VBox>' +
+
+
+                '<Text ' +
+
+                'text="Upload Asset File" ' +
+
+                'class="assetTitle"/>' +
+
+
+                '<Text ' +
+
+                'text="Import your asset data into SAC" ' +
+
+                'class="assetSubtitle"/>' +
+
+
+                '</VBox>' +
+
+
+                '</HBox>' +
+
+
+                /* ==========================================
+                   UPLOAD AREA
+                   ========================================== */
+
+                '<VBox ' +
+
+                'class="assetDropZone">' +
+
+
+                '<HBox ' +
+
+                'class="assetSelectRow" ' +
+
+                'alignItems="Center">' +
+
+
+                '<core:Icon ' +
+
+                'src="sap-icon://upload" ' +
+
+                'size="1rem" ' +
+
+                'class="assetDropIcon"/>' +
+
+
+                '<Text ' +
+
+                'text="Select your XLSM file" ' +
+
+                'class="assetSelectText"/>' +
+
+
+                '</HBox>' +
+
+
+                '<Text ' +
+
+                'text="Supported format: XLSM  •  Sheet: Sheet1  •  Maximum 2,000 records" ' +
+
+                'class="assetHelper"/>' +
+
+
+                /* ==========================================
+                   FILE UPLOADER
+                   ========================================== */
+
+                '<u:FileUploader ' +
+
+                'id="idfileUploader" ' +
+
+                'class="assetUploader" ' +
+
+                'width="100%" ' +
+
+                'useMultipart="false" ' +
+
+                'sendXHR="true" ' +
+
+                'sameFilenameAllowed="false" ' +
+
+                'buttonText="Browse" ' +
+
+                'fileType="XLSM" ' +
+
+                'placeholder="Choose an XLSM file" ' +
+
+                'style="Emphasized"/>' +
+
+
+                '</VBox>' +
+
+
+                /* ==========================================
+                   UPLOAD BUTTON
+                   ========================================== */
+
+                '<Button ' +
+
+                'text="Upload Asset Data" ' +
+
+                'press="onValidate" ' +
+
+                'id="__uploadButton" ' +
+
+                'icon="sap-icon://upload" ' +
+
+                'type="Emphasized" ' +
+
+                'class="assetUploadButton" ' +
+
+                'tooltip="Upload the selected asset file"/>' +
+
+
+                /* ==========================================
+                   FOOTER
+                   ========================================== */
+
+                '<Text ' +
+
+                'text="The file will be validated before the data is sent to SAC." ' +
+
+                'class="assetFooter"/>' +
+
+
+                '</VBox>' +
+
+                '</mvc:View>' +
+
+                '</script>';
+
+
             _shadowRoot.appendChild(
                 div0
             );
 
 
+            /* =================================================
+               EXISTING FRAGMENT
+               ================================================= */
+
             let div1 =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             div1.innerHTML =
                 '<?xml version="1.0"?>' +
+
                 '<script id="myXMLFragment_' +
                 widgetName +
                 '" type="sapui5/fragment">' +
 
                 '<core:FragmentDefinition ' +
+
                 'xmlns="sap.m" ' +
+
                 'xmlns:core="sap.ui.core">' +
 
                 '<SelectDialog ' +
+
                 'title="Partner Number" ' +
+
                 'class="sapUiPopupWithPadding" ' +
+
                 'items="{' +
                 widgetName +
                 '>/}" ' +
+
                 'search="_handleValueHelpSearch" ' +
+
                 'confirm="_handleValueHelpClose" ' +
+
                 'cancel="_handleValueHelpClose" ' +
+
                 'multiSelect="true" ' +
+
                 'showClearButton="true" ' +
+
                 'rememberSelections="true">' +
 
+
                 '<StandardListItem ' +
+
                 'icon="{' +
                 widgetName +
                 '>ProductPicUrl}" ' +
+
                 'iconDensityAware="false" ' +
+
                 'iconInset="false" ' +
+
                 'title="{' +
                 widgetName +
                 '>partner}" ' +
+
                 'description="{' +
                 widgetName +
                 '>partner}" />' +
+
 
                 '</SelectDialog>' +
 
@@ -934,13 +1450,21 @@ tmpl.innerHTML = `
 
                 '</script>';
 
+
             _shadowRoot.appendChild(
                 div1
             );
 
 
+            /* =================================================
+               CONTENT SLOT
+               ================================================= */
+
             let div2 =
-                document.createElement("div");
+                document.createElement(
+                    "div"
+                );
+
 
             div2.innerHTML =
                 '<div id="ui5_content_' +
@@ -955,11 +1479,20 @@ tmpl.innerHTML = `
 
                 '</div>';
 
+
             _shadowRoot.appendChild(
                 div2
             );
 
-            that_.appendChild(div);
+
+            that_.appendChild(
+                div
+            );
+
+
+            /* =================================================
+               STORE XML REFERENCES
+               ================================================= */
 
             var mapcanvas_divstr =
                 _shadowRoot.getElementById(
@@ -967,70 +1500,126 @@ tmpl.innerHTML = `
                     widgetName
                 );
 
+
             var mapcanvas_fragment_divstr =
                 _shadowRoot.getElementById(
                     "myXMLFragment_" +
                     widgetName
                 );
 
+
             Ar.push({
-                id: widgetName,
-                div: mapcanvas_divstr,
-                divf: mapcanvas_fragment_divstr
+
+                id:
+                    widgetName,
+
+                div:
+                    mapcanvas_divstr,
+
+                divf:
+                    mapcanvas_fragment_divstr
+
             });
+
         }
+
 
         that_._renderExportButton();
 
 
+        /* =====================================================
+           SAPUI5 INIT
+           ===================================================== */
+
         sap.ui.getCore().attachInit(
+
             function() {
 
                 "use strict";
 
 
                 sap.ui.define(
+
                     [
+
                         "jquery.sap.global",
+
                         "sap/ui/core/mvc/Controller",
+
                         "sap/ui/model/json/JSONModel",
+
                         "sap/m/MessageToast",
+
                         "sap/ui/core/library",
+
                         "sap/ui/core/Core",
+
                         "sap/ui/model/Filter",
+
                         "sap/m/library",
+
                         "sap/m/MessageBox",
+
                         "sap/ui/unified/DateRange",
+
                         "sap/ui/core/format/DateFormat",
+
                         "sap/ui/model/BindingMode",
+
                         "sap/ui/core/Fragment",
+
                         "sap/m/Token",
+
                         "sap/ui/model/FilterOperator",
+
                         "sap/ui/model/odata/ODataModel",
+
                         "sap/m/BusyDialog"
+
                     ],
 
+
                     function(
+
                         jQuery,
+
                         Controller,
+
                         JSONModel,
+
                         MessageToast,
+
                         coreLibrary,
+
                         Core,
+
                         Filter,
+
                         mobileLibrary,
+
                         MessageBox,
+
                         DateRange,
+
                         DateFormat,
+
                         BindingMode,
+
                         Fragment,
+
                         Token,
+
                         FilterOperator,
+
                         ODataModel,
+
                         BusyDialog
+
                     ) {
 
+
                         "use strict";
+
 
                         var busyDialog =
                             (busyDialog)
@@ -1039,354 +1628,595 @@ tmpl.innerHTML = `
 
 
                         return Controller.extend(
+
                             "myView.Template",
+
                             {
 
-                                onInit: function() {
 
-                                    console.log(
-                                        that._export_settings.title
-                                    );
+                                /* =================================
+                                   INIT
+                                   ================================= */
 
-                                    console.log(
-                                        "widgetName:" +
-                                        that.widgetName
-                                    );
+                                onInit:
+                                    function() {
 
-                                    if (
-                                        that._firstConnection === 0
-                                    ) {
-
-                                        that._firstConnection = 1;
-                                    }
-                                },
+                                        console.log(
+                                            that
+                                                ._export_settings
+                                                .title
+                                        );
 
 
-                                onValidate: function(e) {
-
-                                    var fU =
-                                        this.getView()
-                                            .byId(
-                                                "idfileUploader"
-                                            );
-
-                                    var file =
-                                        $("#__xmlview1--idfileUploader-fu")[0]
-                                            .files[0];
-
-                                    var this_ = this;
-
-                                    this_.wasteTime();
+                                        console.log(
+                                            "widgetName:" +
+                                            that.widgetName
+                                        );
 
 
-                                    var oModel =
-                                        new JSONModel();
+                                        if (
+                                            that
+                                                ._firstConnection ===
+                                            0
+                                        ) {
 
-                                    oModel.setData({
-                                        result_final: null
-                                    });
+                                            that
+                                                ._firstConnection =
+                                                1;
+
+                                        }
+
+                                    },
 
 
-                                    var reader =
-                                        new FileReader();
+                                /* =================================
+                                   VALIDATE / UPLOAD
+                                   ================================= */
+
+                                onValidate:
+                                    function(e) {
 
 
-                                    reader.onload =
-                                        async function(e) {
-
-                                            var strCSV =
-                                                e.target.result;
-
-                                            var workbook =
-                                                XLSX.read(
-                                                    strCSV,
-                                                    {
-                                                        type: "binary"
-                                                    }
+                                        var fU =
+                                            this
+                                                .getView()
+                                                .byId(
+                                                    "idfileUploader"
                                                 );
 
 
-                                            var result_final = [];
-                                            var result = [];
-                                            var correctsheet = false;
+                                        var file =
+                                            $(
+                                                "#__xmlview1--idfileUploader-fu"
+                                            )[0]
+                                                .files[0];
 
 
-                                            workbook.SheetNames.forEach(
-                                                function(sheetName) {
+                                        var this_ =
+                                            this;
 
-                                                    if (
-                                                        sheetName ===
-                                                        "Sheet1"
-                                                    ) {
 
-                                                        correctsheet = true;
+                                        this_.wasteTime();
 
-                                                        var csv =
-                                                            XLSX.utils.sheet_to_csv(
-                                                                workbook.Sheets[
-                                                                    sheetName
-                                                                ]
-                                                            );
 
-                                                        if (
-                                                            csv.length
-                                                        ) {
+                                        var oModel =
+                                            new JSONModel();
 
-                                                            result.push(csv);
+
+                                        oModel.setData({
+
+                                            result_final:
+                                                null
+
+                                        });
+
+
+                                        var reader =
+                                            new FileReader();
+
+
+                                        reader.onload =
+                                            async function(e) {
+
+
+                                                var strCSV =
+                                                    e.target.result;
+
+
+                                                var workbook =
+                                                    XLSX.read(
+
+                                                        strCSV,
+
+                                                        {
+                                                            type:
+                                                                "binary"
                                                         }
 
-                                                        result =
-                                                            result.join(
-                                                                "[$@~!~@$]"
-                                                            );
-                                                    }
-                                                }
-                                            );
+                                                    );
 
 
-                                            if (
-                                                correctsheet
-                                            ) {
+                                                var result_final =
+                                                    [];
 
-                                                var lengthfield =
-                                                    result
-                                                        .split(
-                                                            "[$@~!~@$]"
-                                                        )[0]
-                                                        .split(
-                                                            "[#@~!~@#]"
-                                                        ).length;
+                                                var result =
+                                                    [];
 
-                                                console.log(
-                                                    "lengthfield: " +
-                                                    lengthfield
-                                                );
+                                                var correctsheet =
+                                                    false;
 
 
-                                                var total =
-                                                    this_
-                                                        .getView()
-                                                        .byId(
-                                                            "total"
-                                                        );
+                                                workbook.SheetNames
+                                                    .forEach(
 
-                                                var rec_count = 0;
+                                                        function(
+                                                            sheetName
+                                                        ) {
 
-                                                var len = 0;
+
+                                                            if (
+                                                                sheetName ===
+                                                                "Sheet1"
+                                                            ) {
+
+                                                                correctsheet =
+                                                                    true;
+
+
+                                                                var csv =
+                                                                    XLSX
+                                                                        .utils
+                                                                        .sheet_to_csv(
+                                                                            workbook
+                                                                                .Sheets[
+                                                                                    sheetName
+                                                                                ]
+                                                                        );
+
+
+                                                                if (
+                                                                    csv.length
+                                                                ) {
+
+                                                                    result.push(
+                                                                        csv
+                                                                    );
+
+                                                                }
+
+
+                                                                result =
+                                                                    result.join(
+                                                                        "[$@~!~@$]"
+                                                                    );
+
+                                                            }
+
+                                                        }
+
+                                                    );
 
 
                                                 if (
-                                                    lengthfield ===
-                                                    7
+                                                    correctsheet
                                                 ) {
 
-                                                    for (
-                                                        var i = 1;
-                                                        i <
+
+                                                    var lengthfield =
                                                         result
                                                             .split(
                                                                 "[$@~!~@$]"
+                                                            )[0]
+                                                            .split(
+                                                                "[#@~!~@#]"
                                                             ).length;
-                                                        i++
+
+
+                                                    console.log(
+                                                        "lengthfield: " +
+                                                        lengthfield
+                                                    );
+
+
+                                                    var total =
+                                                        this_
+                                                            .getView()
+                                                            .byId(
+                                                                "total"
+                                                            );
+
+
+                                                    var rec_count =
+                                                        0;
+
+                                                    var len =
+                                                        0;
+
+
+                                                    if (
+                                                        lengthfield ===
+                                                        7
                                                     ) {
 
-                                                        if (
+
+                                                        for (
+
+                                                            var i = 1;
+
+                                                            i <
                                                             result
                                                                 .split(
                                                                     "[$@~!~@$]"
-                                                                )[i]
-                                                                .length > 0
+                                                                )
+                                                                .length;
+
+                                                            i++
+
                                                         ) {
 
-                                                            var rec =
+
+                                                            if (
+
                                                                 result
                                                                     .split(
                                                                         "[$@~!~@$]"
                                                                     )[i]
-                                                                    .split(
-                                                                        "[#@~!~@#]"
-                                                                    );
+                                                                    .length > 0
 
-                                                            if (
-                                                                rec.length > 0
                                                             ) {
 
-                                                                len =
-                                                                    rec[0].trim().length +
-                                                                    rec[1].trim().length +
-                                                                    rec[2].trim().length +
-                                                                    rec[3].trim().length +
-                                                                    rec[4].trim().length +
-                                                                    rec[5].trim().length +
-                                                                    rec[6].trim().length;
+
+                                                                var rec =
+                                                                    result
+                                                                        .split(
+                                                                            "[$@~!~@$]"
+                                                                        )[i]
+                                                                        .split(
+                                                                            "[#@~!~@#]"
+                                                                        );
 
 
                                                                 if (
-                                                                    len > 0
+                                                                    rec.length >
+                                                                    0
                                                                 ) {
 
-                                                                    rec_count =
-                                                                        rec_count + 1;
+
+                                                                    len =
+
+                                                                        rec[0]
+                                                                            .trim()
+                                                                            .length +
+
+                                                                        rec[1]
+                                                                            .trim()
+                                                                            .length +
+
+                                                                        rec[2]
+                                                                            .trim()
+                                                                            .length +
+
+                                                                        rec[3]
+                                                                            .trim()
+                                                                            .length +
+
+                                                                        rec[4]
+                                                                            .trim()
+                                                                            .length +
+
+                                                                        rec[5]
+                                                                            .trim()
+                                                                            .length +
+
+                                                                        rec[6]
+                                                                            .trim()
+                                                                            .length;
 
 
-                                                                    result_final.push(
-                                                                        {
-                                                                            "ID": rec[0].trim(),
-                                                                            "DESCRIPTION": rec[1].trim(),
-                                                                            "ASSET_TYPE": rec[2].trim(),
-                                                                            "COMPANY_CODE": rec[3].trim(),
-                                                                            "ASSET_CLASS": rec[4].trim(),
-                                                                            "COST_CENTER": rec[5].trim(),
-                                                                            "CWIP": rec[6].trim()
-                                                                        }
-                                                                    );
+                                                                    if (
+                                                                        len >
+                                                                        0
+                                                                    ) {
+
+
+                                                                        rec_count =
+                                                                            rec_count +
+                                                                            1;
+
+
+                                                                        result_final
+                                                                            .push(
+
+                                                                                {
+
+                                                                                    "ID":
+                                                                                        rec[0]
+                                                                                            .trim(),
+
+                                                                                    "DESCRIPTION":
+                                                                                        rec[1]
+                                                                                            .trim(),
+
+                                                                                    "ASSET_TYPE":
+                                                                                        rec[2]
+                                                                                            .trim(),
+
+                                                                                    "COMPANY_CODE":
+                                                                                        rec[3]
+                                                                                            .trim(),
+
+                                                                                    "ASSET_CLASS":
+                                                                                        rec[4]
+                                                                                            .trim(),
+
+                                                                                    "COST_CENTER":
+                                                                                        rec[5]
+                                                                                            .trim(),
+
+                                                                                    "CWIP":
+                                                                                        rec[6]
+                                                                                            .trim()
+
+                                                                                }
+
+                                                                            );
+
+                                                                    }
+
                                                                 }
+
                                                             }
+
                                                         }
-                                                    }
 
 
-                                                    if (
-                                                        result_final.length ===
-                                                        0
-                                                    ) {
+                                                        /* =========================
+                                                           NO RECORDS
+                                                           ========================= */
 
-                                                        fU.setValue("");
-
-                                                        MessageToast.show(
-                                                            "There is no record to be uploaded"
-                                                        );
-
-                                                        this_.runNext();
-
-                                                    } else if (
-                                                        result_final.length >=
-                                                        2001
-                                                    ) {
-
-                                                        fU.setValue("");
-
-                                                        MessageToast.show(
-                                                            "Maximum records are 2000."
-                                                        );
-
-                                                        this_.runNext();
-
-                                                    } else {
-
-                                                        oModel =
-                                                            new JSONModel();
-
-                                                        oModel.setSizeLimit(
-                                                            "5000"
-                                                        );
-
-                                                        oModel.setData({
-                                                            result_final:
-                                                                result_final
-                                                        });
+                                                        if (
+                                                            result_final.length ===
+                                                            0
+                                                        ) {
 
 
-                                                        var oModel1 =
-                                                            new sap.ui.model.json.JSONModel();
-
-                                                        oModel1.setData({
-                                                            fname:
-                                                                file.name
-                                                        });
-
-                                                        console.log(
-                                                            oModel
-                                                        );
-
-
-                                                        _result =
-                                                            JSON.stringify(
-                                                                result_final
+                                                            fU.setValue(
+                                                                ""
                                                             );
 
 
-                                                        that._firePropertiesChanged();
+                                                            MessageToast.show(
+                                                                "There is no record to be uploaded"
+                                                            );
 
 
-                                                        this.settings = {};
-                                                        this.settings.result =
-                                                            "";
+                                                            this_.runNext();
 
 
-                                                        that.dispatchEvent(
-                                                            new CustomEvent(
-                                                                "onStart",
-                                                                {
-                                                                    detail: {
-                                                                        settings:
-                                                                            this.settings
+                                                        }
+
+
+                                                        /* =========================
+                                                           RECORD LIMIT
+                                                           ========================= */
+
+                                                        else if (
+                                                            result_final.length >=
+                                                            2001
+                                                        ) {
+
+
+                                                            fU.setValue(
+                                                                ""
+                                                            );
+
+
+                                                            MessageToast.show(
+                                                                "Maximum records are 2000."
+                                                            );
+
+
+                                                            this_.runNext();
+
+
+                                                        }
+
+
+                                                        /* =========================
+                                                           SUCCESS
+                                                           ========================= */
+
+                                                        else {
+
+
+                                                            oModel =
+                                                                new JSONModel();
+
+
+                                                            oModel.setSizeLimit(
+                                                                "5000"
+                                                            );
+
+
+                                                            oModel.setData({
+
+                                                                result_final:
+                                                                    result_final
+
+                                                            });
+
+
+                                                            var oModel1 =
+                                                                new sap.ui
+                                                                    .model
+                                                                    .json
+                                                                    .JSONModel();
+
+
+                                                            oModel1.setData({
+
+                                                                fname:
+                                                                    file.name
+
+                                                            });
+
+
+                                                            console.log(
+                                                                oModel
+                                                            );
+
+
+                                                            _result =
+                                                                JSON.stringify(
+                                                                    result_final
+                                                                );
+
+
+                                                            that
+                                                                ._firePropertiesChanged();
+
+
+                                                            this.settings =
+                                                                {};
+
+                                                            this.settings.result =
+                                                                "";
+
+
+                                                            that.dispatchEvent(
+
+                                                                new CustomEvent(
+
+                                                                    "onStart",
+
+                                                                    {
+
+                                                                        detail: {
+
+                                                                            settings:
+                                                                                this.settings
+
+                                                                        }
+
                                                                     }
-                                                                }
-                                                            )
-                                                        );
+
+                                                                )
+
+                                                            );
+
+
+                                                            this_.runNext();
+
+
+                                                            fU.setValue(
+                                                                ""
+                                                            );
+
+                                                        }
+
+
+                                                    }
+
+
+                                                    /* =========================
+                                                       WRONG COLUMN COUNT
+                                                       ========================= */
+
+                                                    else {
 
 
                                                         this_.runNext();
 
 
-                                                        fU.setValue("");
+                                                        fU.setValue(
+                                                            ""
+                                                        );
+
+
+                                                        MessageToast.show(
+                                                            "Please upload the correct file"
+                                                        );
+
                                                     }
 
-                                                } else {
+
+                                                }
+
+
+                                                /* =========================
+                                                   WRONG SHEET
+                                                   ========================= */
+
+                                                else {
+
 
                                                     this_.runNext();
 
-                                                    fU.setValue("");
+
+                                                    console.log(
+                                                        "Error: wrong Excel File template"
+                                                    );
+
 
                                                     MessageToast.show(
                                                         "Please upload the correct file"
                                                     );
+
                                                 }
 
-                                            } else {
-
-                                                this_.runNext();
-
-                                                console.log(
-                                                    "Error: wrong Excel File template"
-                                                );
-
-                                                MessageToast.show(
-                                                    "Please upload the correct file"
-                                                );
-                                            }
-                                        };
+                                            };
 
 
-                                    if (
-                                        typeof file !==
-                                        "undefined"
-                                    ) {
+                                        /* ================================
+                                           FILE SELECTED
+                                           ================================ */
 
-                                        reader.readAsBinaryString(
-                                            file
-                                        );
+                                        if (
+                                            typeof file !==
+                                            "undefined"
+                                        ) {
+
+
+                                            reader.readAsBinaryString(
+                                                file
+                                            );
+
+                                        }
+
+                                    },
+
+
+                                /* =================================
+                                   BUSY DIALOG
+                                   ================================= */
+
+                                wasteTime:
+                                    function() {
+
+                                        busyDialog.open();
+
+                                    },
+
+
+                                runNext:
+                                    function() {
+
+                                        busyDialog.close();
+
                                     }
-                                },
-
-
-                                wasteTime: function() {
-
-                                    busyDialog.open();
-                                },
-
-
-                                runNext: function() {
-
-                                    busyDialog.close();
-                                }
 
                             }
+
                         );
+
                     }
+
                 );
 
+
+                /* =================================================
+                   FIND VIEW
+                   ================================================= */
 
                 console.log(
                     "widgetName Final:" +
@@ -1396,28 +2226,48 @@ tmpl.innerHTML = `
 
                 var foundIndex =
                     Ar.findIndex(
+
                         x =>
                             x.id ==
                             widgetName
+
                     );
 
+
                 var divfinal =
-                    Ar[foundIndex].div;
+                    Ar[
+                        foundIndex
+                    ].div;
+
 
                 console.log(
                     divfinal
                 );
 
 
+                /* =================================================
+                   CREATE SAPUI5 VIEW
+                   ================================================= */
+
                 var oView =
                     sap.ui.xmlview({
+
                         viewContent:
-                            jQuery(divfinal).html()
+                            jQuery(
+                                divfinal
+                            ).html()
+
                     });
 
 
-                oView.placeAt(div);
+                oView.placeAt(
+                    div
+                );
 
+
+                /* =================================================
+                   DESIGN MODE
+                   ================================================= */
 
                 if (
                     that_._designMode
@@ -1427,35 +2277,64 @@ tmpl.innerHTML = `
                         .byId(
                             "idfileUploader"
                         )
-                        .setEnabled(false);
+                        .setEnabled(
+                            false
+                        );
+
                 }
 
             }
+
         );
+
     }
 
+
+    /* =========================================================
+       CREATE GUID
+       ========================================================= */
 
     function createGuid() {
 
         return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
             .replace(
+
                 /[xy]/g,
+
                 c => {
 
                     let r =
-                        Math.random() * 16 |
+                        Math.random() *
+                        16 |
                         0;
+
 
                     let v =
                         c === "x"
-                            ? r
-                            : (r & 0x3 | 0x8);
 
-                    return v.toString(16);
+                            ? r
+
+                            : (
+                                r &
+                                0x3 |
+                                0x8
+                            );
+
+
+                    return v.toString(
+                        16
+                    );
+
                 }
+
             );
+
     }
 
+
+    /* =========================================================
+       LOAD EXTERNAL XLSX LIBRARY
+       ========================================================= */
 
     function loadScript(
         src,
@@ -1463,18 +2342,22 @@ tmpl.innerHTML = `
     ) {
 
         return new Promise(
+
             function(
                 resolve,
                 reject
             ) {
+
 
                 let script =
                     document.createElement(
                         "script"
                     );
 
+
                 script.src =
                     src;
+
 
                 script.onload =
                     () => {
@@ -1484,22 +2367,34 @@ tmpl.innerHTML = `
                             src
                         );
 
-                        resolve(script);
+
+                        resolve(
+                            script
+                        );
+
                     };
+
 
                 script.onerror =
                     () =>
                         reject(
+
                             new Error(
                                 `Script load error for ${src}`
                             )
+
                         );
+
 
                 shadowRoot.appendChild(
                     script
                 );
+
             }
+
         );
+
     }
+
 
 })();
