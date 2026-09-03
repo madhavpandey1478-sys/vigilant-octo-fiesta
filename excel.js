@@ -823,7 +823,6 @@ tmpl.innerHTML = `
 
             div0.innerHTML =
     '<?xml version="1.0"?>' +
-
     '<script id="oView_' +
     widgetName +
     '" name="oView_' +
@@ -839,25 +838,17 @@ tmpl.innerHTML = `
     'xmlns:mvc="sap.ui.core.mvc" ' +
     'controllerName="myView.Template">' +
 
-
-    /* ==============================
-       MAIN CARD
-       ============================== */
-
     '<VBox ' +
     'class="assetUploadCard" ' +
     'width="100%">' +
 
-
-    /* ==============================
-       HEADER
-       ============================== */
+    /* HEADER */
 
     '<HBox ' +
     'class="assetHeader" ' +
     'alignItems="Center">' +
 
-    '<Icon ' +
+    '<core:Icon ' +
     'src="sap-icon://excel-attachment" ' +
     'size="1.35rem" ' +
     'class="assetIcon"/>' +
@@ -878,18 +869,15 @@ tmpl.innerHTML = `
     '</HBox>' +
 
 
-    /* ==============================
-       UPLOAD AREA
-       ============================== */
+    /* UPLOAD AREA */
 
     '<VBox ' +
     'class="assetDropZone">' +
 
-
     '<HBox ' +
     'alignItems="Center">' +
 
-    '<Icon ' +
+    '<core:Icon ' +
     'src="sap-icon://upload" ' +
     'size="1rem" ' +
     'class="assetDropIcon"/>' +
@@ -899,80 +887,48 @@ tmpl.innerHTML = `
 
     '</HBox>' +
 
-
     '<Text ' +
     'text="Supported format: XLSM  •  Sheet: Sheet1  •  Maximum 2,000 records" ' +
     'class="assetHelper"/>' +
 
-
-    /* ==============================
-       FILE UPLOADER
-       ============================== */
-
     '<u:FileUploader ' +
-
     'id="idfileUploader" ' +
-
     'class="assetFileUploader" ' +
-
     'width="100%" ' +
-
     'useMultipart="false" ' +
-
     'sendXHR="true" ' +
-
     'sameFilenameAllowed="false" ' +
-
     'buttonText="Browse" ' +
-
     'fileType="XLSM" ' +
-
     'placeholder="Choose an XLSM file" ' +
-
     'style="Emphasized"/>' +
-
 
     '</VBox>' +
 
 
-    /* ==============================
-       UPLOAD BUTTON
-       ============================== */
+    /* UPLOAD BUTTON */
 
     '<Button ' +
-
     'text="Upload Asset Data" ' +
-
     'press="onValidate" ' +
-
     'id="__uploadButton" ' +
-
     'icon="sap-icon://upload-to-cloud" ' +
-
     'type="Emphasized" ' +
-
     'class="assetUploadButton" ' +
-
     'tooltip="Upload the selected asset file"/>' +
 
 
-    /* ==============================
-       FOOTER
-       ============================== */
+    /* FOOTER */
 
     '<Text ' +
-
     'text="The file will be validated before the data is sent to SAC." ' +
-
     'class="assetFooter"/>' +
-
 
     '</VBox>' +
 
     '</mvc:View>' +
 
     '</script>';
-
             _shadowRoot.appendChild(
                 div0
             );
