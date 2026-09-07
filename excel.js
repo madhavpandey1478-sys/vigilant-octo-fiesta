@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     let _shadowRoot;
     let _id;
@@ -14,182 +14,423 @@
        ========================================================= */
 
     const ASSET_EXCEL_CSS = `
+
     com-fd-djaja-sap-sac-excel {
-        display:block;
-        width:100%;
-        height:100%;
-        font-family:"72",Arial,sans-serif;
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-family: "72", Arial, sans-serif;
     }
+
+    /* =========================================================
+       MAIN CARD
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetCard {
-        width:100%;
-        min-height:100%;
-        padding:18px;
-        background:#fff;
-        border:1px solid #d9e2ec;
-        border-radius:14px;
-        box-shadow:0 6px 22px rgba(0,0,0,.08);
-        box-sizing:border-box;
+        width: 100%;
+        min-height: 100%;
+        padding: 18px;
+        background: #fff;
+        border: 1px solid #d9e2ec;
+        border-radius: 14px;
+        box-shadow: 0 6px 22px rgba(0,0,0,.08);
+        box-sizing: border-box;
     }
 
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
     com-fd-djaja-sap-sac-excel .assetHeader {
-        width:100%;
-        margin-bottom:14px;
-        padding:0 2px;
-        box-sizing:border-box;
+        width: 100%;
+        margin-bottom: 14px;
+        padding: 0 2px;
+        box-sizing: border-box;
     }
 
     com-fd-djaja-sap-sac-excel .assetIcon {
-        color:#0a6ed1 !important;
-        background:#eaf3fc;
-        border-radius:10px;
-        padding:10px;
-        margin-right:10px;
+        color: #0a6ed1 !important;
+        background: #eaf3fc;
+        border-radius: 10px;
+        padding: 10px;
+        margin-right: 10px;
     }
 
     com-fd-djaja-sap-sac-excel .assetTitle {
-        color:#1d2d3e !important;
-        font-size:18px !important;
-        font-weight:700 !important;
+        color: #1d2d3e !important;
+        font-size: 18px !important;
+        font-weight: 700 !important;
     }
 
     com-fd-djaja-sap-sac-excel .assetSubtitle {
-        color:#6a7885 !important;
-        font-size:11px !important;
+        color: #6a7885 !important;
+        font-size: 11px !important;
     }
+
+
+    /* =========================================================
+       GENERIC BUTTON
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetBtn .sapMBtnInner {
-        border-radius:7px !important;
-        font-size:11px !important;
-        font-weight:600 !important;
-        height:34px !important;
-        min-width:82px !important;
+        border-radius: 7px !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        height: 34px !important;
+        min-width: 82px !important;
     }
 
+
+    /* =========================================================
+       DOWNLOAD TEMPLATE
+       ========================================================= */
+
     com-fd-djaja-sap-sac-excel .assetDownloadBtn {
-        margin-left:12px;
+        margin-left: 12px !important;
     }
 
     com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnInner {
-        min-width:150px !important;
+        height: 34px !important;
+        min-width: 150px !important;
+        padding: 0 13px !important;
+
+        background: #0a6ed1 !important;
+        border: 1px solid #0a6ed1 !important;
+        border-radius: 7px !important;
+
+        color: #fff !important;
+
+        font-size: 11px !important;
+        font-weight: 600 !important;
+
+        box-shadow: 0 1px 2px rgba(0,0,0,.10) !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
     }
 
-    com-fd-djaja-sap-sac-excel .assetBlue .sapMBtnInner {
-        background:#0a6ed1 !important;
-        border-color:#0a6ed1 !important;
-        color:#fff !important;
+    com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnIcon {
+        color: #fff !important;
+        margin-right: 6px !important;
     }
+
+    com-fd-djaja-sap-sac-excel .assetDownloadBtn:hover .sapMBtnInner {
+        background: #085caf !important;
+        border-color: #085caf !important;
+    }
+
+
+    /* =========================================================
+       TOOLBAR
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetToolbar {
-        width:100%;
-        padding:7px 9px !important;
-        margin-bottom:10px;
-        background:#f7f9fb;
-        border:1px solid #e0e5ea;
-        border-radius:8px;
-        box-sizing:border-box;
+        width: 100%;
+        height: 38px !important;
+        min-height: 38px !important;
+
+        padding: 2px 8px !important;
+        margin-bottom: 10px;
+
+        background: #f7f9fb !important;
+        border: 1px solid #d4dde6 !important;
+        border-radius: 8px !important;
+
+        box-sizing: border-box;
+        box-shadow: none !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetToolbar.sapMTB {
+        height: 38px !important;
+        min-height: 38px !important;
     }
 
     com-fd-djaja-sap-sac-excel .assetToolbar .sapMTB {
-        border:none !important;
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
     }
+
+
+    /* =========================================================
+       FILE UPLOADER
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetUploader {
-        min-width:270px;
+        width: 270px !important;
+        min-width: 270px !important;
     }
+
+
+    /* =========================================================
+       UPLOAD BUTTON
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetUploadItem {
-        margin-left:7px;
+        height: 34px !important;
+        min-height: 34px !important;
+
+        margin-left: 7px !important;
+        margin-right: 5px !important;
     }
+
+    com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
+        height: 34px !important;
+
+        min-width: 96px !important;
+        width: 96px !important;
+
+        padding: 0 13px !important;
+
+        background: #0a6ed1 !important;
+        border: 1px solid #0a6ed1 !important;
+        border-radius: 7px !important;
+
+        color: #ffffff !important;
+
+        font-size: 11px !important;
+        font-weight: 600 !important;
+
+        box-shadow: 0 1px 2px rgba(0,0,0,.10) !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnIcon {
+        color: #ffffff !important;
+        margin-right: 6px !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetUploadItem:hover .sapMBtnInner {
+        background: #085caf !important;
+        border-color: #085caf !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetUploadItem:active .sapMBtnInner {
+        background: #064f96 !important;
+        border-color: #064f96 !important;
+    }
+
+
+    /* =========================================================
+       CLEAR BUTTON
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetClearItem {
-        margin-left:3px;
+        height: 34px !important;
+        min-height: 34px !important;
+
+        margin-left: 0 !important;
+        margin-right: 8px !important;
     }
+
+    com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
+        height: 34px !important;
+
+        min-width: 78px !important;
+        width: 78px !important;
+
+        padding: 0 12px !important;
+
+        background: #ffffff !important;
+        border: 1px solid #b8c4cf !important;
+        border-radius: 7px !important;
+
+        color: #334e68 !important;
+
+        font-size: 11px !important;
+        font-weight: 600 !important;
+
+        box-shadow: 0 1px 2px rgba(0,0,0,.05) !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnIcon {
+        color: #52667a !important;
+        margin-right: 6px !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnInner {
+        background: #f5f7f9 !important;
+        border-color: #8fa1b1 !important;
+        color: #1d2d3e !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnIcon {
+        color: #bb1e10 !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetClearItem:active .sapMBtnInner {
+        background: #edf1f4 !important;
+        border-color: #8fa1b1 !important;
+    }
+
+
+    /* =========================================================
+       SEARCH
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetSearch {
-        width:230px !important;
-        margin-left:10px;
+        width: 230px !important;
+        margin-left: 10px !important;
     }
 
+    com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
+        border-radius: 6px !important;
+        border-color: #cfd8e3 !important;
+        box-shadow: none !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
+        font-size: 11px !important;
+    }
+
+
+    /* =========================================================
+       DROP ZONE
+       ========================================================= */
+
     com-fd-djaja-sap-sac-excel .assetDrop {
-        margin-top:8px;
-        padding:18px;
-        border:1.5px dashed #aebfce;
-        border-radius:10px;
-        background:#f9fbfd;
-        box-sizing:border-box;
+        margin-top: 8px;
+        padding: 18px;
+
+        border: 1.5px dashed #aebfce;
+        border-radius: 10px;
+
+        background: #f9fbfd;
+
+        box-sizing: border-box;
     }
 
     com-fd-djaja-sap-sac-excel .assetDropIcon {
-        color:#0a6ed1 !important;
-        margin-right:10px;
+        color: #0a6ed1 !important;
+        margin-right: 10px;
     }
 
     com-fd-djaja-sap-sac-excel .assetDropText {
-        color:#334e68 !important;
-        font-size:12px !important;
-        font-weight:600 !important;
+        color: #334e68 !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
     }
 
     com-fd-djaja-sap-sac-excel .assetHelp {
-        color:#788896 !important;
-        font-size:10px !important;
+        color: #788896 !important;
+        font-size: 10px !important;
     }
+
+
+    /* =========================================================
+       REQUIRED COLUMNS
+       ========================================================= */
 
     com-fd-djaja-sap-sac-excel .assetRequired {
-        margin-top:9px;
-        color:#687887 !important;
-        font-size:10px !important;
+        margin-top: 9px;
+        color: #687887 !important;
+        font-size: 10px !important;
     }
 
+
+    /* =========================================================
+       STATISTICS
+       ========================================================= */
+
     com-fd-djaja-sap-sac-excel .assetStats {
-        margin-top:10px;
+        margin-top: 10px;
     }
 
     com-fd-djaja-sap-sac-excel .assetMetric {
-        margin-right:7px;
-        padding:10px;
-        border:1px solid #e0e5ea;
-        border-radius:9px;
-        background:#fff;
-        min-width:95px;
+        margin-right: 7px;
+        padding: 10px;
+
+        border: 1px solid #e0e5ea;
+        border-radius: 9px;
+
+        background: #fff;
+
+        min-width: 95px;
     }
 
     com-fd-djaja-sap-sac-excel .assetMetricLabel {
-        color:#718096 !important;
-        font-size:9px !important;
+        color: #718096 !important;
+        font-size: 9px !important;
     }
 
     com-fd-djaja-sap-sac-excel .assetMetricValue {
-        color:#1d2d3e !important;
-        font-size:15px !important;
-        font-weight:700 !important;
+        color: #1d2d3e !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
     }
 
+
+    /* =========================================================
+       PREVIEW
+       ========================================================= */
+
     com-fd-djaja-sap-sac-excel .assetPreview {
-        margin-top:12px;
-        border:1px solid #e0e5ea;
-        border-radius:10px;
-        overflow:hidden;
+        margin-top: 12px;
+
+        border: 1px solid #e0e5ea;
+        border-radius: 10px;
+
+        overflow: hidden;
+        background: #fff;
     }
 
     com-fd-djaja-sap-sac-excel .assetPreviewHead {
-        padding:9px 12px;
-        background:#fafbfc;
-        border-bottom:1px solid #e7ebef;
+        padding: 9px 12px;
+
+        background: #fafbfc;
+        border-bottom: 1px solid #e7ebef;
     }
 
     com-fd-djaja-sap-sac-excel .assetPreviewTitle {
-        font-size:12px !important;
-        font-weight:700 !important;
-        color:#1d2d3e !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        color: #1d2d3e !important;
     }
 
-    com-fd-djaja-sap-sac-excel .assetFooter {
-        margin-top:9px;
-        color:#8a98a5 !important;
-        font-size:9px !important;
+
+    /* =========================================================
+       TABLE
+       ========================================================= */
+
+    com-fd-djaja-sap-sac-excel .assetPreview .sapMListTbl {
+        border: none !important;
     }
+
+    com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblHeaderCell {
+        background: #f7f9fb !important;
+        border-bottom: 1px solid #dfe5eb !important;
+    }
+
+    com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblCell {
+        border-bottom: 1px solid #edf0f3 !important;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    com-fd-djaja-sap-sac-excel .assetFooter {
+        margin-top: 9px;
+        color: #8a98a5 !important;
+        font-size: 9px !important;
+    }
+
     `;
 
 
@@ -681,14 +922,11 @@
                 '" type="sapui5/xmlview">' +
 
                 '<mvc:View ' +
-
                 'height="100%" ' +
-
                 'xmlns="sap.m" ' +
                 'xmlns:u="sap.ui.unified" ' +
                 'xmlns:core="sap.ui.core" ' +
                 'xmlns:mvc="sap.ui.core.mvc" ' +
-
                 'controllerName="myView.Template">' +
 
 
@@ -751,21 +989,31 @@
                     'class="assetUploader"/>' +
 
 
+                    /* ===============================
+                       UPLOAD BUTTON
+                       =============================== */
+
                     '<Button ' +
                     'text="Upload" ' +
                     'press="onValidate" ' +
                     'id="__uploadButton" ' +
                     'icon="sap-icon://upload" ' +
                     'type="Emphasized" ' +
-                    'class="assetBtn assetBlue assetUploadItem"/>' +
+                    'width="96px" ' +
+                    'class="assetUploadItem"/>' +
 
+
+                    /* ===============================
+                       CLEAR BUTTON
+                       =============================== */
 
                     '<Button ' +
                     'text="Clear" ' +
                     'press="onClear" ' +
                     'icon="sap-icon://decline" ' +
-                    'type="Transparent" ' +
-                    'class="assetBtn assetClearItem"/>' +
+                    'type="Default" ' +
+                    'width="78px" ' +
+                    'class="assetClearItem"/>' +
 
 
                     '<ToolbarSpacer/>' +
@@ -879,7 +1127,6 @@
                     'growing="true" ' +
                     'growingThreshold="100">' +
 
-
                         '<columns>' +
 
                             '<Column>' +
@@ -960,9 +1207,7 @@
 
 
                 '</VBox>' +
-
                 '</mvc:View>' +
-
                 '</script>';
 
 
@@ -971,7 +1216,9 @@
             );
 
 
-            /* FRAGMENT */
+            /* =====================================================
+               FRAGMENT
+               ===================================================== */
 
             let div1 =
                 document.createElement("div");
@@ -1012,7 +1259,6 @@
                 '</SelectDialog>' +
 
                 '</core:FragmentDefinition>' +
-
                 '</script>';
 
 
@@ -1021,7 +1267,9 @@
             );
 
 
-            /* UI5 CONTENT */
+            /* =====================================================
+               UI5 CONTENT
+               ===================================================== */
 
             let div2 =
                 document.createElement("div");
@@ -1081,13 +1329,11 @@
            ===================================================== */
 
         sap.ui.getCore().attachInit(
-            function() {
+            function () {
 
                 "use strict";
 
-
                 sap.ui.define(
-
                     [
                         "jquery.sap.global",
                         "sap/ui/core/mvc/Controller",
@@ -1108,8 +1354,7 @@
                         "sap/m/BusyDialog"
                     ],
 
-
-                    function(
+                    function (
                         jQuery,
                         Controller,
                         JSONModel,
@@ -1139,9 +1384,7 @@
 
 
                         return Controller.extend(
-
                             "myView.Template",
-
                             {
 
 
@@ -1149,7 +1392,7 @@
                                    INIT
                                    ================================================= */
 
-                                onInit: function() {
+                                onInit: function () {
 
                                     console.log(
                                         that._export_settings.title
@@ -1174,7 +1417,7 @@
                                    VALIDATE / UPLOAD
                                    ================================================= */
 
-                                onValidate: function(e) {
+                                onValidate: function (e) {
 
                                     var fU =
                                         this.getView().byId(
@@ -1184,7 +1427,8 @@
 
                                     var fileInput =
                                         document.getElementById(
-                                            fU.getId() + "-fu"
+                                            fU.getId() +
+                                            "-fu"
                                         );
 
 
@@ -1195,7 +1439,8 @@
                                             : undefined;
 
 
-                                    var this_ = this;
+                                    var this_ =
+                                        this;
 
 
                                     if (
@@ -1228,7 +1473,7 @@
 
 
                                     reader.onload =
-                                        async function(e) {
+                                        async function (e) {
 
                                             try {
 
@@ -1246,16 +1491,13 @@
 
 
                                                 var result_final = [];
-
                                                 var result = [];
-
-                                                var correctsheet =
-                                                    false;
+                                                var correctsheet = false;
 
 
                                                 workbook.SheetNames
                                                     .forEach(
-                                                        function(
+                                                        function (
                                                             sheetName
                                                         ) {
 
@@ -1323,7 +1565,6 @@
 
 
                                                     var rec_count = 0;
-
                                                     var len = 0;
 
 
@@ -1331,7 +1572,6 @@
                                                         lengthfield ===
                                                         7
                                                     ) {
-
 
                                                         var rows =
                                                             result.split(
@@ -1363,33 +1603,13 @@
                                                                 ) {
 
                                                                     len =
-                                                                        rec[0]
-                                                                            .trim()
-                                                                            .length +
-
-                                                                        rec[1]
-                                                                            .trim()
-                                                                            .length +
-
-                                                                        rec[2]
-                                                                            .trim()
-                                                                            .length +
-
-                                                                        rec[3]
-                                                                            .trim()
-                                                                            .length +
-
-                                                                        rec[4]
-                                                                            .trim()
-                                                                            .length +
-
-                                                                        rec[5]
-                                                                            .trim()
-                                                                            .length +
-
-                                                                        rec[6]
-                                                                            .trim()
-                                                                            .length;
+                                                                        rec[0].trim().length +
+                                                                        rec[1].trim().length +
+                                                                        rec[2].trim().length +
+                                                                        rec[3].trim().length +
+                                                                        rec[4].trim().length +
+                                                                        rec[5].trim().length +
+                                                                        rec[6].trim().length;
 
 
                                                                     if (
@@ -1467,8 +1687,6 @@
                                                             );
 
                                                             this_.runNext();
-
-
                                                         }
 
 
@@ -1500,8 +1718,6 @@
                                                             );
 
                                                             this_.runNext();
-
-
                                                         }
 
 
@@ -1521,13 +1737,11 @@
 
 
                                                             oModel.setData({
-
                                                                 result_final:
                                                                     result_final,
 
                                                                 rows:
                                                                     result_final
-
                                                             });
 
 
@@ -1546,7 +1760,6 @@
 
                                                             this_
                                                                 .updateStats(
-
                                                                     result_final
                                                                         .length,
 
@@ -1600,7 +1813,6 @@
 
 
                                                             that.dispatchEvent(
-
                                                                 new CustomEvent(
                                                                     "onStart",
                                                                     {
@@ -1622,7 +1834,6 @@
                                                             );
                                                         }
 
-
                                                     }
 
                                                     else {
@@ -1630,17 +1841,14 @@
                                                         this_
                                                             .runNext();
 
-
                                                         fU.setValue(
                                                             ""
                                                         );
-
 
                                                         MessageToast.show(
                                                             "Please upload the correct file"
                                                         );
                                                     }
-
 
                                                 }
 
@@ -1660,8 +1868,9 @@
                                                     );
                                                 }
 
+                                            }
 
-                                            } catch (error) {
+                                            catch (error) {
 
                                                 console.error(
                                                     "Excel validation error:",
@@ -1682,7 +1891,6 @@
                                                     "Unable to read the Excel file"
                                                 );
                                             }
-
                                         };
 
 
@@ -1697,14 +1905,12 @@
                                    ================================================= */
 
                                 onDownloadTemplate:
-                                    function() {
+                                    function () {
 
                                         try {
 
                                             var data = [
-
                                                 {
-
                                                     ID: "",
                                                     DESCRIPTION: "",
                                                     ASSET_TYPE: "",
@@ -1712,21 +1918,16 @@
                                                     ASSET_CLASS: "",
                                                     COST_CENTER: "",
                                                     CWIP: ""
-
                                                 }
-
                                             ];
 
 
                                             var worksheet =
                                                 XLSX.utils
                                                     .json_to_sheet(
-
                                                         data,
-
                                                         {
                                                             header: [
-
                                                                 "ID",
                                                                 "DESCRIPTION",
                                                                 "ASSET_TYPE",
@@ -1734,7 +1935,6 @@
                                                                 "ASSET_CLASS",
                                                                 "COST_CENTER",
                                                                 "CWIP"
-
                                                             ]
                                                         }
                                                     );
@@ -1747,21 +1947,15 @@
 
                                             XLSX.utils
                                                 .book_append_sheet(
-
                                                     workbook,
-
                                                     worksheet,
-
                                                     "Sheet1"
                                                 );
 
 
                                             XLSX.writeFile(
-
                                                 workbook,
-
                                                 "Asset_Upload_Template.xlsx"
-
                                             );
 
 
@@ -1769,8 +1963,9 @@
                                                 "Template downloaded successfully"
                                             );
 
+                                        }
 
-                                        } catch (error) {
+                                        catch (error) {
 
                                             console.error(
                                                 "Template download error:",
@@ -1790,7 +1985,7 @@
                                    ================================================= */
 
                                 onClear:
-                                    function() {
+                                    function () {
 
                                         try {
 
@@ -1873,14 +2068,12 @@
 
 
                                             this.updateStats(
-
                                                 0,
                                                 0,
                                                 0,
                                                 "-",
                                                 0,
                                                 "Ready"
-
                                             );
 
 
@@ -1917,8 +2110,9 @@
                                                 "Upload cleared"
                                             );
 
+                                        }
 
-                                        } catch (error) {
+                                        catch (error) {
 
                                             console.error(
                                                 "Clear error:",
@@ -1933,7 +2127,7 @@
                                    ================================================= */
 
                                 onSearchPreview:
-                                    function(oEvent) {
+                                    function (oEvent) {
 
                                         try {
 
@@ -1984,7 +2178,6 @@
 
 
                                             var fields = [
-
                                                 "ID",
                                                 "DESCRIPTION",
                                                 "ASSET_TYPE",
@@ -1992,7 +2185,6 @@
                                                 "ASSET_CLASS",
                                                 "COST_CENTER",
                                                 "CWIP"
-
                                             ];
 
 
@@ -2000,36 +2192,26 @@
 
 
                                             fields.forEach(
-                                                function(
-                                                    field
-                                                ) {
+                                                function (field) {
 
                                                     filters.push(
-
                                                         new Filter(
-
                                                             field,
-
                                                             FilterOperator.Contains,
-
                                                             value
-
                                                         )
                                                     );
-
                                                 }
                                             );
 
 
                                             var combinedFilter =
                                                 new Filter({
-
                                                     filters:
                                                         filters,
 
                                                     and:
                                                         false
-
                                                 });
 
 
@@ -2039,8 +2221,9 @@
                                                 ]
                                             );
 
+                                        }
 
-                                        } catch (error) {
+                                        catch (error) {
 
                                             console.error(
                                                 "Preview search error:",
@@ -2055,7 +2238,7 @@
                                    ================================================= */
 
                                 setPreview:
-                                    function(result_final) {
+                                    function (result_final) {
 
                                         try {
 
@@ -2084,13 +2267,11 @@
 
 
                                             model.setData({
-
                                                 result_final:
                                                     result_final || [],
 
                                                 rows:
                                                     result_final || []
-
                                             });
 
 
@@ -2142,20 +2323,18 @@
                                             if (count) {
 
                                                 count.setText(
-
                                                     n +
-
                                                     (
                                                         n === 1
                                                             ? " row"
                                                             : " rows"
                                                     )
-
                                                 );
                                             }
 
+                                        }
 
-                                        } catch (error) {
+                                        catch (error) {
 
                                             console.error(
                                                 "Preview update error:",
@@ -2170,15 +2349,13 @@
                                    ================================================= */
 
                                 updateStats:
-                                    function(
-
+                                    function (
                                         rowsRead,
                                         validRows,
                                         invalidRows,
                                         sheet,
                                         columns,
                                         status
-
                                     ) {
 
                                         try {
@@ -2188,7 +2365,7 @@
 
 
                                             var setText =
-                                                function(
+                                                function (
                                                     id,
                                                     value
                                                 ) {
@@ -2245,8 +2422,9 @@
                                                 status || "Ready"
                                             );
 
+                                        }
 
-                                        } catch (error) {
+                                        catch (error) {
 
                                             console.error(
                                                 "Statistics error:",
@@ -2261,13 +2439,15 @@
                                    ================================================= */
 
                                 wasteTime:
-                                    function() {
+                                    function () {
 
                                         try {
 
                                             busyDialog.open();
 
-                                        } catch (error) {
+                                        }
+
+                                        catch (error) {
 
                                             console.error(
                                                 error
@@ -2277,13 +2457,15 @@
 
 
                                 runNext:
-                                    function() {
+                                    function () {
 
                                         try {
 
                                             busyDialog.close();
 
-                                        } catch (error) {
+                                        }
+
+                                        catch (error) {
 
                                             console.error(
                                                 error
@@ -2292,9 +2474,7 @@
                                     }
 
                             }
-
                         );
-
                     }
                 );
 
@@ -2322,18 +2502,12 @@
                 );
 
 
-                /* =====================================================
-                   CREATE XML VIEW
-                   ===================================================== */
-
                 var oView =
                     sap.ui.xmlview({
-
                         viewContent:
                             jQuery(
                                 divfinal
                             ).html()
-
                     });
 
 
@@ -2404,7 +2578,7 @@
     ) {
 
         return new Promise(
-            function(
+            function (
                 resolve,
                 reject
             ) {
@@ -2426,6 +2600,7 @@
                             "Load: " +
                             src
                         );
+
 
                         resolve(
                             script
