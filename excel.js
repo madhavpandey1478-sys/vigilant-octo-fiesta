@@ -23,6 +23,11 @@ com-fd-djaja-sap-sac-excel {
     box-sizing:border-box;
 }
 
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
 com-fd-djaja-sap-sac-excel .assetCard {
     width:100%;
     min-height:100%;
@@ -36,9 +41,10 @@ com-fd-djaja-sap-sac-excel .assetCard {
     overflow:hidden;
 }
 
-/* =========================
+
+/* =========================================================
    HEADER
-   ========================= */
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetHeader {
     width:100%;
@@ -72,37 +78,57 @@ com-fd-djaja-sap-sac-excel .assetSubtitle {
     margin-top:2px;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
 
-com-fd-djaja-sap-sac-excel .assetBtn .sapMBtnInner {
-    border-radius:7px !important;
-    font-size:11px !important;
-    font-weight:600 !important;
-    height:34px !important;
-    min-width:82px !important;
-    box-shadow:none !important;
+/* =========================================================
+   COMMON BUTTON
+   ========================================================= */
+
+com-fd-djaja-sap-sac-excel .assetBtn {
+    margin-top:0 !important;
+    margin-bottom:0 !important;
 }
 
+com-fd-djaja-sap-sac-excel .assetBtn .sapMBtnInner {
+    border-radius:6px !important;
+    font-size:11px !important;
+    font-weight:600 !important;
+    height:32px !important;
+    min-width:82px !important;
+    box-shadow:none !important;
+    box-sizing:border-box !important;
+}
+
+
+/* =========================================================
+   DOWNLOAD TEMPLATE BUTTON
+   ========================================================= */
+
 com-fd-djaja-sap-sac-excel .assetDownloadBtn {
-    margin-left:12px;
-    margin-right:0;
+    margin-left:12px !important;
+    margin-right:0 !important;
 }
 
 com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnInner {
     min-width:150px !important;
+    height:34px !important;
+    border-radius:7px !important;
 }
+
+
+/* =========================================================
+   BLUE BUTTON
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetBlue .sapMBtnInner {
     background:#0a6ed1 !important;
-    border-color:#0a6ed1 !important;
+    border:1px solid #0a6ed1 !important;
     color:#fff !important;
 }
 
-/* =========================
+
+/* =========================================================
    TOOLBAR
-   ========================= */
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetToolbar {
     width:100%;
@@ -132,23 +158,126 @@ com-fd-djaja-sap-sac-excel .assetToolbar .sapMToolbarSpacer {
     flex:1 1 auto !important;
 }
 
+
+/* =========================================================
+   FILE UPLOADER
+   ========================================================= */
+
 com-fd-djaja-sap-sac-excel .assetUploader {
     width:270px !important;
     min-width:270px !important;
 }
 
+
+/* =========================================================
+   UPLOAD BUTTON
+   ========================================================= */
+
 com-fd-djaja-sap-sac-excel .assetUploadItem {
-    margin-left:7px;
+    margin-left:8px !important;
+    margin-right:0 !important;
+    height:32px !important;
 }
 
-com-fd-djaja-sap-sac-excel .assetClearItem {
-    margin-left:3px;
-    margin-right:7px;
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
+    height:32px !important;
+    min-width:92px !important;
+    padding:0 13px !important;
+
+    border:1px solid #0a6ed1 !important;
+    border-radius:6px !important;
+
+    background:#0a6ed1 !important;
+    color:#ffffff !important;
+
+    font-size:11px !important;
+    font-weight:600 !important;
+
+    box-shadow:none !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    box-sizing:border-box !important;
 }
+
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnIcon {
+    color:#ffffff !important;
+    margin-right:6px !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetUploadItem:hover .sapMBtnInner {
+    background:#085cad !important;
+    border-color:#085cad !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetUploadItem:active .sapMBtnInner {
+    background:#064f96 !important;
+    border-color:#064f96 !important;
+}
+
+
+/* =========================================================
+   CLEAR BUTTON
+   ========================================================= */
+
+com-fd-djaja-sap-sac-excel .assetClearItem {
+    margin-left:5px !important;
+    margin-right:8px !important;
+    height:32px !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
+    height:32px !important;
+    min-width:68px !important;
+    padding:0 11px !important;
+
+    border:1px solid #c7d1db !important;
+    border-radius:6px !important;
+
+    background:#ffffff !important;
+    color:#52667a !important;
+
+    font-size:11px !important;
+    font-weight:600 !important;
+
+    box-shadow:none !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    box-sizing:border-box !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnIcon {
+    color:#0a6ed1 !important;
+    margin-right:5px !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnInner {
+    background:#f5f8fa !important;
+    border-color:#aebdca !important;
+    color:#1d2d3e !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnIcon {
+    color:#d1495b !important;
+}
+
+com-fd-djaja-sap-sac-excel .assetClearItem:active .sapMBtnInner {
+    background:#edf1f4 !important;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetSearch {
     width:230px !important;
-    margin-left:8px;
+    margin-left:8px !important;
 }
 
 com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
@@ -157,9 +286,14 @@ com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
     box-shadow:none !important;
 }
 
-/* =========================
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
+    font-size:11px !important;
+}
+
+
+/* =========================================================
    DROP ZONE
-   ========================= */
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetDrop {
     width:100%;
@@ -190,9 +324,10 @@ com-fd-djaja-sap-sac-excel .assetHelp {
     margin-top:2px;
 }
 
-/* =========================
+
+/* =========================================================
    REQUIRED COLUMNS
-   ========================= */
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetRequired {
     width:100%;
@@ -203,9 +338,10 @@ com-fd-djaja-sap-sac-excel .assetRequired {
     box-sizing:border-box;
 }
 
-/* =========================
+
+/* =========================================================
    STATISTICS
-   ========================= */
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetStats {
     width:100%;
@@ -218,9 +354,12 @@ com-fd-djaja-sap-sac-excel .assetMetric {
     min-height:66px;
     margin:0 7px 0 0;
     padding:9px 10px;
+
     border:1px solid #d9e2ec;
     border-radius:9px;
+
     background:#fff;
+
     box-sizing:border-box;
 }
 
@@ -238,26 +377,39 @@ com-fd-djaja-sap-sac-excel .assetMetricValue {
     margin-top:3px;
 }
 
-/* =========================
-   PREVIEW
-   ========================= */
+
+/* =========================================================
+   PREVIEW CONTAINER
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetPreview {
     width:100%;
     margin:12px 0 0;
+
     border:1px solid #d9e2ec;
     border-radius:10px;
+
     overflow:hidden;
     background:#fff;
+
     box-sizing:border-box;
 }
+
+
+/* =========================================================
+   PREVIEW HEADER
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetPreviewHead {
     width:100%;
     min-height:40px;
+
     padding:9px 13px;
+
     background:#fafbfc;
+
     border-bottom:1px solid #e1e7ec;
+
     box-sizing:border-box;
 }
 
@@ -274,6 +426,11 @@ com-fd-djaja-sap-sac-excel .assetPreviewHead .sapMText:not(.assetPreviewTitle) {
     font-size:11px !important;
 }
 
+
+/* =========================================================
+   PREVIEW TABLE
+   ========================================================= */
+
 com-fd-djaja-sap-sac-excel .assetPreview .sapMListTbl {
     border:none !important;
 }
@@ -287,22 +444,30 @@ com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblCell {
     border-bottom:1px solid #edf0f3 !important;
 }
 
+
+/* =========================================================
+   EMPTY PREVIEW
+   ========================================================= */
+
 com-fd-djaja-sap-sac-excel .assetPreview > .sapMFlexBox:last-child {
     min-height:53px;
     padding:10px;
     box-sizing:border-box;
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-   ========================= */
+   ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetFooter {
     width:100%;
     margin:8px 0 0;
+
     color:#8a98a5 !important;
     font-size:9px !important;
     line-height:1.25 !important;
+
     box-sizing:border-box;
 }
 `;
