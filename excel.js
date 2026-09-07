@@ -172,14 +172,14 @@ com-fd-djaja-sap-sac-excel .assetUploader {
    ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetUploadItem {
-    height:32px !important;
+    height:30px !important;
 
     margin-left:8px !important;
     margin-right:4px !important;
 }
 
 com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
-    height:32px !important;
+    height:30px !important;
     min-width:92px !important;
     width:92px !important;
 
@@ -224,14 +224,14 @@ com-fd-djaja-sap-sac-excel .assetUploadItem:active .sapMBtnInner {
    ========================================================= */
 
 com-fd-djaja-sap-sac-excel .assetClearItem {
-    height:32px !important;
+    height:30px !important;
 
     margin-left:4px !important;
     margin-right:8px !important;
 }
 
 com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
-    height:32px !important;
+    height:30px !important;
     min-width:72px !important;
     width:72px !important;
 
@@ -286,7 +286,7 @@ com-fd-djaja-sap-sac-excel .assetSearch {
 
 com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
     border-radius:6px !important;
-    border-color:#cfd8e3 !important;
+    border-color:##b8c4cf !important;
     box-shadow:none !important;
 }
 
