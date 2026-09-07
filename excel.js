@@ -398,7 +398,6 @@ com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
     font-size: 11px !important;
 }
 
-`;
     /* =========================================================
        DROP ZONE
        ========================================================= */
