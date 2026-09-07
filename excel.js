@@ -232,8 +232,8 @@ com-fd-djaja-sap-sac-excel .assetClearItem {
 
 com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
     height:30px !important;
-    min-width:72px !important;
-    width:72px !important;
+    min-width:120px !important;
+    width:120px !important;
 
     padding:0 10px !important;
 
