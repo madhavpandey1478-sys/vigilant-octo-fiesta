@@ -1535,19 +1535,35 @@ com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
 
 
                                     if (
-                                        typeof file ===
-                                        "undefined"
-                                    ) {
+    typeof file ===
+    "undefined"
+) {
 
-                                        MessageToast.show(
-                                            "Please choose an Excel file first"
-                                        );
+    MessageToast.show(
+        "Please choose an Excel file first"
+    );
 
-                                        return;
-                                    }
+    return;
+}
 
 
-                                    this_.wasteTime();
+/* =================================================
+   SAC EVENT: onValidate
+   ================================================= */
+
+that_.dispatchEvent(
+    new CustomEvent(
+        "onValidate",
+        {
+            detail: {
+                fileName: file.name
+            }
+        }
+    )
+);
+
+
+this_.wasteTime();
 
 
                                     var oModel =
@@ -2194,12 +2210,28 @@ com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
                                             );
 
 
-                                            _result = "";
+                                          _result = "";
 
 
-                                            MessageToast.show(
-                                                "Upload cleared"
-                                            );
+/* =================================================
+   SAC EVENT: onClear
+   ================================================= */
+
+that_.dispatchEvent(
+    new CustomEvent(
+        "onClear",
+        {
+            detail: {
+                cleared: true
+            }
+        }
+    )
+);
+
+
+MessageToast.show(
+    "Upload cleared"
+);
 
                                         }
 
