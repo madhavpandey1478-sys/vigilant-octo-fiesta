@@ -1,6 +1,6 @@
 {
   "id": "com.fd.djaja.sap.sac.excel",
-  "version": "6.7.0",
+  "version": "2.2.1",
   "name": "Asset",
   "description": "Asset",
   "newInstancePrefix": "Asset",
@@ -146,9 +146,15 @@
       "body": "this.footer = value;"
     }
   },
-  "events": {
+ "events": {
     "onStart": {
-      "description": "Specify the SAC Script that shall be triggered when the Export process is started."
+        "description": "Triggered when the Excel upload process is started."
+    },
+    "onValidate": {
+        "description": "Triggered when the Excel file is validated."
+    },
+    "onClear": {
+        "description": "Triggered when the uploaded Excel data is cleared."
     }
-  }
+}
 }
