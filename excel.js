@@ -512,9 +512,8 @@ com-fd-djaja-sap-sac-excel .assetRequired {
    STATISTICS
    ========================================================= */
 
-com-fd-djaja-sap-excel .assetStats {
+com-fd-djaja-sap-sac-excel .assetStats {
     width: 100% !important;
-
     margin: 0 !important;
 
     display: flex !important;
@@ -522,9 +521,8 @@ com-fd-djaja-sap-excel .assetStats {
     gap: 7px !important;
 }
 
-com-fd-djaja-sap-excel .assetMetric {
+com-fd-djaja-sap-sac-excel .assetMetric {
     flex: 1 1 0 !important;
-
     min-width: 0 !important;
     width: auto !important;
 
@@ -539,7 +537,7 @@ com-fd-djaja-sap-excel .assetMetric {
     overflow: hidden !important;
 }
 
-com-fd-djaja-sap-excel .assetMetricLabel {
+com-fd-djaja-sap-sac-excel .assetMetricLabel {
     color: #718096 !important;
 
     font-size: 9px !important;
@@ -550,7 +548,7 @@ com-fd-djaja-sap-excel .assetMetricLabel {
     text-overflow: ellipsis !important;
 }
 
-com-fd-djaja-sap-excel .assetMetricValue {
+com-fd-djaja-sap-sac-excel .assetMetricValue {
     margin-top: 2px !important;
 
     color: #1d2d3e !important;
@@ -560,7 +558,6 @@ com-fd-djaja-sap-excel .assetMetricValue {
 
     font-weight: 700 !important;
 }
-
 
 /* =========================================================
    PREVIEW
@@ -1276,40 +1273,39 @@ com-fd-djaja-sap-sac-excel .assetFooter {
 
                 /* STATISTICS */
 
-                '<HBox class="assetStats">' +
+               <VBox class="assetStats">
 
-                    '<VBox class="assetMetric">' +
-                        '<Text text="Rows Read" class="assetMetricLabel"/>' +
-                        '<Text id="rowsRead" text="0" class="assetMetricValue"/>' +
-                    '</VBox>' +
+    <VBox class="assetMetric">
+        <Text text="Rows Read" class="assetMetricLabel"/>
+        <Text text="0" class="assetMetricValue"/>
+    </VBox>
 
-                    '<VBox class="assetMetric">' +
-                        '<Text text="Valid Rows" class="assetMetricLabel"/>' +
-                        '<Text id="validRows" text="0" class="assetMetricValue"/>' +
-                    '</VBox>' +
+    <VBox class="assetMetric">
+        <Text text="Valid Rows" class="assetMetricLabel"/>
+        <Text text="0" class="assetMetricValue"/>
+    </VBox>
 
-                    '<VBox class="assetMetric">' +
-                        '<Text text="Invalid Rows" class="assetMetricLabel"/>' +
-                        '<Text id="invalidRows" text="0" class="assetMetricValue"/>' +
-                    '</VBox>' +
+    <VBox class="assetMetric">
+        <Text text="Invalid Rows" class="assetMetricLabel"/>
+        <Text text="0" class="assetMetricValue"/>
+    </VBox>
 
-                    '<VBox class="assetMetric">' +
-                        '<Text text="Sheet" class="assetMetricLabel"/>' +
-                        '<Text id="sheetName" text="-" class="assetMetricValue"/>' +
-                    '</VBox>' +
+    <VBox class="assetMetric">
+        <Text text="Sheet" class="assetMetricLabel"/>
+        <Text text="-" class="assetMetricValue"/>
+    </VBox>
 
-                    '<VBox class="assetMetric">' +
-                        '<Text text="Columns" class="assetMetricLabel"/>' +
-                        '<Text id="columnCount" text="0" class="assetMetricValue"/>' +
-                    '</VBox>' +
+    <VBox class="assetMetric">
+        <Text text="Columns" class="assetMetricLabel"/>
+        <Text text="0" class="assetMetricValue"/>
+    </VBox>
 
-                    '<VBox class="assetMetric">' +
-                        '<Text text="Validation" class="assetMetricLabel"/>' +
-                        '<Text id="validationStatus" text="Ready" class="assetMetricValue"/>' +
-                    '</VBox>' +
+    <VBox class="assetMetric">
+        <Text text="Validation" class="assetMetricLabel"/>
+        <Text text="Ready" class="assetMetricValue"/>
+    </VBox>
 
-                '</HBox>' +
-
+</VBox>
 
                 /* PREVIEW */
 
