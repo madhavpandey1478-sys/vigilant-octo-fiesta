@@ -1083,6 +1083,535 @@ com-fd-djaja-sap-sac-excel .assetFooter {
 }
 
 
+
+/* =========================================================
+
+   FINAL UI OVERRIDES - MATCH REFERENCE DESIGN
+
+   ========================================================= */
+
+
+/* Header: compact, clean, no icon */
+
+com-fd-djaja-sap-sac-excel .assetCard {
+
+    padding: 4px !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    background: #ffffff !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetHeader {
+
+    min-height: 52px !important;
+
+    margin: 0 0 6px 0 !important;
+
+    padding: 0 !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetTitle {
+
+    color: #0070f2 !important;
+
+    font-size: 17px !important;
+
+    line-height: 20px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetSubtitle {
+
+    color: #647789 !important;
+
+    font-size: 11px !important;
+
+}
+
+
+/* Header action group */
+
+com-fd-djaja-sap-sac-excel .assetHeaderActions {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 8px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetHeaderReady .sapMBtnInner {
+
+    height: 34px !important;
+
+    min-width: 62px !important;
+
+    padding: 0 12px !important;
+
+    border: 1px solid #d6dce2 !important;
+
+    border-radius: 7px !important;
+
+    background: #f6f7f8 !important;
+
+    color: #263746 !important;
+
+    font-size: 11px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetErrorLogBtn .sapMBtnInner {
+
+    height: 34px !important;
+
+    min-width: 162px !important;
+
+    padding: 0 12px !important;
+
+    border: 1px solid #d6dce2 !important;
+
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+
+    color: #7b8793 !important;
+
+    font-size: 11px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetToggleBtn .sapMBtnInner {
+
+    height: 34px !important;
+
+    min-width: 132px !important;
+
+    padding: 0 12px !important;
+
+    border: 1px solid #c9d2dc !important;
+
+    border-radius: 7px !important;
+
+    background: #ffffff !important;
+
+    color: #263746 !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+}
+
+
+/* Toolbar */
+
+com-fd-djaja-sap-sac-excel .assetToolbar {
+
+    height: 62px !important;
+
+    min-height: 62px !important;
+
+    margin: 0 0 7px 0 !important;
+
+    padding: 7px 14px !important;
+
+    background: #fbfcfd !important;
+
+    border: 1px solid #d9e1e8 !important;
+
+    border-radius: 9px !important;
+
+    overflow: visible !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetToolbar.sapMTB {
+
+    height: 62px !important;
+
+    min-height: 62px !important;
+
+    padding: 7px 14px !important;
+
+}
+
+
+/* File uploader */
+
+com-fd-djaja-sap-sac-excel .assetUploader {
+
+    width: 338px !important;
+
+    min-width: 338px !important;
+
+    height: 46px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupInput {
+
+    height: 46px !important;
+
+    line-height: 44px !important;
+
+    border-radius: 9px 0 0 9px !important;
+
+    font-size: 12px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton {
+
+    width: 102px !important;
+
+    min-width: 102px !important;
+
+    height: 46px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton .sapMBtnInner {
+
+    width: 102px !important;
+
+    min-width: 102px !important;
+
+    height: 46px !important;
+
+    border-radius: 0 9px 9px 0 !important;
+
+    font-size: 12px !important;
+
+}
+
+
+/* Main Upload/Clear buttons */
+
+com-fd-djaja-sap-sac-excel .assetUploadItem,
+
+com-fd-djaja-sap-sac-excel .assetClearItem {
+
+    height: 46px !important;
+
+    min-height: 46px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetUploadItem {
+
+    width: 104px !important;
+
+    min-width: 104px !important;
+
+    margin: 0 3px 0 10px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
+
+    width: 104px !important;
+
+    min-width: 104px !important;
+
+    height: 46px !important;
+
+    border-radius: 9px !important;
+
+    font-size: 12px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetClearItem {
+
+    width: 104px !important;
+
+    min-width: 104px !important;
+
+    margin: 0 !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
+
+    width: 104px !important;
+
+    min-width: 104px !important;
+
+    height: 46px !important;
+
+    border-radius: 9px !important;
+
+    font-size: 12px !important;
+
+}
+
+
+/* Search */
+
+com-fd-djaja-sap-sac-excel .assetSearch {
+
+    width: 360px !important;
+
+    min-width: 360px !important;
+
+    height: 46px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
+
+    height: 46px !important;
+
+    border-radius: 9px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
+
+    height: 44px !important;
+
+    font-size: 12px !important;
+
+}
+
+
+/* Required columns */
+
+com-fd-djaja-sap-sac-excel .assetRequired {
+
+    margin: 0 14px 10px 14px !important;
+
+    width: calc(100% - 28px) !important;
+
+    color: #607284 !important;
+
+    font-size: 11px !important;
+
+    line-height: 16px !important;
+
+}
+
+
+/* Stats: FORCE horizontal row on UI5 VBox */
+
+com-fd-djaja-sap-sac-excel .assetStats {
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 14px !important;
+
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    align-items: stretch !important;
+
+    gap: 9px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetStats > .sapMFlexItem {
+
+    flex: 1 1 0 !important;
+
+    min-width: 0 !important;
+
+    width: 0 !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetMetric {
+
+    width: 100% !important;
+
+    min-width: 0 !important;
+
+    min-height: 58px !important;
+
+    padding: 10px 12px !important;
+
+    border: 1px solid #e0e6ec !important;
+
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetMetricLabel {
+
+    font-size: 10px !important;
+
+    line-height: 14px !important;
+
+    color: #667789 !important;
+
+}
+
+
+com-fd-djaja-sap-excel .assetMetricValue {
+
+    margin-top: 2px !important;
+
+    font-size: 16px !important;
+
+    line-height: 19px !important;
+
+    color: #102a43 !important;
+
+}
+
+
+/* Preview */
+
+com-fd-djaja-sap-sac-excel .assetPreview {
+
+    width: 100% !important;
+
+    min-height: 255px !important;
+
+    margin-top: 10px !important;
+
+    border: 1px solid #dfe5eb !important;
+
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetPreviewHead {
+
+    width: 100% !important;
+
+    min-height: 42px !important;
+
+    padding: 0 12px !important;
+
+    background: #f8fafc !important;
+
+    border-bottom: 1px solid #e3e8ed !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetPreviewHead > .sapMFlexItem:last-child {
+
+    margin-left: auto !important;
+
+}
+
+
+com-fd-djaja-sap-excel .assetPreviewTitle {
+
+    font-size: 12px !important;
+
+    font-weight: 700 !important;
+
+    color: #1d2d3e !important;
+
+}
+
+
+com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
+
+    font-size: 10px !important;
+
+    color: #718096 !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblHeaderCell {
+
+    height: 34px !important;
+
+    background: #f7f9fb !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblCell {
+
+    height: 30px !important;
+
+    font-size: 10px !important;
+
+}
+
+
+com-fd-djaja-sap-sac-excel #previewEmpty {
+
+    width: 100% !important;
+
+    min-height: 210px !important;
+
+    padding: 12px !important;
+
+    display: flex !important;
+
+    align-items: flex-start !important;
+
+    justify-content: flex-start !important;
+
+    color: #718096 !important;
+
+    font-size: 12px !important;
+
+}
+
+
+/* Footer */
+
+com-fd-djaja-sap-sac-excel .assetFooter {
+
+    margin: 7px 0 0 0 !important;
+
+    padding: 0 0 0 1px !important;
+
+    color: #8795a3 !important;
+
+    font-size: 9px !important;
+
+}
+
+
 `;
 
 
@@ -1932,56 +2461,79 @@ com-fd-djaja-sap-sac-excel .assetFooter {
                 'justifyContent="SpaceBetween">' +
 
 
-                    '<HBox alignItems="Center">' +
+                    '<VBox>' +
 
 
-                        '<core:Icon ' +
+                        '<Text ' +
 
-                        'src="sap-icon://excel-attachment" ' +
+                        'text="Excel Upload" ' +
 
-                        'size="1.4rem" ' +
-
-                        'class="assetIcon"/>' +
+                        'class="assetTitle"/>' +
 
 
-                        '<VBox>' +
+                        '<Text ' +
+
+                        'text="Upload and validate Excel file" ' +
+
+                        'class="assetSubtitle"/>' +
 
 
-                            '<Text ' +
-
-                            'text="Excel Upload" ' +
-
-                            'class="assetTitle"/>' +
+                    '</VBox>' +
 
 
-                            '<Text ' +
+                    '<HBox ' +
 
-                            'text="Upload and validate Excel file" ' +
+                    'class="assetHeaderActions" ' +
 
-                            'class="assetSubtitle"/>' +
+                    'alignItems="Center">' +
 
 
-                        '</VBox>' +
+                        '<Button ' +
+
+                        'text="Download Template" ' +
+
+                        'press="onDownloadTemplate" ' +
+
+                        'icon="sap-icon://download" ' +
+
+                        'type="Emphasized" ' +
+
+                        'class="assetBtn assetDownloadBtn"/>' +
+
+
+                        '<Button ' +
+
+                        'text="Ready" ' +
+
+                        'enabled="false" ' +
+
+                        'class="assetHeaderReady"/>' +
+
+
+                        '<Button ' +
+
+                        'text="Download Error Log" ' +
+
+                        'enabled="false" ' +
+
+                        'class="assetErrorLogBtn"/>' +
+
+
+                        '<Button ' +
+
+                        'id="togglePreviewButton" ' +
+
+                        'text="Toggle Preview" ' +
+
+                        'press="onTogglePreview" ' +
+
+                        'class="assetToggleBtn"/>' +
 
 
                     '</HBox>' +
 
 
-
-                    '<Button ' +
-
-                    'text="Download Template" ' +
-
-                    'press="onDownloadTemplate" ' +
-
-                    'icon="sap-icon://download" ' +
-
-                    'type="Emphasized" ' +
-
-                    'class="assetBtn assetBlue assetDownloadBtn"/>' +
-
-
-                '</HBox>' +
+                '</HBox>' 
 
 
 
@@ -2071,51 +2623,6 @@ com-fd-djaja-sap-sac-excel .assetFooter {
 '</Toolbar>' +
 
 
-                /* DROP ZONE */
-
-
-                '<VBox class="assetDrop">' +
-
-
-                    '<HBox alignItems="Center">' +
-
-
-                        '<core:Icon ' +
-
-                        'src="sap-icon://upload-to-cloud" ' +
-
-                        'size="1.3rem" ' +
-
-                        'class="assetDropIcon"/>' +
-
-
-                        '<VBox>' +
-
-
-                            '<Text ' +
-
-                            'text="Drag &amp; drop your XLSM file here" ' +
-
-                            'class="assetDropText"/>' +
-
-
-                            '<Text ' +
-
-                            'text="or click to browse  •  Sheet: Sheet1  •  Maximum 2,000 records" ' +
-
-                            'class="assetHelp"/>' +
-
-
-                        '</VBox>' +
-
-
-                    '</HBox>' +
-
-
-                '</VBox>' +
-
-
-
                 /* REQUIRED COLUMNS */
 
 
@@ -2200,7 +2707,9 @@ com-fd-djaja-sap-sac-excel .assetFooter {
 
                     'class="assetPreviewHead" ' +
 
-                    'alignItems="Center">' +
+                    'alignItems="Center" ' +
+
+                    'justifyContent="SpaceBetween">' +
 
 
                         '<Text ' +
@@ -2327,26 +2836,13 @@ com-fd-djaja-sap-sac-excel .assetFooter {
 
 
 
-                    '<VBox ' +
+                    '<Text ' +
 
                     'id="previewEmpty" ' +
 
-                    'alignItems="Center">' +
+                    'text="No preview available" ' +
 
-
-                        '<core:Icon ' +
-
-                        'src="sap-icon://table-view" ' +
-
-                        'size="1.6rem"/>' +
-
-
-                        '<Text ' +
-
-                        'text="No preview available. Upload a file to view validated rows."/>' +
-
-
-                    '</VBox>' +
+                    'class="assetPreviewEmpty"/>' +
 
 
                 '</VBox>' +
@@ -3708,6 +4204,139 @@ this_.wasteTime();
                                             MessageToast.show(
 
                                                 "Unable to download template"
+
+                                            );
+
+                                        }
+
+                                    },
+
+
+
+                                /* =================================================
+
+                                   TOGGLE PREVIEW
+
+                                   ================================================= */
+
+
+                                onTogglePreview:
+
+                                    function () {
+
+
+                                        try {
+
+
+                                            var table =
+
+                                                this.getView().byId(
+
+                                                    "previewTable"
+
+                                                );
+
+
+                                            var empty =
+
+                                                this.getView().byId(
+
+                                                    "previewEmpty"
+
+                                                );
+
+
+                                            var button =
+
+                                                this.getView().byId(
+
+                                                    "togglePreviewButton"
+
+                                                );
+
+
+                                            if (!table) {
+
+                                                return;
+
+                                            }
+
+
+                                            var currentlyVisible =
+
+                                                table.getVisible();
+
+
+                                            if (currentlyVisible) {
+
+
+                                                table.setVisible(false);
+
+
+                                                if (empty) {
+
+                                                    empty.setVisible(true);
+
+                                                }
+
+
+                                                if (button) {
+
+                                                    button.setText(
+
+                                                        "Show Preview"
+
+                                                    );
+
+                                                }
+
+
+                                            } else {
+
+
+                                                var hasRows =
+
+                                                    table.getItems().length > 0;
+
+
+                                                table.setVisible(hasRows);
+
+
+                                                if (empty) {
+
+                                                    empty.setVisible(!hasRows);
+
+                                                }
+
+
+                                                if (button) {
+
+                                                    button.setText(
+
+                                                        hasRows
+
+                                                            ? "Hide Preview"
+
+                                                            : "Toggle Preview"
+
+                                                    );
+
+                                                }
+
+                                            }
+
+
+                                        }
+
+
+                                        catch (error) {
+
+
+                                            console.error(
+
+                                                "Toggle preview error:",
+
+                                                error
 
                                             );
 
