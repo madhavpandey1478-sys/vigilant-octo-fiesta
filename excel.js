@@ -94,7 +94,7 @@ com-fd-djaja-sap-sac-excel .assetTitle {
     font-weight: 700 !important;
 }
 
-com-fd-djaja-sap-excel .assetSubtitle {
+com-fd-djaja-sap-sac-excel .assetSubtitle {
     margin-top: 1px !important;
 
     color: #6a7885 !important;
@@ -135,7 +135,7 @@ com-fd-djaja-sap-sac-excel .assetDownloadBtn {
     margin: 0 !important;
 }
 
-com-fd-djaja-sap-excel .assetDownloadBtn .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnInner {
     width: 158px !important;
     min-width: 158px !important;
     height: 34px !important;
@@ -159,7 +159,7 @@ com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnIcon {
     margin-right: 6px !important;
 }
 
-com-fd-djaja-sap-excel .assetDownloadBtn:hover .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetDownloadBtn:hover .sapMBtnInner {
     background: #085caf !important;
     border-color: #085caf !important;
 }
@@ -286,7 +286,7 @@ com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton .sapMBtnInner:hover {
    UPLOAD BUTTON
    ========================================================= */
 
-com-fd-djaja-sap-excel .assetUploadItem {
+com-fd-djaja-sap-sac-excel .assetUploadItem {
     width: 96px !important;
     min-width: 96px !important;
 
@@ -296,7 +296,7 @@ com-fd-djaja-sap-excel .assetUploadItem {
     margin: 0 6px 0 7px !important;
 }
 
-com-fd-djaja-sap-excel .assetUploadItem .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
     width: 96px !important;
     min-width: 96px !important;
 
@@ -397,7 +397,7 @@ com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnIcon {
     margin-right: 5px !important;
 }
 
-com-fd-djaja-sap-excel .assetClearItem:hover .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnInner {
     background: #f5f7f9 !important;
     border-color: #8fa1b1 !important;
 }
@@ -558,7 +558,6 @@ com-fd-djaja-sap-sac-excel .assetMetricValue {
 
     font-weight: 700 !important;
 }
-
 /* =========================================================
    PREVIEW
    ========================================================= */
