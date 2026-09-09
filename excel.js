@@ -33,7 +33,7 @@
    ========================================================= */
 
 
-:host {
+com-fd-djaja-sap-sac-excel {
 
     display: block !important;
 
@@ -48,11 +48,11 @@
 }
 
 
-:host *,
+com-fd-djaja-sap-sac-excel *,
 
-:host *::before,
+com-fd-djaja-sap-sac-excel *::before,
 
-:host *::after {
+com-fd-djaja-sap-sac-excel *::after {
 
     box-sizing: border-box !important;
 
@@ -67,7 +67,7 @@
    ========================================================= */
 
 
-:host .assetCard {
+com-fd-djaja-sap-sac-excel .assetCard {
 
     width: 100% !important;
 
@@ -100,7 +100,7 @@
    ========================================================= */
 
 
-:host .assetHeader {
+com-fd-djaja-sap-sac-excel .assetHeader {
 
     width: 100% !important;
 
@@ -121,14 +121,14 @@
 }
 
 
-:host .assetHeader > .sapMFlexItem:first-child {
+com-fd-djaja-sap-sac-excel .assetHeader > .sapMFlexItem:first-child {
 
     min-width: 0 !important;
 
 }
 
 
-:host .assetIcon {
+com-fd-djaja-sap-sac-excel .assetIcon {
 
     width: 38px !important;
 
@@ -150,7 +150,7 @@
 }
 
 
-:host .assetTitle {
+com-fd-djaja-sap-sac-excel .assetTitle {
 
     color: #1d2d3e !important;
 
@@ -163,7 +163,7 @@
 }
 
 
-:host .assetSubtitle {
+com-fd-djaja-sap-sac-excel .assetSubtitle {
 
     margin-top: 1px !important;
 
@@ -185,7 +185,7 @@
    ========================================================= */
 
 
-:host .assetBtn .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetBtn .sapMBtnInner {
 
     height: 34px !important;
 
@@ -220,7 +220,7 @@
    ========================================================= */
 
 
-:host .assetDownloadBtn {
+com-fd-djaja-sap-sac-excel .assetDownloadBtn {
 
     width: 158px !important;
 
@@ -232,7 +232,7 @@
 }
 
 
-:host .assetDownloadBtn .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnInner {
 
     width: 158px !important;
 
@@ -264,7 +264,7 @@
 }
 
 
-:host .assetDownloadBtn .sapMBtnIcon {
+com-fd-djaja-sap-sac-excel .assetDownloadBtn .sapMBtnIcon {
 
     color: #ffffff !important;
 
@@ -273,7 +273,7 @@
 }
 
 
-:host .assetDownloadBtn:hover .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetDownloadBtn:hover .sapMBtnInner {
 
     background: #085caf !important;
 
@@ -290,7 +290,7 @@
    ========================================================= */
 
 
-:host .assetToolbar {
+com-fd-djaja-sap-sac-excel .assetToolbar {
 
     width: 100% !important;
 
@@ -324,7 +324,7 @@
 }
 
 
-:host .assetToolbar.sapMTB {
+com-fd-djaja-sap-sac-excel .assetToolbar.sapMTB {
 
     height: 42px !important;
 
@@ -336,7 +336,7 @@
 }
 
 
-:host .assetToolbar .sapMTB {
+com-fd-djaja-sap-sac-excel .assetToolbar .sapMTB {
 
     border: none !important;
 
@@ -355,7 +355,7 @@
    ========================================================= */
 
 
-:host .assetUploader {
+com-fd-djaja-sap-sac-excel .assetUploader {
 
     width: 310px !important;
 
@@ -376,7 +376,7 @@
 /* FILE NAME */
 
 
-:host .assetUploader .sapUiFupInput {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupInput {
 
     height: 34px !important;
 
@@ -412,7 +412,7 @@
 /* CHOOSE FILE */
 
 
-:host .assetUploader .sapUiFupButton {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton {
 
     width: 100px !important;
 
@@ -430,7 +430,7 @@
 }
 
 
-:host .assetUploader .sapUiFupButton .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton .sapMBtnInner {
 
     width: 100px !important;
 
@@ -465,7 +465,7 @@
 }
 
 
-:host .assetUploader .sapUiFupButton .sapMBtnInner:hover {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton .sapMBtnInner:hover {
 
     background: #f1f5f8 !important;
 
@@ -482,7 +482,7 @@
    ========================================================= */
 
 
-:host .assetUploadItem {
+com-fd-djaja-sap-sac-excel .assetUploadItem {
 
     width: 96px !important;
 
@@ -499,7 +499,7 @@
 }
 
 
-:host .assetUploadItem .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
 
     width: 96px !important;
 
@@ -540,7 +540,7 @@
 }
 
 
-:host .assetUploadItem .sapMBtnIcon {
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnIcon {
 
     color: #ffffff !important;
 
@@ -549,7 +549,7 @@
 }
 
 
-:host .assetUploadItem:hover .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploadItem:hover .sapMBtnInner {
 
     background: #085caf !important;
 
@@ -558,7 +558,7 @@
 }
 
 
-:host .assetUploadItem:active .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploadItem:active .sapMBtnInner {
 
     background: #064f96 !important;
 
@@ -575,7 +575,7 @@
    ========================================================= */
 
 
-:host .assetClearItem {
+com-fd-djaja-sap-sac-excel .assetClearItem {
 
     width: 96px !important;
 
@@ -592,7 +592,7 @@
 }
 
 
-:host .assetClearItem .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
 
     width: 96px !important;
 
@@ -636,7 +636,7 @@
 }
 
 
-:host .assetClearItem .sapMBtnContent {
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnContent {
 
     display: inline-block !important;
 
@@ -660,7 +660,7 @@
 }
 
 
-:host .assetClearItem .sapMBtnIcon {
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnIcon {
 
     color: #52667a !important;
 
@@ -669,7 +669,7 @@
 }
 
 
-:host .assetClearItem:hover .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnInner {
 
     background: #f5f7f9 !important;
 
@@ -678,7 +678,7 @@
 }
 
 
-:host .assetClearItem:hover .sapMBtnIcon {
+com-fd-djaja-sap-sac-excel .assetClearItem:hover .sapMBtnIcon {
 
     color: #bb1e10 !important;
 
@@ -693,7 +693,7 @@
    ========================================================= */
 
 
-:host .assetSearch {
+com-fd-djaja-sap-sac-excel .assetSearch {
 
     width: 220px !important;
 
@@ -708,7 +708,7 @@
 }
 
 
-:host .assetSearch .sapMInputBaseContentWrapper {
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
 
     height: 32px !important;
 
@@ -726,7 +726,7 @@
 }
 
 
-:host .assetSearch .sapMInputBaseInner {
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
 
     height: 30px !important;
 
@@ -742,7 +742,7 @@
 }
 
 
-:host .assetSearch .sapMInputBaseInner::placeholder {
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner::placeholder {
 
     color: #8997a5 !important;
 
@@ -757,7 +757,7 @@
    ========================================================= */
 
 
-:host .assetDrop {
+com-fd-djaja-sap-sac-excel .assetDrop {
 
     width: 100% !important;
 
@@ -787,7 +787,7 @@
 }
 
 
-:host .assetDropIcon {
+com-fd-djaja-sap-sac-excel .assetDropIcon {
 
     color: #0a6ed1 !important;
 
@@ -796,7 +796,7 @@
 }
 
 
-:host .assetDropText {
+com-fd-djaja-sap-sac-excel .assetDropText {
 
     color: #334e68 !important;
 
@@ -811,7 +811,7 @@
 }
 
 
-:host .assetHelp {
+com-fd-djaja-sap-sac-excel .assetHelp {
 
     margin-top: 1px !important;
 
@@ -834,7 +834,7 @@
    ========================================================= */
 
 
-:host .assetRequired {
+com-fd-djaja-sap-sac-excel .assetRequired {
 
     width: 100% !important;
 
@@ -860,7 +860,7 @@
    ========================================================= */
 
 
-:host .assetStats {
+com-fd-djaja-sap-sac-excel .assetStats {
 
     width: 100% !important;
 
@@ -876,7 +876,7 @@
 }
 
 
-:host .assetMetric {
+com-fd-djaja-sap-sac-excel .assetMetric {
 
     flex: 1 1 0 !important;
 
@@ -903,7 +903,7 @@
 }
 
 
-:host .assetMetricLabel {
+com-fd-djaja-sap-sac-excel .assetMetricLabel {
 
     color: #718096 !important;
 
@@ -922,7 +922,7 @@
 }
 
 
-:host .assetMetricValue {
+com-fd-djaja-sap-sac-excel .assetMetricValue {
 
     margin-top: 2px !important;
 
@@ -946,7 +946,7 @@
    ========================================================= */
 
 
-:host .assetPreview {
+com-fd-djaja-sap-sac-excel .assetPreview {
 
     width: 100% !important;
 
@@ -967,7 +967,7 @@
 }
 
 
-:host .assetPreviewHead {
+com-fd-djaja-sap-sac-excel .assetPreviewHead {
 
     padding: 8px 11px !important;
 
@@ -980,7 +980,7 @@
 }
 
 
-:host .assetPreviewTitle {
+com-fd-djaja-sap-sac-excel .assetPreviewTitle {
 
     color: #1d2d3e !important;
 
@@ -1003,7 +1003,7 @@
    ========================================================= */
 
 
-:host .assetPreview .sapMListTbl {
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTbl {
 
     width: 100% !important;
 
@@ -1013,7 +1013,7 @@
 }
 
 
-:host .assetPreview .sapMListTblHeaderCell {
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblHeaderCell {
 
     height: 32px !important;
 
@@ -1029,7 +1029,7 @@
 }
 
 
-:host .assetPreview .sapMListTblCell {
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblCell {
 
     padding: 0 8px !important;
 
@@ -1050,7 +1050,7 @@
    ========================================================= */
 
 
-:host #previewEmpty {
+com-fd-djaja-sap-sac-excel #previewEmpty {
 
     padding: 22px 10px !important;
 
@@ -1068,7 +1068,7 @@
    ========================================================= */
 
 
-:host .assetFooter {
+com-fd-djaja-sap-sac-excel .assetFooter {
 
     margin-top: 8px !important;
 
@@ -1093,7 +1093,7 @@
 
 /* Header: compact, clean, no icon */
 
-:host .assetCard {
+com-fd-djaja-sap-sac-excel .assetCard {
 
     padding: 4px !important;
 
@@ -1108,7 +1108,7 @@
 }
 
 
-:host .assetHeader {
+com-fd-djaja-sap-sac-excel .assetHeader {
 
     min-height: 52px !important;
 
@@ -1119,7 +1119,7 @@
 }
 
 
-:host .assetTitle {
+com-fd-djaja-sap-sac-excel .assetTitle {
 
     color: #0070f2 !important;
 
@@ -1130,7 +1130,7 @@
 }
 
 
-:host .assetSubtitle {
+com-fd-djaja-sap-sac-excel .assetSubtitle {
 
     color: #647789 !important;
 
@@ -1141,7 +1141,7 @@
 
 /* Header action group */
 
-:host .assetHeaderActions {
+com-fd-djaja-sap-sac-excel .assetHeaderActions {
 
     display: flex !important;
 
@@ -1152,7 +1152,7 @@
 }
 
 
-:host .assetHeaderReady .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetHeaderReady .sapMBtnInner {
 
     height: 34px !important;
 
@@ -1173,7 +1173,7 @@
 }
 
 
-:host .assetErrorLogBtn .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetErrorLogBtn .sapMBtnInner {
 
     height: 34px !important;
 
@@ -1194,7 +1194,7 @@
 }
 
 
-:host .assetToggleBtn .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetToggleBtn .sapMBtnInner {
 
     height: 34px !important;
 
@@ -1219,7 +1219,7 @@
 
 /* Toolbar */
 
-:host .assetToolbar {
+com-fd-djaja-sap-sac-excel .assetToolbar {
 
     height: 62px !important;
 
@@ -1240,7 +1240,7 @@
 }
 
 
-:host .assetToolbar.sapMTB {
+com-fd-djaja-sap-sac-excel .assetToolbar.sapMTB {
 
     height: 62px !important;
 
@@ -1253,7 +1253,7 @@
 
 /* File uploader */
 
-:host .assetUploader {
+com-fd-djaja-sap-sac-excel .assetUploader {
 
     width: 338px !important;
 
@@ -1264,7 +1264,7 @@
 }
 
 
-:host .assetUploader .sapUiFupInput {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupInput {
 
     height: 46px !important;
 
@@ -1277,7 +1277,7 @@
 }
 
 
-:host .assetUploader .sapUiFupButton {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton {
 
     width: 102px !important;
 
@@ -1288,7 +1288,7 @@
 }
 
 
-:host .assetUploader .sapUiFupButton .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploader .sapUiFupButton .sapMBtnInner {
 
     width: 102px !important;
 
@@ -1305,9 +1305,9 @@
 
 /* Main Upload/Clear buttons */
 
-:host .assetUploadItem,
+com-fd-djaja-sap-sac-excel .assetUploadItem,
 
-:host .assetClearItem {
+com-fd-djaja-sap-sac-excel .assetClearItem {
 
     height: 46px !important;
 
@@ -1316,7 +1316,7 @@
 }
 
 
-:host .assetUploadItem {
+com-fd-djaja-sap-sac-excel .assetUploadItem {
 
     width: 104px !important;
 
@@ -1327,7 +1327,7 @@
 }
 
 
-:host .assetUploadItem .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetUploadItem .sapMBtnInner {
 
     width: 104px !important;
 
@@ -1342,7 +1342,7 @@
 }
 
 
-:host .assetClearItem {
+com-fd-djaja-sap-sac-excel .assetClearItem {
 
     width: 104px !important;
 
@@ -1353,7 +1353,7 @@
 }
 
 
-:host .assetClearItem .sapMBtnInner {
+com-fd-djaja-sap-sac-excel .assetClearItem .sapMBtnInner {
 
     width: 104px !important;
 
@@ -1370,7 +1370,7 @@
 
 /* Search */
 
-:host .assetSearch {
+com-fd-djaja-sap-sac-excel .assetSearch {
 
     width: 360px !important;
 
@@ -1381,7 +1381,7 @@
 }
 
 
-:host .assetSearch .sapMInputBaseContentWrapper {
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseContentWrapper {
 
     height: 46px !important;
 
@@ -1390,7 +1390,7 @@
 }
 
 
-:host .assetSearch .sapMInputBaseInner {
+com-fd-djaja-sap-sac-excel .assetSearch .sapMInputBaseInner {
 
     height: 44px !important;
 
@@ -1401,7 +1401,7 @@
 
 /* Required columns */
 
-:host .assetRequired {
+com-fd-djaja-sap-sac-excel .assetRequired {
 
     margin: 0 14px 10px 14px !important;
 
@@ -1418,7 +1418,7 @@
 
 /* Stats: FORCE horizontal row on UI5 VBox */
 
-:host .assetStats {
+com-fd-djaja-sap-sac-excel .assetStats {
 
     width: 100% !important;
 
@@ -1437,7 +1437,7 @@
 }
 
 
-:host .assetStats > .sapMFlexItem {
+com-fd-djaja-sap-sac-excel .assetStats > .sapMFlexItem {
 
     flex: 1 1 0 !important;
 
@@ -1448,7 +1448,7 @@
 }
 
 
-:host .assetMetric {
+com-fd-djaja-sap-sac-excel .assetMetric {
 
     width: 100% !important;
 
@@ -1467,7 +1467,7 @@
 }
 
 
-:host .assetMetricLabel {
+com-fd-djaja-sap-sac-excel .assetMetricLabel {
 
     font-size: 10px !important;
 
@@ -1493,7 +1493,7 @@ com-fd-djaja-sap-excel .assetMetricValue {
 
 /* Preview */
 
-:host .assetPreview {
+com-fd-djaja-sap-sac-excel .assetPreview {
 
     width: 100% !important;
 
@@ -1510,7 +1510,7 @@ com-fd-djaja-sap-excel .assetMetricValue {
 }
 
 
-:host .assetPreviewHead {
+com-fd-djaja-sap-sac-excel .assetPreviewHead {
 
     width: 100% !important;
 
@@ -1531,7 +1531,7 @@ com-fd-djaja-sap-excel .assetMetricValue {
 }
 
 
-:host .assetPreviewHead > .sapMFlexItem:last-child {
+com-fd-djaja-sap-sac-excel .assetPreviewHead > .sapMFlexItem:last-child {
 
     margin-left: auto !important;
 
@@ -1558,7 +1558,7 @@ com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
 }
 
 
-:host .assetPreview .sapMListTblHeaderCell {
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblHeaderCell {
 
     height: 34px !important;
 
@@ -1567,7 +1567,7 @@ com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
 }
 
 
-:host .assetPreview .sapMListTblCell {
+com-fd-djaja-sap-sac-excel .assetPreview .sapMListTblCell {
 
     height: 30px !important;
 
@@ -1576,7 +1576,7 @@ com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
 }
 
 
-:host #previewEmpty {
+com-fd-djaja-sap-sac-excel #previewEmpty {
 
     width: 100% !important;
 
@@ -1599,7 +1599,7 @@ com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
 
 /* Footer */
 
-:host .assetFooter {
+com-fd-djaja-sap-sac-excel .assetFooter {
 
     margin: 7px 0 0 0 !important;
 
@@ -1608,530 +1608,6 @@ com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
     color: #8795a3 !important;
 
     font-size: 9px !important;
-
-}
-
-
-
-/* =========================================================
-
-   REFERENCE SCREENSHOT - FINAL OVERRIDES
-
-   ========================================================= */
-
-:host {
-
-    display: block !important;
-
-    width: 100% !important;
-
-    height: 100% !important;
-
-    min-width: 0 !important;
-
-    min-height: 0 !important;
-
-    background: #ffffff !important;
-
-    overflow: hidden !important;
-
-}
-
-:host .assetCard {
-
-    width: 100% !important;
-
-    height: 100% !important;
-
-    min-height: 0 !important;
-
-    padding: 4px !important;
-
-    margin: 0 !important;
-
-    border: 0 !important;
-
-    border-radius: 0 !important;
-
-    box-shadow: none !important;
-
-    background: #ffffff !important;
-
-    overflow: hidden !important;
-
-}
-
-:host .assetHeader {
-
-    width: 100% !important;
-
-    height: 52px !important;
-
-    min-height: 52px !important;
-
-    margin: 0 0 6px 0 !important;
-
-    padding: 0 !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: space-between !important;
-
-}
-
-:host .assetTitle {
-
-    color: #0070f2 !important;
-
-    font-size: 17px !important;
-
-    line-height: 20px !important;
-
-    font-weight: 700 !important;
-
-}
-
-:host .assetSubtitle {
-
-    margin-top: 1px !important;
-
-    color: #647789 !important;
-
-    font-size: 11px !important;
-
-    line-height: 15px !important;
-
-}
-
-:host .assetHeaderActions {
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    gap: 8px !important;
-
-    flex: 0 0 auto !important;
-
-}
-
-:host .assetHeaderActions .sapMBtn { margin: 0 !important; }
-
-:host .assetDownloadBtn { width: 160px !important; min-width: 160px !important; }
-
-:host .assetDownloadBtn .sapMBtnInner {
-
-    width: 160px !important;
-
-    height: 34px !important;
-
-    min-width: 160px !important;
-
-    border-radius: 7px !important;
-
-    background: #0a6ed1 !important;
-
-    border: 1px solid #0a6ed1 !important;
-
-    color: #ffffff !important;
-
-    font-size: 11px !important;
-
-    font-weight: 600 !important;
-
-}
-
-:host .assetHeaderReady { width: 62px !important; min-width: 62px !important; }
-
-:host .assetHeaderReady .sapMBtnInner {
-
-    height: 34px !important;
-
-    min-width: 62px !important;
-
-    border: 1px solid #d6dce2 !important;
-
-    border-radius: 7px !important;
-
-    background: #f6f7f8 !important;
-
-    color: #263746 !important;
-
-    font-size: 11px !important;
-
-}
-
-:host .assetErrorLogBtn { width: 162px !important; min-width: 162px !important; }
-
-:host .assetErrorLogBtn .sapMBtnInner {
-
-    height: 34px !important;
-
-    min-width: 162px !important;
-
-    border: 1px solid #d6dce2 !important;
-
-    border-radius: 7px !important;
-
-    background: #ffffff !important;
-
-    color: #7b8793 !important;
-
-    font-size: 11px !important;
-
-}
-
-:host .assetToggleBtn { width: 132px !important; min-width: 132px !important; }
-
-:host .assetToggleBtn .sapMBtnInner {
-
-    height: 34px !important;
-
-    min-width: 132px !important;
-
-    border: 1px solid #c9d2dc !important;
-
-    border-radius: 7px !important;
-
-    background: #ffffff !important;
-
-    color: #263746 !important;
-
-    font-size: 11px !important;
-
-    font-weight: 600 !important;
-
-}
-
-:host .assetToolbar {
-
-    width: 100% !important;
-
-    height: 62px !important;
-
-    min-height: 62px !important;
-
-    margin: 0 0 7px 0 !important;
-
-    padding: 7px 14px !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    background: #fbfcfd !important;
-
-    border: 1px solid #d9e1e8 !important;
-
-    border-radius: 9px !important;
-
-    overflow: visible !important;
-
-}
-
-:host .assetToolbar .sapUiFup {
-
-    flex: 0 0 338px !important;
-
-    width: 338px !important;
-
-}
-
-:host .assetUploader {
-
-    width: 338px !important;
-
-    min-width: 338px !important;
-
-    height: 46px !important;
-
-}
-
-:host .assetUploader .sapUiFupInput {
-
-    height: 46px !important;
-
-    line-height: 44px !important;
-
-    border-radius: 9px 0 0 9px !important;
-
-    font-size: 12px !important;
-
-}
-
-:host .assetUploader .sapUiFupButton {
-
-    width: 102px !important;
-
-    min-width: 102px !important;
-
-    height: 46px !important;
-
-}
-
-:host .assetUploader .sapUiFupButton .sapMBtnInner {
-
-    height: 46px !important;
-
-    border-radius: 0 9px 9px 0 !important;
-
-}
-
-:host .assetUploadItem {
-
-    width: 104px !important;
-
-    min-width: 104px !important;
-
-    height: 46px !important;
-
-    margin: 0 7px !important;
-
-}
-
-:host .assetUploadItem .sapMBtnInner {
-
-    width: 104px !important;
-
-    min-width: 104px !important;
-
-    height: 46px !important;
-
-    border-radius: 9px !important;
-
-    font-size: 12px !important;
-
-    font-weight: 600 !important;
-
-}
-
-:host .assetClearItem {
-
-    width: 104px !important;
-
-    min-width: 104px !important;
-
-    height: 46px !important;
-
-    margin: 0 !important;
-
-}
-
-:host .assetClearItem .sapMBtnInner {
-
-    width: 104px !important;
-
-    min-width: 104px !important;
-
-    height: 46px !important;
-
-    border-radius: 9px !important;
-
-    font-size: 12px !important;
-
-    font-weight: 600 !important;
-
-}
-
-:host .assetSearch {
-
-    width: 360px !important;
-
-    min-width: 220px !important;
-
-    max-width: 360px !important;
-
-    height: 46px !important;
-
-    margin-left: auto !important;
-
-}
-
-:host .assetSearch .sapMInputBaseContentWrapper {
-
-    height: 46px !important;
-
-    border-radius: 9px !important;
-
-    background: #ffffff !important;
-
-}
-
-:host .assetSearch .sapMInputBaseInner {
-
-    height: 44px !important;
-
-    font-size: 12px !important;
-
-}
-
-:host .assetRequired {
-
-    width: 100% !important;
-
-    margin: 0 0 9px 0 !important;
-
-    color: #687887 !important;
-
-    font-size: 10px !important;
-
-    line-height: 14px !important;
-
-}
-
-:host .assetStats {
-
-    width: 100% !important;
-
-    height: 58px !important;
-
-    min-height: 58px !important;
-
-    display: flex !important;
-
-    flex-direction: row !important;
-
-    align-items: stretch !important;
-
-    gap: 8px !important;
-
-    margin: 0 !important;
-
-}
-
-:host .assetMetric {
-
-    flex: 1 1 0 !important;
-
-    width: auto !important;
-
-    min-width: 0 !important;
-
-    height: 58px !important;
-
-    min-height: 58px !important;
-
-    margin: 0 !important;
-
-    padding: 10px 12px !important;
-
-    border: 1px solid #e0e5ea !important;
-
-    border-radius: 8px !important;
-
-    background: #ffffff !important;
-
-}
-
-:host .assetMetricLabel {
-
-    display: block !important;
-
-    color: #718096 !important;
-
-    font-size: 10px !important;
-
-    line-height: 14px !important;
-
-    white-space: nowrap !important;
-
-}
-
-:host .assetMetricValue {
-
-    display: block !important;
-
-    margin-top: 2px !important;
-
-    color: #1d2d3e !important;
-
-    font-size: 16px !important;
-
-    line-height: 19px !important;
-
-    font-weight: 700 !important;
-
-}
-
-:host .assetPreview {
-
-    width: 100% !important;
-
-    margin-top: 10px !important;
-
-    border: 1px solid #e0e5ea !important;
-
-    border-radius: 8px !important;
-
-    background: #ffffff !important;
-
-    overflow: hidden !important;
-
-}
-
-:host .assetPreviewHead {
-
-    height: 36px !important;
-
-    min-height: 36px !important;
-
-    padding: 0 11px !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: space-between !important;
-
-    background: #fafbfc !important;
-
-    border-bottom: 1px solid #e7ebef !important;
-
-}
-
-:host .assetPreviewTitle {
-
-    color: #1d2d3e !important;
-
-    font-size: 12px !important;
-
-    line-height: 16px !important;
-
-    font-weight: 700 !important;
-
-}
-
-:host #previewCount {
-
-    color: #6e7d8a !important;
-
-    font-size: 10px !important;
-
-}
-
-:host #previewEmpty {
-
-    padding: 20px 10px !important;
-
-    color: #788896 !important;
-
-    font-size: 11px !important;
-
-    text-align: left !important;
-
-}
-
-:host .assetFooter {
-
-    margin-top: 7px !important;
-
-    color: #8a98a5 !important;
-
-    font-size: 9px !important;
-
-    line-height: 13px !important;
 
 }
 
@@ -2168,13 +1644,11 @@ com-fd-djaja-sap-excel .assetPreviewHead #previewCount {
     let tmpl = document.createElement("template");
 
 
-    tmpl.innerHTML =
+    tmpl.innerHTML = `
 
-        "<style>" +
+        <style></style>
 
-        ASSET_EXCEL_CSS +
-
-        "</style>";
+    `;
 
 
 
